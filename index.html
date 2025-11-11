@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ricerca Professore - Orario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Ricerca Docente in Orario Scolastico</h1>
+    <div class="form-group">
+        <select id="classe_select">
+            <option value="">-- Tutte le classi --</option>
+        </select>
+        <select id="docente_select">
+            <option value="">-- Tutti i docenti --</option>
+        </select>
+        <select id="aula_select">
+            <option value="">-- Tutte le aule --</option>
+        </select>
+
+        <select id="giorno_select">
+            <option value="">-- Tutti i giorni --</option>
+            <option value="Lun">Lunedì</option>
+            <option value="Mar">Martedì</option>
+            <option value="Mer">Mercoledì</option>
+            <option value="Gio">Giovedì</option>
+            <option value="Ven">Venerdì</option>
+        </select>
+        <select id="ora_select">
+            <option value="">-- Tutte le ore --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+        <button onclick="cerca()">Filtra</button>
+        <button onclick="cercaAdesso()" style="background:#2196f3;color:white;margin-left:10px;">Cerca adesso</button>
+    </div>
+
+    <div id="risultati"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
