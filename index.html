@@ -3,45 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Ricerca Professore - Orario</title>
+    <title>Ricerca Docente - Orario</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>Ricerca Docente in Orario ITTVT</h1>
     <div id="orologio-dinamico"></div>
-    <div class="form-group">
-        <select id="classe_select">
-            <option value="">Tutti i docenti</option>
+    <div class="form-group-wrapper">
+        <div class="form-group-principale">
+            <button onclick="cercaAdesso()" class="btn-adesso">
+                🚀 Vedi Lezioni Attive (Adesso)
+            </button>
+            <button onclick="resetFiltri()" class="btn-reset">
+                Annulla Filtri
+            </button>
+        </div>
 
-        </select>
-        <select id="docente_select">
-            <option value="">Tutti i docenti</option>
-        </select>
-        <select id="aula_select">
-            <option value="">Tutte le aule</option>
-        </select>
-
-        <select id="giorno_select">
-            <option value="">Tutti i giorni</option>
-            <option value="Lun">Lunedì</option>
-            <option value="Mar">Martedì</option>
-            <option value="Mer">Mercoledì</option>
-            <option value="Gio">Giovedì</option>
-            <option value="Ven">Venerdì</option>
-        </select>
-        <select id="ora_select">
-            <option value="">Tutte le ore </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-        </select>
-        <button onclick="cerca()">Filtra</button>
-        <button onclick="cercaAdesso()" style="background:#2196f3;color:white;margin-left:10px;">In questa ora</button>
+        <div class="form-group-filtri">
+            <select id="classe_select">
+                <option value="">Filtra per Classe...</option>
+                </select>
+            <select id="docente_select">
+                <option value="">Filtra per Docente...</option>
+                </select>
+            <select id="aula_select">
+                <option value="">Filtra per Aula...</option>
+                </select>
+            
+            <select id="giorno_select">
+                <option value="">Qualsiasi Giorno</option>
+                <option value="Lun">Lunedì</option>
+                <option value="Mar">Martedì</option>
+                <option value="Mer">Mercoledì</option>
+                <option value="Gio">Giovedì</option>
+                <option value="Ven">Venerdì</option>
+            </select>
+            <select id="ora_select">
+                <option value="">Qualsiasi Ora</option>
+                <option value="1">1ª ora</option>
+                <option value="2">2ª ora</option>
+                <option value="3">3ª ora</option>
+                <option value="4">4ª ora</option>
+                <option value="5">5ª ora</option>
+                <option value="6">6ª ora</option>
+                <option value="7">7ª ora</option>
+            </select>
+            
+            </div>
     </div>
 
     <!-- Banner benvenuto fuori dal box -->
