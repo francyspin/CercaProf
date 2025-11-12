@@ -1,9 +1,15 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 30px;
-  background: #fafafc;
+  background: linear-gradient(120deg, #f0f4ff 0%, #e5ecfa 100%);
+  animation: bgMove 14s linear infinite;
   text-align: center;
   transition: background 0.5s;
+}
+@keyframes bgMove {
+  0% {background-position: 0% 50%;}
+  80% {background-position: 80% 51%;}
+  100% {background-position: 0% 50%;}
 }
 body.senza-lezioni {
   background: #ffeaea;
@@ -100,36 +106,31 @@ h1 {
 }
 .result-item b { color: #114bbe; }
 
-/* Tabella e menu paginazione puliti */
 .tabella-e-pagine {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 21px;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
-@media (max-width: 900px) {
-  .tabella-e-pagine { flex-direction: column; gap: 0; }
-}
 
 .paginazione {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 110px;
-  padding-top: 0;
-  margin-top: 0;
-  gap: 5px;
-  background: #f5f6fa66;
-  border-radius: 12px;
-  box-shadow: 0 0 7px #f2f8ff;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  margin-top: 4px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
 }
+
 .btn-pagi {
   padding: 10px 18px;
-  margin: 2px;
   border-radius: 13px;
   background: #e5eaf7;
   border: 2px solid #e0eaff;
@@ -137,6 +138,7 @@ h1 {
   font-size: 1.1em;
   font-weight: 800;
   cursor: pointer;
+  min-width: 44px;
   box-shadow: 0 1px 2px #e8f2fc;
   transition: background 0.13s, color 0.13s, border 0.13s;
 }
@@ -150,6 +152,32 @@ h1 {
   color: #fff;
   border-color: #1976d2;
 }
+
+.contenitore-tabella {
+  width: 100%;
+  flex: 1;
+  overflow-x: auto;
+}
+
+/* Responsive: la paginazione rimane sopra anche su mobile/tablet */
+@media (max-width: 900px) {
+  .tabella-e-pagine {
+    flex-direction: column;
+    align-items: center;
+    max-width: 99vw;
+  }
+  .paginazione {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 17px;
+    margin-top: 0;
+    padding: 10px 0 0 0;
+  }
+  .btn-pagi { font-size: 1em; min-width: 44px; min-height: 34px; }
+  .contenitore-tabella { max-width: 99vw; }
+}
+
 
 .orario-tabella {
   width: 100%;
@@ -180,28 +208,38 @@ h1 {
 }
 .orario-tabella tr:last-child td { border-bottom: none; }
 
-/* Banner benvenuto e banner-lezioni più glassy */
 .benvenuto {
-  max-width: 680px;
-  margin: 45px auto 25px auto;
-  background: rgba(255,255,255,0.90);
-  border-radius: 18px;
+  max-width: 430px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 15px;
   box-shadow: 0 1px 17px #cce7fd66;
-  padding: 43px 28px;
+  padding: 24px 16px;
   text-align: center;
-  backdrop-filter: blur(3px);
-  filter: drop-shadow(0 0 40px #8cc7fecc);
-  animation: fadeIn 0.65s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Verticale! */
+  align-items: center;      /* Orizzontale! */
+  min-height: 120px;
+  backdrop-filter: blur(2px);
+  filter: drop-shadow(0 0 24px #8cc7fecc);
+  animation: fadeIn 0.5s;
 }
 .benvenuto h2 { 
   color: #1976D2; 
-  margin-bottom: 12px; 
-  font-size: 2.3em; 
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 16px #7fbcfb99;
+  margin-bottom: 7px; 
+  font-size: 1.35em; 
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 12px #7fbcfb55;
 }
-.benvenuto p { font-size: 1.12em; color: #286085; margin-bottom: 0; }
+.benvenuto p { 
+  font-size: 1.03em; 
+  color: #286085; 
+  margin-bottom: 0; 
+  margin-top: 3px;
+}
+
 
 .banner-lezioni {
   max-width: 600px;
@@ -286,3 +324,66 @@ h1 {
   .benvenuto, .banner-lezioni { padding: 23px 4vw; }
 }
 
+#risultati {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+.benvenuto { 
+  min-height: initial; 
+  margin: 0; 
+}
+#banner-benvenuto {
+  width: 100%;
+  max-width: 470px;
+  margin: 25px auto 6px auto;
+  padding: 28px 12vw 22px 12vw;
+  text-align: center;
+  border-radius: 24px;
+  background: linear-gradient(115deg, #eaf6ff 0%, #bcf1fa 48%, #f8e2f2 100%);
+  color: #035ba6;
+  font-size: 2.1em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  box-shadow: 0 11px 28px #d7edff66, 0 1px 4px #fff9;
+  text-shadow: 0 2px 10px #22507633, 0 2px 16px #8ad3fc55;
+  filter: drop-shadow(0 0 22px #8dcafb99);
+  user-select: none;
+  z-index: 2;
+  /* Animazione gradiente super soft */
+  background-size: 200% 200%;
+  animation: benvenutoGradient 12s ease-in-out infinite;
+}
+
+@keyframes benvenutoGradient {
+  0%   { background-position: 0% 50%; }
+  30%  { background-position: 100% 50%; }
+  60%  { background-position: 60% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+#banner-frasi {
+  max-width: 410px;
+  margin: 3px auto 12px auto;
+  padding: 11px 14px;
+  background: rgba(255,255,255,0.75);
+  color: #2676d9;
+  font-size: 1.09em;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px #bfe2ff33;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  animation: fadeIn 1.2s;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#banner-frasi .frase-ciclica {
+  transition: opacity 0.5s;
+}

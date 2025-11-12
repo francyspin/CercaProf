@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <h1>Ricerca Docente in Orario Scolastico</h1>
+    <h1>Ricerca Docente in Orario ITTVT</h1>
+    <div id="orologio-dinamico"></div>
     <div class="form-group">
         <select id="classe_select">
             <option value="">-- Tutte le classi --</option>
@@ -42,7 +43,15 @@
         <button onclick="cercaAdesso()" style="background:#2196f3;color:white;margin-left:10px;">Cerca adesso</button>
     </div>
 
+    <!-- Banner benvenuto fuori dal box -->
+    <div id="banner-benvenuto"></div>
+
+    <!-- Banner frasi cicliche sotto il benvenuto -->
+    <div id="banner-frasi"></div>
+
+    <!-- Il box dei risultati/tabella -->
     <div id="risultati"></div>
+
     <script src="script.js"></script>
 </body>
 
