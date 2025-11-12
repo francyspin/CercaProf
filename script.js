@@ -98,9 +98,12 @@ function aggiornaSelect(sel, values) {
 
 /* --- FUNZIONI RICERCA CENTRALE --- */
 function cerca() {
+    // All'inizio di cerca/cercaAdesso
   document.getElementById('banner-benvenuto').style.display = "none";
   document.getElementById('banner-frasi').style.display = "none";
   document.getElementById('risultati').style.display = "";
+
+
 
   document.body.classList.remove('senza-lezioni');
   const classe = document.getElementById('classe_select').value;
@@ -143,9 +146,11 @@ function cerca() {
 }
 
 function cercaAdesso() {
+  // All'inizio di cerca/cercaAdesso
   document.getElementById('banner-benvenuto').style.display = "none";
   document.getElementById('banner-frasi').style.display = "none";
   document.getElementById('risultati').style.display = "";
+
 
   document.body.classList.remove('senza-lezioni');
   const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
@@ -170,7 +175,7 @@ function cercaAdesso() {
       return ok;
     });
   }
-
+  
   mostraRisultati(risultati, ora_scuola, giorno, true);
 }
 
@@ -180,30 +185,21 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
   let pagi = "";
   let table = "";
 
-  if(adessoMode && (!ora_scuola || ora_scuola === "" || typeof ora_scuola === "undefined" || risultati.length === 0)) {
-    document.body.classList.add('senza-lezioni');
-    pagi = `<div class="paginazione"><button class="btn-pagi" disabled>1</button></div>`;
-    table = `<table class="orario-tabella">
-      <thead>
-        <tr>
-          <th>Classe</th><th>Giorno</th><th>Ora</th><th>Docente</th><th>Aula</th><th>Descrizione</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="6" style="text-align:center; color:#e02538; font-size:1.16em"><em>Nessun risultato trovato.</em></td>
-        </tr>
-      </tbody>
-    </table>`;
-    box.innerHTML = `
-      <div class="tabella-e-pagine">${pagi}<div class="contenitore-tabella">${table}</div></div>
-      <div class="banner-lezioni"><h2>Non ci sono lezioni attive al momento!</h2>
-        <p>Le lezioni sono finite oppure non sono ancora iniziate.<br>
-        Nessuna classe o docente risulta impegnato ora.</p>
-      </div>
-    `;
-    return;
-  }
+if(adessoMode && (!ora_scuola || ora_scuola === "" || typeof ora_scuola === "undefined" || risultati.length === 0)) {
+  document.body.classList.add('senza-lezioni');
+  // SOLO banner, nessuna tabella, nessun bottone
+  box.innerHTML = `
+   <div class="banner-lezioni">
+  <div class="icona-banner">⚠️</div>
+  <h2>Non ci sono lezioni attive al momento!</h2>
+  <p>Le lezioni sono finite oppure non sono ancora iniziate.<br>
+  Nessuna classe o docente risulta impegnato ora.</p>
+</div>
+
+  `;
+  return;
+}
+
 
   let risultatiPagina = risultati;
   let totalPages = 1;

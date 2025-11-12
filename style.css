@@ -1,7 +1,12 @@
 body {
+  margin: 0; /* 1. Rimuove il margine esterno (il problema principale) */
+  padding: 30px; /* 2. Aggiunge lo spazio all'interno, coperto dallo sfondo */
+  min-height: 100vh; /* 3. Assicura che il body sia alto almeno quanto lo schermo */
+  box-sizing: border-box; /* Buona pratica quando si usa padding */
+  
+  /* Il resto dei tuoi stili originali */
   font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 30px;
-  background: linear-gradient(120deg, #f0f4ff 0%, #e5ecfa 100%);
+  background: linear-gradient(120deg, #c4e3ff 0%, #e5ecfa 25%, #b8c8fe 100%);
   animation: bgMove 14s linear infinite;
   text-align: center;
   transition: background 0.5s;
@@ -18,8 +23,8 @@ body.senza-lezioni {
 h1 {
   color: #fff;
   background: linear-gradient(94deg, #1976D2 10%, #4fc3f7 90%);
-  display: inline-block;      /* L'isola si adatta al titolo */
-  padding: 26px 60px;         /* ↑ più aria ai lati! */
+  display: inline-block;
+  padding: 26px 60px;
   border-radius: 32px;
   font-size: 2.7em;
   font-weight: 900;
@@ -28,11 +33,9 @@ h1 {
   text-shadow: 0 2px 16px #22507644, 0 4px 28px #4fc3f777;
   user-select: none;
   transition: background 0.6s;
-  white-space: nowrap;         /* Tutto su una riga */
-  margin: 36px auto 42px auto; /* Centra l'isola */
+  white-space: nowrap;
+  margin: 0 auto 22px auto;  
 }
-
-
 
 .form-group {
   display: flex;
@@ -58,6 +61,11 @@ h1 {
   cursor: pointer;
   vertical-align: middle;
   transition: border 0.2s, box-shadow 0.2s;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='grey' viewBox='0 0 24 24' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  padding-right: 32px; /* spazio per la freccia */
 }
 .form-group select:focus,
 .form-group input:focus {
@@ -96,7 +104,12 @@ h1 {
   max-width: 850px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
 }
+
 .result-item {
   background: #fff;
   padding: 17px;
@@ -130,7 +143,6 @@ h1 {
   box-shadow: none;
   padding: 0;
 }
-
 .btn-pagi {
   padding: 10px 18px;
   border-radius: 13px;
@@ -160,34 +172,6 @@ h1 {
   flex: 1;
   overflow-x: auto;
 }
-
-/* Responsive: la paginazione rimane sopra anche su mobile/tablet */
-@media (max-width: 900px) {
-  .tabella-e-pagine {
-    flex-direction: column;
-    align-items: center;
-    max-width: 99vw;
-  }
-  .paginazione {
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 17px;
-    margin-top: 0;
-    padding: 10px 0 0 0;
-  }
-  .btn-pagi { font-size: 1em; min-width: 44px; min-height: 34px; }
-  .contenitore-tabella { max-width: 99vw; }
-}
-@media (max-width: 900px) {
-  h1 {
-    padding: 18px 10px 12px 10px; /* lato più stretto su telefoni */
-    font-size: 1.7em;
-    border-radius: 16px;
-    margin: 18px auto 27px auto;
-  }
-}
-
 
 .orario-tabella {
   width: 100%;
@@ -228,117 +212,165 @@ h1 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Verticale! */
-  align-items: center;      /* Orizzontale! */
+  justify-content: center;
+  align-items: center;
   min-height: 120px;
   backdrop-filter: blur(2px);
   filter: drop-shadow(0 0 24px #8cc7fecc);
   animation: fadeIn 0.5s;
 }
-.benvenuto h2 { 
-  color: #1976D2; 
-  margin-bottom: 7px; 
-  font-size: 1.35em; 
+.benvenuto h2 {
+  color: #1976D2;
+  margin-bottom: 7px;
+  font-size: 1.35em;
   font-weight: 700;
   letter-spacing: 1px;
   text-shadow: 0 1px 12px #7fbcfb55;
 }
-.benvenuto p { 
-  font-size: 1.03em; 
-  color: #286085; 
-  margin-bottom: 0; 
+.benvenuto p {
+  font-size: 1.03em;
+  color: #286085;
+  margin-bottom: 0;
   margin-top: 3px;
 }
 
-
+/* ----------- NUOVO BANNER LEZIONI ORDINATO ----------- */
 .banner-lezioni {
   max-width: 600px;
-  margin: 40px auto 25px auto;
-  background: rgba(255, 234, 234, 0.96);
-  border-radius: 20px;
-  box-shadow: 0 1px 16px #f4c1c1, 0 0 44px #ffcfd9aa;
-  padding: 33px 24px;
-  text-align: center;
+  margin: 24px auto 22px auto;
+  background: #fff2f4;
+  border-radius: 22px;
   border: 2.4px solid #ffb8b8;
+  box-shadow: 0 1px 22px #f4c1c1, 0 0 44px #ffcfd9aa;
+  padding: 36px 6vw 24px 6vw;
+  text-align: center;
   position: relative;
   animation: fadeIn 0.6s;
   backdrop-filter: blur(2px);
 }
+.banner-lezioni::before { content: none !important; }
+.banner-lezioni .icona-banner {
+  font-size: 3em;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 13px;
+  filter: drop-shadow(0 3px 8px #ffc5c5);
+  opacity: 0.97;
+  display: block;
+}
 .banner-lezioni h2 {
   color: #e6255e;
-  margin-bottom: 14px;
-  font-size: 2.23em;
+  font-size: 2.1em;
   font-weight: 900;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px #ffc7e8aa, 0 1.5px 24px #ffd3c6cc;
-  font-family: 'Segoe UI Semibold', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  margin-top: 0;
+  text-align: center;
 }
 .banner-lezioni p {
-  font-size: 1.12em;
-  color: #b61737;
+  color: #a13450;
+  font-size: 1.15em;
   margin-bottom: 0;
   font-weight: 500;
 }
-.banner-lezioni::before {
-  content: "⚠️";
-  font-size: 2.2em;
-  position: absolute;
-  left: 24px; top: 24px;
-  opacity: 0.88;
-  filter: drop-shadow(0 3px 4px #ffb6b1);
+
+/* Fade in animazione */
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
 }
 
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
-}
+/* --------- RESPONSIVE MOBILE --------- */
 @media (max-width: 900px) {
-  body { margin: 3vw; }
-  h1 { font-size: 1.5em; padding: 14px 0; max-width: 99vw; border-radius: 12px; }
-  .tabella-e-pagine { 
-    flex-direction: column; 
-    gap: 0; 
-    align-items: center;
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.18em;  }
+  h1 {
+    font-size: 1.35em;
+    padding: 16px 4vw;
     max-width: 99vw;
+    border-radius: 12px;
+    margin: 10px auto 14px auto;
   }
-  .paginazione {
-    flex-direction: row;
-    min-width: 0;
-    max-width: 98vw;
-    padding: 10px 0 0 0;
-    gap: 10px;
-    margin-bottom: 17px;
-  }
-  .btn-pagi { font-size: 1em; min-width: 44px; min-height: 34px; }
-  .orario-tabella { font-size: 13px; max-width: 98vw; }
   .form-group {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
+    width: 98vw;
+    margin: 0 auto 10px auto;
   }
   .form-group select,
   .form-group input {
-    width: 98vw;
-    min-width: 120px;
+    width: 100vw;
+    min-width: 0;
     max-width: 99vw;
-    padding: 13px 20px 13px 10px;
-    font-size: 1.06em;
-  }
-  .form-group button {
-    font-size: 1.12em;
-    min-height: 44px;
-    width: 98vw;
-    max-width: 99vw;
+    font-size: 1.13em;
+    padding: 16px 10vw 16px 3vw;
+    border-radius: 11px;
     margin-bottom: 6px;
   }
-  .benvenuto, .banner-lezioni { padding: 23px 4vw; }
-}
-
-#risultati {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh;
+  .form-group button {
+    font-size: 1.22em;
+    min-height: 48px;
+    width: 99vw;
+    max-width: 99vw;
+    border-radius: 16px;
+    margin-bottom: 8px;
+  }
+  #banner-benvenuto,
+  #banner-frasi,
+  .benvenuto,
+  .banner-lezioni {
+    padding: 18px 3vw;
+    max-width: 98vw;
+    font-size: 1.09em !important;
+    border-radius: 16px;
+  }
+  #risultati,
+  .tabella-e-pagine,
+  .contenitore-tabella {
+    max-width: 99vw;
+    width: 99vw;
+    margin: 0 auto !important;
+    padding: 0;
+  }
+  .orario-tabella {
+    font-size: 1.05em;
+    max-width: 99vw;
+    border-radius: 10px;
+  }
+  .orario-tabella th,
+  .orario-tabella td {
+    font-size: 1em;
+    padding: 11px 7px;
+  }
+  .paginazione {
+    flex-direction: row;
+    gap: 5px;
+    margin: 13px 0;
+    padding: 0;
+  }
+  .btn-pagi {
+    font-size: 1em;
+    min-width: 38px;
+    min-height: 33px;
+    border-radius: 11px;
+  }
+  .banner-lezioni {
+    padding: 19px 2vw 12px 2vw;
+    max-width: 98vw;
+    font-size: 1.06em;
+    border-radius: 14px;
+  }
+  .banner-lezioni .icona-banner {
+    font-size: 2em;
+    margin-bottom: 8px;
+  }
+  .banner-lezioni h2 {
+    font-size: 1.18em;
+    margin-bottom: 9px;
+  }
 }
 .benvenuto { 
   min-height: initial; 
