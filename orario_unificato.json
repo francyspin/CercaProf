@@ -75,7 +75,7 @@
     "Classe":"1A",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"1A",
@@ -105,7 +105,7 @@
     "Classe":"1A",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di chimica (Rocchi A.;Sabatucci F.)\n(Lab. di chimica)"
+    "Descrizione":"Lab. di chimica (Rocchi A.;Sabatucci F.) (Lab. di chimica)"
   },
   {
     "Classe":"1A",
@@ -117,7 +117,7 @@
     "Classe":"1A",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1A",
@@ -135,7 +135,7 @@
     "Classe":"1A",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Cesarini F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Cesarini F.)"
   },
   {
     "Classe":"1A",
@@ -171,13 +171,13 @@
     "Classe":"1A",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Messore L.;Rossi L.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Messore L.;Rossi L.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1A",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Cesarini F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Cesarini F.)"
   },
   {
     "Classe":"1A",
@@ -201,7 +201,7 @@
     "Classe":"1A",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Messore L.;Rossi L.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Messore L.;Rossi L.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1A",
@@ -225,13 +225,13 @@
     "Classe":"1B",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Messore L.;Rossi L.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Messore L.;Rossi L.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1B",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Cesarini F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Cesarini F.)"
   },
   {
     "Classe":"1B",
@@ -243,7 +243,7 @@
     "Classe":"1B",
     "Ora":"2",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1B",
@@ -255,7 +255,7 @@
     "Classe":"1B",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Messore L.;Rossi L.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Messore L.;Rossi L.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1B",
@@ -345,7 +345,7 @@
     "Classe":"1B",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"1B",
@@ -357,7 +357,7 @@
     "Classe":"1B",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Cesarini F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Cesarini F.)"
   },
   {
     "Classe":"1B",
@@ -423,7 +423,7 @@
     "Classe":"1C",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Balletti A.;Gigliotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Balletti A.;Gigliotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1C",
@@ -447,13 +447,13 @@
     "Classe":"1C",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1C",
     "Ora":"2",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Balletti A.;Gigliotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Balletti A.;Gigliotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1C",
@@ -531,13 +531,13 @@
     "Classe":"1C",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Viscarelli G.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Viscarelli G.)"
   },
   {
     "Classe":"1C",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Viscarelli G.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Viscarelli G.)"
   },
   {
     "Classe":"1C",
@@ -555,7 +555,7 @@
     "Classe":"1C",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"1C",
@@ -687,7 +687,7 @@
     "Classe":"1D",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1D",
@@ -759,7 +759,7 @@
     "Classe":"1D",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Messore L.;Moreno M.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Messore L.;Moreno M.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1D",
@@ -783,13 +783,13 @@
     "Classe":"1D",
     "Ora":"6",
     "Giorno":"Lun",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"1D",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Messore L.;Moreno M.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Messore L.;Moreno M.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1D",
@@ -819,7 +819,7 @@
     "Classe":"1D",
     "Ora":"7",
     "Giorno":"Mar",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Viscarelli G.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Viscarelli G.)"
   },
   {
     "Classe":"1D",
@@ -831,7 +831,7 @@
     "Classe":"1D",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Viscarelli G.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Viscarelli G.)"
   },
   {
     "Classe":"1D",
@@ -849,7 +849,7 @@
     "Classe":"1E",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"1E",
@@ -927,13 +927,13 @@
     "Classe":"1E",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Colopardi F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Colopardi F.)"
   },
   {
     "Classe":"1E",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di fisica (Condina G.;Sappino F.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Condina G.;Sappino F.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1E",
@@ -975,7 +975,7 @@
     "Classe":"1E",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Gigliotti A.;Ranucci G.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Gigliotti A.;Ranucci G.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1E",
@@ -1005,7 +1005,7 @@
     "Classe":"1E",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Gigliotti A.;Ranucci G.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Gigliotti A.;Ranucci G.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1E",
@@ -1029,7 +1029,7 @@
     "Classe":"1E",
     "Ora":"7",
     "Giorno":"Mar",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Colopardi F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Colopardi F.)"
   },
   {
     "Classe":"1E",
@@ -1125,7 +1125,7 @@
     "Classe":"1F",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Gigliotti A.;Moreno M.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Gigliotti A.;Moreno M.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1F",
@@ -1155,7 +1155,7 @@
     "Classe":"1F",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Gigliotti A.;Moreno M.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Gigliotti A.;Moreno M.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1F",
@@ -1179,7 +1179,7 @@
     "Classe":"1F",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Colopardi F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Colopardi F.)"
   },
   {
     "Classe":"1F",
@@ -1191,7 +1191,7 @@
     "Classe":"1F",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di fisica (Condina G.;Sappino F.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Condina G.;Sappino F.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1F",
@@ -1215,7 +1215,7 @@
     "Classe":"1F",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Colopardi F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Colopardi F.)"
   },
   {
     "Classe":"1F",
@@ -1227,7 +1227,7 @@
     "Classe":"1F",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"1F",
@@ -1269,19 +1269,19 @@
     "Classe":"1G",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Gigliotti A.;Balletti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Gigliotti A.;Balletti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1G",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Camilli A.)"
+    "Descrizione":"Insegnamento della religione cattolica (Camilli A.)"
   },
   {
     "Classe":"1G",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1G",
@@ -1299,7 +1299,7 @@
     "Classe":"1G",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Gigliotti A.;Balletti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Gigliotti A.;Balletti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1G",
@@ -1365,7 +1365,7 @@
     "Classe":"1G",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Colopardi F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Colopardi F.)"
   },
   {
     "Classe":"1G",
@@ -1419,7 +1419,7 @@
     "Classe":"1G",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Colopardi F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Colopardi F.)"
   },
   {
     "Classe":"1G",
@@ -1485,7 +1485,7 @@
     "Classe":"1H",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"1H",
@@ -1533,7 +1533,7 @@
     "Classe":"1H",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Gigliotti A.;Turchetti E.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Gigliotti A.;Turchetti E.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1H",
@@ -1563,7 +1563,7 @@
     "Classe":"1H",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Gigliotti A.;Turchetti E.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Gigliotti A.;Turchetti E.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1H",
@@ -1593,7 +1593,7 @@
     "Classe":"1H",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di fisica (Condina G.;Sappino F.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Condina G.;Sappino F.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1H",
@@ -1605,7 +1605,7 @@
     "Classe":"1H",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Colopardi F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Colopardi F.)"
   },
   {
     "Classe":"1H",
@@ -1647,7 +1647,7 @@
     "Classe":"1H",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Colopardi F.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Colopardi F.)"
   },
   {
     "Classe":"1H",
@@ -1689,7 +1689,7 @@
     "Classe":"1L",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Catanzaro I.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Catanzaro I.)"
   },
   {
     "Classe":"1L",
@@ -1707,7 +1707,7 @@
     "Classe":"1L",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Catanzaro I.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Catanzaro I.)"
   },
   {
     "Classe":"1L",
@@ -1743,7 +1743,7 @@
     "Classe":"1L",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1L",
@@ -1785,7 +1785,7 @@
     "Classe":"1L",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Storia\n(Di Silvestri R.)"
+    "Descrizione":"Storia (Di Silvestri R.)"
   },
   {
     "Classe":"1L",
@@ -1797,7 +1797,7 @@
     "Classe":"1L",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Balletti A.;Gigliotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Balletti A.;Gigliotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1L",
@@ -1827,7 +1827,7 @@
     "Classe":"1L",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(Balletti A.;Gigliotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (Balletti A.;Gigliotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1L",
@@ -1845,13 +1845,13 @@
     "Classe":"1L",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"1L",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Storia\n(Di Silvestri R.)"
+    "Descrizione":"Storia (Di Silvestri R.)"
   },
   {
     "Classe":"1L",
@@ -1947,7 +1947,7 @@
     "Classe":"1M",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(D'Angelo F.;Gigliotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (D'Angelo F.;Gigliotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1M",
@@ -1971,25 +1971,25 @@
     "Classe":"1M",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Catanzaro I.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Catanzaro I.)"
   },
   {
     "Classe":"1M",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(D'Angelo F.;Gigliotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (D'Angelo F.;Gigliotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1M",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"1M",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di fisica (Tinivelli P.;Barlattani D.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Tinivelli P.;Barlattani D.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1M",
@@ -2025,7 +2025,7 @@
     "Classe":"1M",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Catanzaro I.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Catanzaro I.)"
   },
   {
     "Classe":"1M",
@@ -2061,7 +2061,7 @@
     "Classe":"1M",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di chimica (Rocchi A.;Sabatucci F.)\n(Lab. di chimica)"
+    "Descrizione":"Lab. di chimica (Rocchi A.;Sabatucci F.) (Lab. di chimica)"
   },
   {
     "Classe":"1M",
@@ -2151,7 +2151,7 @@
     "Classe":"1P",
     "Ora":"2",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1P",
@@ -2169,7 +2169,7 @@
     "Classe":"1P",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Catanzaro I.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Catanzaro I.)"
   },
   {
     "Classe":"1P",
@@ -2211,7 +2211,7 @@
     "Classe":"1P",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(D'Angelo F.;Gigl iotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (D'Angelo F.;Gigl iotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1P",
@@ -2241,7 +2241,7 @@
     "Classe":"1P",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(D'Angelo F.;Gigl iotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (D'Angelo F.;Gigl iotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1P",
@@ -2265,7 +2265,7 @@
     "Classe":"1P",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Catanzaro I.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Catanzaro I.)"
   },
   {
     "Classe":"1P",
@@ -2301,7 +2301,7 @@
     "Classe":"1P",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"1P",
@@ -2313,7 +2313,7 @@
     "Classe":"1Q",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Catanzaro I.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Catanzaro I.)"
   },
   {
     "Classe":"1Q",
@@ -2331,7 +2331,7 @@
     "Classe":"1Q",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di chimica (Romano M.;Simoncelli N)\n(Lab. di chimica)"
+    "Descrizione":"Lab. di chimica (Romano M.;Simoncelli N) (Lab. di chimica)"
   },
   {
     "Classe":"1Q",
@@ -2349,7 +2349,7 @@
     "Classe":"1Q",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"1Q",
@@ -2367,7 +2367,7 @@
     "Classe":"1Q",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"1Q",
@@ -2379,7 +2379,7 @@
     "Classe":"1Q",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(D'Angelo F.;Gigl iotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (D'Angelo F.;Gigl iotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1Q",
@@ -2397,7 +2397,7 @@
     "Classe":"1Q",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Scienze integrate - Scienze della terra\n(Catanzaro I.)"
+    "Descrizione":"Scienze integrate - Scienze della terra (Catanzaro I.)"
   },
   {
     "Classe":"1Q",
@@ -2409,7 +2409,7 @@
     "Classe":"1Q",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di tecnologie informatiche\n(D'Angelo F.;Gigl iotti A.) (Lab. di tecn. informatiche)"
+    "Descrizione":"Laboratorio di tecnologie informatiche (D'Angelo F.;Gigl iotti A.) (Lab. di tecn. informatiche)"
   },
   {
     "Classe":"1Q",
@@ -2529,7 +2529,7 @@
     "Classe":"2A",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2A",
@@ -2631,7 +2631,7 @@
     "Classe":"2A",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"2A",
@@ -2787,7 +2787,7 @@
     "Classe":"2B",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Fiaschetti D.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Fiaschetti D.)"
   },
   {
     "Classe":"2B",
@@ -2811,7 +2811,7 @@
     "Classe":"2B",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2B",
@@ -2865,7 +2865,7 @@
     "Classe":"2B",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Fiaschetti D.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Fiaschetti D.)"
   },
   {
     "Classe":"2B",
@@ -2901,7 +2901,7 @@
     "Classe":"2B",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Fiaschetti D.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Fiaschetti D.)"
   },
   {
     "Classe":"2B",
@@ -2919,7 +2919,7 @@
     "Classe":"2B",
     "Ora":"7",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"2B",
@@ -3009,7 +3009,7 @@
     "Classe":"2C",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2C",
@@ -3075,7 +3075,7 @@
     "Classe":"2C",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(De Angelis I.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (De Angelis I.)"
   },
   {
     "Classe":"2C",
@@ -3099,13 +3099,13 @@
     "Classe":"2C",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(De Angelis I.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (De Angelis I.)"
   },
   {
     "Classe":"2C",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(De Angelis I.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (De Angelis I.)"
   },
   {
     "Classe":"2C",
@@ -3135,7 +3135,7 @@
     "Classe":"2C",
     "Ora":"7",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Camilli A.)"
+    "Descrizione":"Insegnamento della religione cattolica (Camilli A.)"
   },
   {
     "Classe":"2C",
@@ -3279,7 +3279,7 @@
     "Classe":"2D",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2D",
@@ -3351,7 +3351,7 @@
     "Classe":"2D",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"2D",
@@ -3435,7 +3435,7 @@
     "Classe":"2E",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di fisica (Poleggi L.;Sappino F.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Poleggi L.;Sappino F.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2E",
@@ -3459,7 +3459,7 @@
     "Classe":"2E",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"2E",
@@ -3675,7 +3675,7 @@
     "Classe":"2F",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di fisica (Poleggi L.;Sappino F.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Poleggi L.;Sappino F.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2F",
@@ -3693,7 +3693,7 @@
     "Classe":"2F",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"2F",
@@ -3783,19 +3783,19 @@
     "Classe":"2G",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Fiaschetti D.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Fiaschetti D.)"
   },
   {
     "Classe":"2G",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Fiaschetti D.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Fiaschetti D.)"
   },
   {
     "Classe":"2G",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2G",
@@ -3885,7 +3885,7 @@
     "Classe":"2G",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"2G",
@@ -3981,7 +3981,7 @@
     "Classe":"2G",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Fiaschetti D.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Fiaschetti D.)"
   },
   {
     "Classe":"2G",
@@ -4041,7 +4041,7 @@
     "Classe":"2H",
     "Ora":"2",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"2H",
@@ -4065,7 +4065,7 @@
     "Classe":"2H",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di chimica (Rocchi T.;Sabatucci F.)\n(Lab. di chimica)"
+    "Descrizione":"Lab. di chimica (Rocchi T.;Sabatucci F.) (Lab. di chimica)"
   },
   {
     "Classe":"2H",
@@ -4119,19 +4119,19 @@
     "Classe":"2H",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"A034 - Scienze e tecnologie applicate\n(Sabatucci F.)"
+    "Descrizione":"A034 - Scienze e tecnologie applicate (Sabatucci F.)"
   },
   {
     "Classe":"2H",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di fisica (Poleggi L.;Sappino F.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Poleggi L.;Sappino F.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2H",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"A034 - Scienze e tecnologie applicate\n(Sabatucci F.)"
+    "Descrizione":"A034 - Scienze e tecnologie applicate (Sabatucci F.)"
   },
   {
     "Classe":"2H",
@@ -4143,7 +4143,7 @@
     "Classe":"2H",
     "Ora":"6",
     "Giorno":"Lun",
-    "Descrizione":"A034 - Scienze e tecnologie applicate\n(Sabatucci F.)"
+    "Descrizione":"A034 - Scienze e tecnologie applicate (Sabatucci F.)"
   },
   {
     "Classe":"2H",
@@ -4269,7 +4269,7 @@
     "Classe":"2L",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"A034 - Scienze e tecnologie applicate\n(Sabatucci F.)"
+    "Descrizione":"A034 - Scienze e tecnologie applicate (Sabatucci F.)"
   },
   {
     "Classe":"2L",
@@ -4347,7 +4347,7 @@
     "Classe":"2L",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Brunetti M.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2L",
@@ -4371,13 +4371,13 @@
     "Classe":"2L",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"2L",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"A034 - Scienze e tecnologie applicate\n(Sabatucci F.)"
+    "Descrizione":"A034 - Scienze e tecnologie applicate (Sabatucci F.)"
   },
   {
     "Classe":"2L",
@@ -4401,7 +4401,7 @@
     "Classe":"2L",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"A034 - Scienze e tecnologie applicate\n(Sabatucci F.)"
+    "Descrizione":"A034 - Scienze e tecnologie applicate (Sabatucci F.)"
   },
   {
     "Classe":"2L",
@@ -4431,7 +4431,7 @@
     "Classe":"2M",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di disegno (Carletti F.;Imperatrice T.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di disegno (Carletti F.;Imperatrice T.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"2M",
@@ -4473,7 +4473,7 @@
     "Classe":"2M",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"A037 - Scienze e tecnologie applicate\n(Carletti F.)"
+    "Descrizione":"A037 - Scienze e tecnologie applicate (Carletti F.)"
   },
   {
     "Classe":"2M",
@@ -4497,7 +4497,7 @@
     "Classe":"2M",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Tinivelli P.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2M",
@@ -4509,7 +4509,7 @@
     "Classe":"2M",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"A037 - Scienze e tecnologie applicate\n(Carletti F.)"
+    "Descrizione":"A037 - Scienze e tecnologie applicate (Carletti F.)"
   },
   {
     "Classe":"2M",
@@ -4527,7 +4527,7 @@
     "Classe":"2M",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"A037 - Scienze e tecnologie applicate\n(Carletti F.)"
+    "Descrizione":"A037 - Scienze e tecnologie applicate (Carletti F.)"
   },
   {
     "Classe":"2M",
@@ -4551,7 +4551,7 @@
     "Classe":"2M",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"2M",
@@ -4623,13 +4623,13 @@
     "Classe":"2P",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2P",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Brodo F.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Brodo F.)"
   },
   {
     "Classe":"2P",
@@ -4647,7 +4647,7 @@
     "Classe":"2P",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"2P",
@@ -4701,7 +4701,7 @@
     "Classe":"2P",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Brodo F.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Brodo F.)"
   },
   {
     "Classe":"2P",
@@ -4743,7 +4743,7 @@
     "Classe":"2P",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(Brodo F.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (Brodo F.)"
   },
   {
     "Classe":"2P",
@@ -4785,7 +4785,7 @@
     "Classe":"2P",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di chimica (Rocchi A.;Simoncelli N)\n(Lab. di chimica)"
+    "Descrizione":"Lab. di chimica (Rocchi A.;Simoncelli N) (Lab. di chimica)"
   },
   {
     "Classe":"2P",
@@ -4797,7 +4797,7 @@
     "Classe":"2P",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di disegno (Feliziani A.;Rocchi B.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di disegno (Feliziani A.;Rocchi B.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"2P",
@@ -4875,7 +4875,7 @@
     "Classe":"2Q",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.)\n(Lab. di fisica 'Fausta Bestoso')"
+    "Descrizione":"Laboratorio di fisica (Barlattani D.;Gentile V.) (Lab. di fisica 'Fausta Bestoso')"
   },
   {
     "Classe":"2Q",
@@ -4899,7 +4899,7 @@
     "Classe":"2Q",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(De Angelis I.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (De Angelis I.)"
   },
   {
     "Classe":"2Q",
@@ -4923,7 +4923,7 @@
     "Classe":"2Q",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Lab. di chimica (Romano M.;Simoncelli N)\n(Lab. di chimica)"
+    "Descrizione":"Lab. di chimica (Romano M.;Simoncelli N) (Lab. di chimica)"
   },
   {
     "Classe":"2Q",
@@ -5001,13 +5001,13 @@
     "Classe":"2Q",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(De Angelis I.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (De Angelis I.)"
   },
   {
     "Classe":"2Q",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"2Q",
@@ -5031,7 +5031,7 @@
     "Classe":"2Q",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"A042 - Scienze e tecnologie applicate\n(De Angelis I.)"
+    "Descrizione":"A042 - Scienze e tecnologie applicate (De Angelis I.)"
   },
   {
     "Classe":"2Q",
@@ -5079,7 +5079,7 @@
     "Classe":"3ABS",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"3ABS",
@@ -5091,13 +5091,13 @@
     "Classe":"3ABS",
     "Ora":"2",
     "Giorno":"Gio",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"3ABS",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Catanzaro I.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Catanzaro I.)"
   },
   {
     "Classe":"3ABS",
@@ -5109,7 +5109,7 @@
     "Classe":"3ABS",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Rocchi T.;Sanetti A.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Rocchi T.;Sanetti A.) (Lab. Chimica 2)"
   },
   {
     "Classe":"3ABS",
@@ -5133,19 +5133,19 @@
     "Classe":"3ABS",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Catanzaro I.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Catanzaro I.)"
   },
   {
     "Classe":"3ABS",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Rocchi T.;Sanetti A.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Rocchi T.;Sanetti A.) (Lab. Chimica 2)"
   },
   {
     "Classe":"3ABS",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"3ABS",
@@ -5163,7 +5163,7 @@
     "Classe":"3ABS",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"3ABS",
@@ -5175,7 +5175,7 @@
     "Classe":"3ABS",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"3ABS",
@@ -5253,7 +5253,7 @@
     "Classe":"3ACA",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Geopedologia, economia ed estimo\n(Paganini S.)"
+    "Descrizione":"Geopedologia, economia ed estimo (Paganini S.)"
   },
   {
     "Classe":"3ACA",
@@ -5295,7 +5295,7 @@
     "Classe":"3ACA",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di geopedologia (Gagliano M.;Paganini S.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di geopedologia (Gagliano M.;Paganini S.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"3ACA",
@@ -5313,7 +5313,7 @@
     "Classe":"3ACA",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Lab. topografia1\n(Del Lungo A.;Gagliano M.) (203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Lab. topografia1 (Del Lungo A.;Gagliano M.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"3ACA",
@@ -5331,19 +5331,19 @@
     "Classe":"3ACA",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Progettazione, costruzioni e impianti\n(Fociani M.)"
+    "Descrizione":"Progettazione, costruzioni e impianti (Fociani M.)"
   },
   {
     "Classe":"3ACA",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Geopedologia, economia ed estimo\n(Paganini S.)"
+    "Descrizione":"Geopedologia, economia ed estimo (Paganini S.)"
   },
   {
     "Classe":"3ACA",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Lab. topografia1\n(Del Lungo A.;Gagliano M.) (203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Lab. topografia1 (Del Lungo A.;Gagliano M.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"3ACA",
@@ -5355,7 +5355,7 @@
     "Classe":"3ACA",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"3ACA",
@@ -5397,7 +5397,7 @@
     "Classe":"3ACA",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"3ACA",
@@ -5409,25 +5409,25 @@
     "Classe":"3ACA",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"3ACA",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Progettazione, costruzioni e impianti\n(Fociani M.)"
+    "Descrizione":"Progettazione, costruzioni e impianti (Fociani M.)"
   },
   {
     "Classe":"3ACA",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"3ACA",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"3ACA",
@@ -5451,7 +5451,7 @@
     "Classe":"3ACA",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"3ACA",
@@ -5541,13 +5541,13 @@
     "Classe":"3ACT",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Meccanica, macchine e sistemi propulsivi\n(Monachello F.)"
+    "Descrizione":"Meccanica, macchine e sistemi propulsivi (Monachello F.)"
   },
   {
     "Classe":"3ACT",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Cannarella L.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Cannarella L.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"3ACT",
@@ -5559,7 +5559,7 @@
     "Classe":"3ACT",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Lab. meccanica, macchine e sistemi propulsivi\n(Cionco F.;Monachell o F.) (Lab. di aerotecnica)"
+    "Descrizione":"Lab. meccanica, macchine e sistemi propulsivi (Cionco F.;Monachell o F.) (Lab. di aerotecnica)"
   },
   {
     "Classe":"3ACT",
@@ -5577,7 +5577,7 @@
     "Classe":"3ACT",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Cannarella L.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Cannarella L.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"3ACT",
@@ -5589,7 +5589,7 @@
     "Classe":"3ACT",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Lab. meccanica, macchine e sistemi propulsivi\n(Cionco F.;Monachell o F.) (Lab. di aerotecnica)"
+    "Descrizione":"Lab. meccanica, macchine e sistemi propulsivi (Cionco F.;Monachell o F.) (Lab. di aerotecnica)"
   },
   {
     "Classe":"3ACT",
@@ -5631,7 +5631,7 @@
     "Classe":"3ACT",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"3ACT",
@@ -5673,13 +5673,13 @@
     "Classe":"3AET",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Cannarella L.;Proietti G.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Cannarella L.;Proietti G.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3AET",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Cannarella L.;Proietti G.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Cannarella L.;Proietti G.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3AET",
@@ -5703,13 +5703,13 @@
     "Classe":"3AET",
     "Ora":"2",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di TPSE (Cannarella L.;Rossi L.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Cannarella L.;Rossi L.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"3AET",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Cannarella L.;Proietti G.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Cannarella L.;Proietti G.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3AET",
@@ -5733,7 +5733,7 @@
     "Classe":"3AET",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di TPSE (Cannarella L.;Rossi L.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Cannarella L.;Rossi L.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"3AET",
@@ -5793,7 +5793,7 @@
     "Classe":"3AET",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di sistemi automatici (Giovannini A.;Ugolini C.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di sistemi automatici (Giovannini A.;Ugolini C.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"3AET",
@@ -5811,7 +5811,7 @@
     "Classe":"3AET",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di TPSE (Cannarella L.;Rossi L.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Cannarella L.;Rossi L.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"3AET",
@@ -5823,7 +5823,7 @@
     "Classe":"3AET",
     "Ora":"6",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di sistemi automatici (Giovannini A.;Ugolini C.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di sistemi automatici (Giovannini A.;Ugolini C.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"3AET",
@@ -5835,7 +5835,7 @@
     "Classe":"3AET",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"3AET",
@@ -5895,7 +5895,7 @@
     "Classe":"3AIA",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"TPSIT\n(Turchetti E.)"
+    "Descrizione":"TPSIT (Turchetti E.)"
   },
   {
     "Classe":"3AIA",
@@ -5907,7 +5907,7 @@
     "Classe":"3AIA",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"3AIA",
@@ -6027,7 +6027,7 @@
     "Classe":"3AIA",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"TPSIT\n(Turchetti E.)"
+    "Descrizione":"TPSIT (Turchetti E.)"
   },
   {
     "Classe":"3AIA",
@@ -6039,7 +6039,7 @@
     "Classe":"3AIA",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di telecomunicazioni (Draghi V.;Giovannini A.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Draghi V.;Giovannini A.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3AIA",
@@ -6069,7 +6069,7 @@
     "Classe":"3AIA",
     "Ora":"7",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di telecomunicazioni (Draghi V.;Giovannini A.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Draghi V.;Giovannini A.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3AIA",
@@ -6213,7 +6213,7 @@
     "Classe":"3AMM",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Lab. di saldatura)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Lab. di saldatura)"
   },
   {
     "Classe":"3AMM",
@@ -6237,13 +6237,13 @@
     "Classe":"3AMM",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Aula Corsi)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Aula Corsi)"
   },
   {
     "Classe":"3AMM",
     "Ora":"6",
     "Giorno":"Lun",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Lab. di saldatura)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Lab. di saldatura)"
   },
   {
     "Classe":"3AMM",
@@ -6267,7 +6267,7 @@
     "Classe":"3AMM",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Aula Corsi)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Aula Corsi)"
   },
   {
     "Classe":"3AMM",
@@ -6279,7 +6279,7 @@
     "Classe":"3AMM",
     "Ora":"7",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"3AMM",
@@ -6291,7 +6291,7 @@
     "Classe":"3AMM",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (008 Lab Sistemi Mecc)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"3AMM",
@@ -6309,7 +6309,7 @@
     "Classe":"3BBS",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Bellacima R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Bellacima R.)"
   },
   {
     "Classe":"3BBS",
@@ -6339,7 +6339,7 @@
     "Classe":"3BBS",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Bellacima R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Bellacima R.)"
   },
   {
     "Classe":"3BBS",
@@ -6357,13 +6357,13 @@
     "Classe":"3BBS",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Bellacima R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Bellacima R.)"
   },
   {
     "Classe":"3BBS",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Bellacima R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Bellacima R.)"
   },
   {
     "Classe":"3BBS",
@@ -6375,7 +6375,7 @@
     "Classe":"3BBS",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"3BBS",
@@ -6387,7 +6387,7 @@
     "Classe":"3BBS",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Prestininzi M.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Prestininzi M.)"
   },
   {
     "Classe":"3BBS",
@@ -6411,7 +6411,7 @@
     "Classe":"3BBS",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Ottaviani S.;Rocchi T.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Ottaviani S.;Rocchi T.) (Lab. Chimica 2)"
   },
   {
     "Classe":"3BBS",
@@ -6429,7 +6429,7 @@
     "Classe":"3BBS",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Prestininzi M.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Prestininzi M.)"
   },
   {
     "Classe":"3BBS",
@@ -6441,7 +6441,7 @@
     "Classe":"3BBS",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Ottaviani S.;Rocchi T.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Ottaviani S.;Rocchi T.) (Lab. Chimica 2)"
   },
   {
     "Classe":"3BBS",
@@ -6513,19 +6513,19 @@
     "Classe":"3BCT",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Fazio M.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Fazio M.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"3BCT",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Meccanica, macchine e sistemi propulsivi\n(Fabbretti M.)"
+    "Descrizione":"Meccanica, macchine e sistemi propulsivi (Fabbretti M.)"
   },
   {
     "Classe":"3BCT",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Fazio M.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Fazio M.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"3BCT",
@@ -6537,13 +6537,13 @@
     "Classe":"3BCT",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Lab. meccanica, macchine e sistemi propulsivi\n(Fabbretti M.;Cionco F.) (Lab. di aerotecnica)"
+    "Descrizione":"Lab. meccanica, macchine e sistemi propulsivi (Fabbretti M.;Cionco F.) (Lab. di aerotecnica)"
   },
   {
     "Classe":"3BCT",
     "Ora":"2",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Fazio M.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Fazio M.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"3BCT",
@@ -6555,7 +6555,7 @@
     "Classe":"3BCT",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Fazio M.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Fazio M.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"3BCT",
@@ -6567,7 +6567,7 @@
     "Classe":"3BCT",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Lab. meccanica, macchine e sistemi propulsivi\n(Fabbretti M.;Cionco F.) (Lab. di aerotecnica)"
+    "Descrizione":"Lab. meccanica, macchine e sistemi propulsivi (Fabbretti M.;Cionco F.) (Lab. di aerotecnica)"
   },
   {
     "Classe":"3BCT",
@@ -6639,7 +6639,7 @@
     "Classe":"3BCT",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"3BCT",
@@ -6681,7 +6681,7 @@
     "Classe":"3BCT",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3BCT",
@@ -6711,7 +6711,7 @@
     "Classe":"3BCT",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3BCT",
@@ -6771,7 +6771,7 @@
     "Classe":"3BIA",
     "Ora":"2",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"3BIA",
@@ -6783,7 +6783,7 @@
     "Classe":"3BIA",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"TPSIT\n(Muzzi F.)"
+    "Descrizione":"TPSIT (Muzzi F.)"
   },
   {
     "Classe":"3BIA",
@@ -6807,7 +6807,7 @@
     "Classe":"3BIA",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di telecomunicazioni (Giovannini A.;Ugolini C.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Giovannini A.;Ugolini C.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3BIA",
@@ -6837,7 +6837,7 @@
     "Classe":"3BIA",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di telecomunicazioni (Giovannini A.;Ugolini C.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Giovannini A.;Ugolini C.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"3BIA",
@@ -6849,7 +6849,7 @@
     "Classe":"3BIA",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"TPSIT\n(Muzzi F.)"
+    "Descrizione":"TPSIT (Muzzi F.)"
   },
   {
     "Classe":"3BIA",
@@ -6939,13 +6939,13 @@
     "Classe":"3BMM",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Monachello F.;Nicolai G.)\n(Lab. tecnologico)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Monachello F.;Nicolai G.) (Lab. tecnologico)"
   },
   {
     "Classe":"3BMM",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(Condina G.;Guarducci A.) (008 Lab Sistemi Mecc)"
+    "Descrizione":"Laboratorio di sistemi e automazione (Condina G.;Guarducci A.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"3BMM",
@@ -6969,13 +6969,13 @@
     "Classe":"3BMM",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Monachello F.;Nicolai G.)\n(Lab. tecnologico)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Monachello F.;Nicolai G.) (Lab. tecnologico)"
   },
   {
     "Classe":"3BMM",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(Condina G.;Guarducci A.) (008 Lab Sistemi Mecc)"
+    "Descrizione":"Laboratorio di sistemi e automazione (Condina G.;Guarducci A.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"3BMM",
@@ -7017,13 +7017,13 @@
     "Classe":"3BMM",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Nicolai G.;Monachello F.) (Lab. di proget. e impianti)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Nicolai G.;Monachello F.) (Lab. di proget. e impianti)"
   },
   {
     "Classe":"3BMM",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Monachello F.;Nicolai G.)\n(Lab. tecnologico)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Monachello F.;Nicolai G.) (Lab. tecnologico)"
   },
   {
     "Classe":"3BMM",
@@ -7047,13 +7047,13 @@
     "Classe":"3BMM",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(Condina G.;Guarducci A.) (008 Lab Sistemi Mecc)"
+    "Descrizione":"Laboratorio di sistemi e automazione (Condina G.;Guarducci A.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"3BMM",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Monachello F.;Nicolai G.)\n(Lab. tecnologico)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Monachello F.;Nicolai G.) (Lab. tecnologico)"
   },
   {
     "Classe":"3BMM",
@@ -7077,7 +7077,7 @@
     "Classe":"3BMM",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"3BMM",
@@ -7149,13 +7149,13 @@
     "Classe":"4ABS",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"4ABS",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Sanetti A.;Romano M.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Sanetti A.;Romano M.) (Lab. Chimica 2)"
   },
   {
     "Classe":"4ABS",
@@ -7185,7 +7185,7 @@
     "Classe":"4ABS",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Sanetti A.;Romano M.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Sanetti A.;Romano M.) (Lab. Chimica 2)"
   },
   {
     "Classe":"4ABS",
@@ -7215,7 +7215,7 @@
     "Classe":"4ABS",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Prestininzi M.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Prestininzi M.)"
   },
   {
     "Classe":"4ABS",
@@ -7251,7 +7251,7 @@
     "Classe":"4ABS",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Prestininzi M.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Prestininzi M.)"
   },
   {
     "Classe":"4ABS",
@@ -7311,13 +7311,13 @@
     "Classe":"4ABS",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"4ABS",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"4ABS",
@@ -7341,7 +7341,7 @@
     "Classe":"4ABS",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"4ABS",
@@ -7365,13 +7365,13 @@
     "Classe":"4ACA",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Geopedologia, economia ed estimo\n(Paganini S.)"
+    "Descrizione":"Geopedologia, economia ed estimo (Paganini S.)"
   },
   {
     "Classe":"4ACA",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"4ACA",
@@ -7407,7 +7407,7 @@
     "Classe":"4ACA",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Geopedologia, economia ed estimo\n(Paganini S.)"
+    "Descrizione":"Geopedologia, economia ed estimo (Paganini S.)"
   },
   {
     "Classe":"4ACA",
@@ -7443,7 +7443,7 @@
     "Classe":"4ACA",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Progettazione, costruzioni e impianti\n(Fociani M.)"
+    "Descrizione":"Progettazione, costruzioni e impianti (Fociani M.)"
   },
   {
     "Classe":"4ACA",
@@ -7461,13 +7461,13 @@
     "Classe":"4ACA",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"4ACA",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Progettazione, costruzioni e impianti\n(Fociani M.)"
+    "Descrizione":"Progettazione, costruzioni e impianti (Fociani M.)"
   },
   {
     "Classe":"4ACA",
@@ -7479,7 +7479,7 @@
     "Classe":"4ACA",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"4ACA",
@@ -7491,7 +7491,7 @@
     "Classe":"4ACA",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"4ACA",
@@ -7509,7 +7509,7 @@
     "Classe":"4ACA",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Fociani M.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Fociani M.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"4ACA",
@@ -7587,7 +7587,7 @@
     "Classe":"4ACT",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4ACT",
@@ -7617,7 +7617,7 @@
     "Classe":"4ACT",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4ACT",
@@ -7737,7 +7737,7 @@
     "Classe":"4ACT",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Meccanica, macchine e sistemi propulsivi\n(Monachello F.)"
+    "Descrizione":"Meccanica, macchine e sistemi propulsivi (Monachello F.)"
   },
   {
     "Classe":"4ACT",
@@ -7761,7 +7761,7 @@
     "Classe":"4ACT",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"4ACT",
@@ -7785,13 +7785,13 @@
     "Classe":"4AEN",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Brodo F.;Nicolai G.)\n(Lab. di saldatura)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Brodo F.;Nicolai G.) (Lab. di saldatura)"
   },
   {
     "Classe":"4AEN",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"4AEN",
@@ -7845,7 +7845,7 @@
     "Classe":"4AEN",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(De Angelis I.;Fiorentini P.) (Lab. tecnologico)"
+    "Descrizione":"Laboratorio di sistemi e automazione (De Angelis I.;Fiorentini P.) (Lab. tecnologico)"
   },
   {
     "Classe":"4AEN",
@@ -7875,7 +7875,7 @@
     "Classe":"4AEN",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(De Angelis I.;Fiorentini P.) (Lab. tecnologico)"
+    "Descrizione":"Laboratorio di sistemi e automazione (De Angelis I.;Fiorentini P.) (Lab. tecnologico)"
   },
   {
     "Classe":"4AEN",
@@ -7911,7 +7911,7 @@
     "Classe":"4AEN",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di impianti energetici (Fabbretti M.;Cionco F.)\n(Lab. di proget. e impianti)"
+    "Descrizione":"Laboratorio di impianti energetici (Fabbretti M.;Cionco F.) (Lab. di proget. e impianti)"
   },
   {
     "Classe":"4AEN",
@@ -7941,7 +7941,7 @@
     "Classe":"4AEN",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di impianti energetici (Fabbretti M.;Cionco F.)\n(Lab. di proget. e impianti)"
+    "Descrizione":"Laboratorio di impianti energetici (Fabbretti M.;Cionco F.) (Lab. di proget. e impianti)"
   },
   {
     "Classe":"4AEN",
@@ -8001,13 +8001,13 @@
     "Classe":"4AET",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"4AET",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Rossi L.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Rossi L.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
@@ -8025,19 +8025,19 @@
     "Classe":"4AET",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
     "Ora":"2",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Rossi L.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Rossi L.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Rossi L.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Rossi L.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
@@ -8055,7 +8055,7 @@
     "Classe":"4AET",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
@@ -8073,13 +8073,13 @@
     "Classe":"4AET",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
@@ -8109,7 +8109,7 @@
     "Classe":"4AET",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
@@ -8145,7 +8145,7 @@
     "Classe":"4AET",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4AET",
@@ -8235,7 +8235,7 @@
     "Classe":"4AIA",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"4AIA",
@@ -8247,7 +8247,7 @@
     "Classe":"4AIA",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"TPSIT\n(Turchetti E.)"
+    "Descrizione":"TPSIT (Turchetti E.)"
   },
   {
     "Classe":"4AIA",
@@ -8289,7 +8289,7 @@
     "Classe":"4AIA",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4AIA",
@@ -8319,7 +8319,7 @@
     "Classe":"4AIA",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4AIA",
@@ -8403,7 +8403,7 @@
     "Classe":"4AMM",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(Nicolai G.;Pierini M.) (Lab. tecnologico)"
+    "Descrizione":"Laboratorio di sistemi e automazione (Nicolai G.;Pierini M.) (Lab. tecnologico)"
   },
   {
     "Classe":"4AMM",
@@ -8433,13 +8433,13 @@
     "Classe":"4AMM",
     "Ora":"2",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(Nicolai G.;Pierini M.) (Lab. tecnologico)"
+    "Descrizione":"Laboratorio di sistemi e automazione (Nicolai G.;Pierini M.) (Lab. tecnologico)"
   },
   {
     "Classe":"4AMM",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Disegno, proget e organ. indus (Brodo F.)\n(008 Lab Sistemi Mecc)"
+    "Descrizione":"Disegno, proget e organ. indus (Brodo F.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"4AMM",
@@ -8463,7 +8463,7 @@
     "Classe":"4AMM",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Sistemi e automazione (Pierini M.)\n(008 Lab Sistemi Mecc)"
+    "Descrizione":"Sistemi e automazione (Pierini M.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"4AMM",
@@ -8481,7 +8481,7 @@
     "Classe":"4AMM",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Tecnologie meccaniche di processo e prodotto (Mancini V.)\n(Aula Corsi)"
+    "Descrizione":"Tecnologie meccaniche di processo e prodotto (Mancini V.) (Aula Corsi)"
   },
   {
     "Classe":"4AMM",
@@ -8493,7 +8493,7 @@
     "Classe":"4AMM",
     "Ora":"4",
     "Giorno":"Lun",
-    "Descrizione":"Disegno, proget e organ. indus (Brodo F.)\n(008 Lab Sistemi Mecc)"
+    "Descrizione":"Disegno, proget e organ. indus (Brodo F.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"4AMM",
@@ -8505,13 +8505,13 @@
     "Classe":"4AMM",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Aula Corsi)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Aula Corsi)"
   },
   {
     "Classe":"4AMM",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Lab. di macch. utensili)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Lab. di macch. utensili)"
   },
   {
     "Classe":"4AMM",
@@ -8541,31 +8541,31 @@
     "Classe":"4AMM",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Lab. di macch. utensili)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Lab. di macch. utensili)"
   },
   {
     "Classe":"4AMM",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di mecc, macch. ed en. (Nicolai G.;Pierini M.)\n(Lab. di macch. a fluido)"
+    "Descrizione":"Lab. di mecc, macch. ed en. (Nicolai G.;Pierini M.) (Lab. di macch. a fluido)"
   },
   {
     "Classe":"4AMM",
     "Ora":"6",
     "Giorno":"Lun",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"4AMM",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"Meccanica, macchine ed energia (Pierini M.)\n(008 Lab Sistemi Mecc)"
+    "Descrizione":"Meccanica, macchine ed energia (Pierini M.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"4AMM",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Meccanica, macchine ed energia (Pierini M.)\n(008 Lab Sistemi Mecc)"
+    "Descrizione":"Meccanica, macchine ed energia (Pierini M.) (008 Lab Sistemi Mecc)"
   },
   {
     "Classe":"4AMM",
@@ -8577,7 +8577,7 @@
     "Classe":"4AMM",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di mecc, macch. ed en. (Nicolai G.;Pierini M.)\n(Lab. di macch. a fluido)"
+    "Descrizione":"Lab. di mecc, macch. ed en. (Nicolai G.;Pierini M.) (Lab. di macch. a fluido)"
   },
   {
     "Classe":"4AMM",
@@ -8589,7 +8589,7 @@
     "Classe":"4AMM",
     "Ora":"7",
     "Giorno":"Mar",
-    "Descrizione":"Tecnologie meccaniche di processo e prodotto (Mancini V.)\n(Aula Corsi)"
+    "Descrizione":"Tecnologie meccaniche di processo e prodotto (Mancini V.) (Aula Corsi)"
   },
   {
     "Classe":"4AMM",
@@ -8625,13 +8625,13 @@
     "Classe":"4ATL",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"TPSIT\n(Lazzari M.)"
+    "Descrizione":"TPSIT (Lazzari M.)"
   },
   {
     "Classe":"4ATL",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4ATL",
@@ -8661,7 +8661,7 @@
     "Classe":"4ATL",
     "Ora":"2",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4ATL",
@@ -8691,13 +8691,13 @@
     "Classe":"4ATL",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di sistemi e reti (Cannarella L.;Ugolini C.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di sistemi e reti (Cannarella L.;Ugolini C.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"4ATL",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"4ATL",
@@ -8721,7 +8721,7 @@
     "Classe":"4ATL",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di sistemi e reti (Cannarella L.;Ugolini C.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di sistemi e reti (Cannarella L.;Ugolini C.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"4ATL",
@@ -8733,7 +8733,7 @@
     "Classe":"4ATL",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di TPSIT (Cannarella L.;Lazzari M.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSIT (Cannarella L.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4ATL",
@@ -8763,7 +8763,7 @@
     "Classe":"4ATL",
     "Ora":"6",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di TPSIT (Cannarella L.;Lazzari M.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSIT (Cannarella L.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"4ATL",
@@ -8775,7 +8775,7 @@
     "Classe":"4ATL",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4ATL",
@@ -8823,7 +8823,7 @@
     "Classe":"4BBS",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"4BBS",
@@ -8835,13 +8835,13 @@
     "Classe":"4BBS",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Bellacima R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Bellacima R.)"
   },
   {
     "Classe":"4BBS",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Prestininzi M.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Prestininzi M.)"
   },
   {
     "Classe":"4BBS",
@@ -8853,7 +8853,7 @@
     "Classe":"4BBS",
     "Ora":"2",
     "Giorno":"Lun",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Bellacima R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Bellacima R.)"
   },
   {
     "Classe":"4BBS",
@@ -8871,7 +8871,7 @@
     "Classe":"4BBS",
     "Ora":"2",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Sanetti A.;Romano M.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Sanetti A.;Romano M.) (Lab. Chimica 2)"
   },
   {
     "Classe":"4BBS",
@@ -8889,7 +8889,7 @@
     "Classe":"4BBS",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Bellacima R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Bellacima R.)"
   },
   {
     "Classe":"4BBS",
@@ -8901,7 +8901,7 @@
     "Classe":"4BBS",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Sanetti A.;Romano M.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Sanetti A.;Romano M.) (Lab. Chimica 2)"
   },
   {
     "Classe":"4BBS",
@@ -8937,7 +8937,7 @@
     "Classe":"4BBS",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Prestininzi M.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Prestininzi M.)"
   },
   {
     "Classe":"4BBS",
@@ -9057,19 +9057,19 @@
     "Classe":"4BCT",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio SCSI 1 (Fazio M.;Condina G.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Fazio M.;Condina G.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"4BCT",
     "Ora":"2",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4BCT",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Meccanica, macchine e sistemi propulsivi\n(Fabbretti M.)"
+    "Descrizione":"Meccanica, macchine e sistemi propulsivi (Fabbretti M.)"
   },
   {
     "Classe":"4BCT",
@@ -9087,13 +9087,13 @@
     "Classe":"4BCT",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio SCSI 1 (Fazio M.;Condina G.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Fazio M.;Condina G.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"4BCT",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Giovannini A.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4BCT",
@@ -9129,7 +9129,7 @@
     "Classe":"4BCT",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"4BCT",
@@ -9315,13 +9315,13 @@
     "Classe":"4BIA",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"TPSIT\n(Turchetti E.)"
+    "Descrizione":"TPSIT (Turchetti E.)"
   },
   {
     "Classe":"4BIA",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4BIA",
@@ -9351,7 +9351,7 @@
     "Classe":"4BIA",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4BIA",
@@ -9369,7 +9369,7 @@
     "Classe":"4BIA",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"4BIA",
@@ -9471,7 +9471,7 @@
     "Classe":"4CIA",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"TPSIT\n(Muzzi F.)"
+    "Descrizione":"TPSIT (Muzzi F.)"
   },
   {
     "Classe":"4CIA",
@@ -9495,7 +9495,7 @@
     "Classe":"4CIA",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di TPSIT (Muzzi F.;Silvestro G.)\n(117 - Lab. di sistemi e reti)"
+    "Descrizione":"Laboratorio di TPSIT (Muzzi F.;Silvestro G.) (117 - Lab. di sistemi e reti)"
   },
   {
     "Classe":"4CIA",
@@ -9525,7 +9525,7 @@
     "Classe":"4CIA",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di TPSIT (Muzzi F.;Silvestro G.)\n(117 - Lab. di sistemi e reti)"
+    "Descrizione":"Laboratorio di TPSIT (Muzzi F.;Silvestro G.) (117 - Lab. di sistemi e reti)"
   },
   {
     "Classe":"4CIA",
@@ -9555,7 +9555,7 @@
     "Classe":"4CIA",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4CIA",
@@ -9585,7 +9585,7 @@
     "Classe":"4CIA",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di telecomunicazioni (Caddeo M.;Draghi V.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"4CIA",
@@ -9615,7 +9615,7 @@
     "Classe":"4CIA",
     "Ora":"6",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Camilli A.)"
+    "Descrizione":"Insegnamento della religione cattolica (Camilli A.)"
   },
   {
     "Classe":"4CIA",
@@ -9663,19 +9663,19 @@
     "Classe":"5ABS",
     "Ora":"1",
     "Giorno":"Lun",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"5ABS",
     "Ora":"1",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Sanetti A.;Romano M.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Sanetti A.;Romano M.) (Lab. Chimica 2)"
   },
   {
     "Classe":"5ABS",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"5ABS",
@@ -9699,13 +9699,13 @@
     "Classe":"5ABS",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Sanetti A.;Romano M.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Sanetti A.;Romano M.) (Lab. Chimica 2)"
   },
   {
     "Classe":"5ABS",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"5ABS",
@@ -9723,19 +9723,19 @@
     "Classe":"5ABS",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Sanetti A.;Romano M.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Sanetti A.;Romano M.) (Lab. Chimica 2)"
   },
   {
     "Classe":"5ABS",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Biologia, microbiologia e controllo sanitario\n(Prestininzi M.)"
+    "Descrizione":"Biologia, microbiologia e controllo sanitario (Prestininzi M.)"
   },
   {
     "Classe":"5ABS",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Lab. di chimica organica e biochimica\n(Sanetti A.;Romano M.) (Lab. Chimica 2)"
+    "Descrizione":"Lab. di chimica organica e biochimica (Sanetti A.;Romano M.) (Lab. Chimica 2)"
   },
   {
     "Classe":"5ABS",
@@ -9807,7 +9807,7 @@
     "Classe":"5ABS",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Igiene, anatomia, fisiologia e patologia\n(Piergentili R.)"
+    "Descrizione":"Igiene, anatomia, fisiologia e patologia (Piergentili R.)"
   },
   {
     "Classe":"5ABS",
@@ -9885,13 +9885,13 @@
     "Classe":"5ACA",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"5ACA",
     "Ora":"1",
     "Giorno":"Gio",
-    "Descrizione":"Gestione del cantiere e sicurezza dell'ambiente di lavoro\n(Giacobbi F.)"
+    "Descrizione":"Gestione del cantiere e sicurezza dell'ambiente di lavoro (Giacobbi F.)"
   },
   {
     "Classe":"5ACA",
@@ -9921,7 +9921,7 @@
     "Classe":"5ACA",
     "Ora":"2",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"5ACA",
@@ -9939,7 +9939,7 @@
     "Classe":"5ACA",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"5ACA",
@@ -9957,7 +9957,7 @@
     "Classe":"5ACA",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"5ACA",
@@ -9969,25 +9969,25 @@
     "Classe":"5ACA",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"5ACA",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Geopedologia, economia ed estimo\n(Paganini S.)"
+    "Descrizione":"Geopedologia, economia ed estimo (Paganini S.)"
   },
   {
     "Classe":"5ACA",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Progettazione, costruzioni e impianti\n(Giacobbi F.)"
+    "Descrizione":"Progettazione, costruzioni e impianti (Giacobbi F.)"
   },
   {
     "Classe":"5ACA",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di costruzioni, progettazione e impianti\n(Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
+    "Descrizione":"Lab. di costruzioni, progettazione e impianti (Giacobbi F.;Vestri A.) (Lab. di progett. edile)"
   },
   {
     "Classe":"5ACA",
@@ -9999,13 +9999,13 @@
     "Classe":"5ACA",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Gestione del cantiere e sicurezza dell'ambiente di lavoro\n(Giacobbi F.)"
+    "Descrizione":"Gestione del cantiere e sicurezza dell'ambiente di lavoro (Giacobbi F.)"
   },
   {
     "Classe":"5ACA",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Geopedologia, economia ed estimo\n(Paganini S.)"
+    "Descrizione":"Geopedologia, economia ed estimo (Paganini S.)"
   },
   {
     "Classe":"5ACA",
@@ -10047,7 +10047,7 @@
     "Classe":"5ACA",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Progettazione, costruzioni e impianti\n(Giacobbi F.)"
+    "Descrizione":"Progettazione, costruzioni e impianti (Giacobbi F.)"
   },
   {
     "Classe":"5ACA",
@@ -10125,7 +10125,7 @@
     "Classe":"5ACT",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Cannarella L.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Cannarella L.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"5ACT",
@@ -10137,13 +10137,13 @@
     "Classe":"5ACT",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Meccanica, macchine e sistemi propulsivi\n(Monachello F.)"
+    "Descrizione":"Meccanica, macchine e sistemi propulsivi (Monachello F.)"
   },
   {
     "Classe":"5ACT",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Meccanica, macchine e sistemi propulsivi\n(Monachello F.)"
+    "Descrizione":"Meccanica, macchine e sistemi propulsivi (Monachello F.)"
   },
   {
     "Classe":"5ACT",
@@ -10155,7 +10155,7 @@
     "Classe":"5ACT",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Cannarella L.) (314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Cannarella L.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"5ACT",
@@ -10227,7 +10227,7 @@
     "Classe":"5ACT",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Manfredi G.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Manfredi G.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"5ACT",
@@ -10239,7 +10239,7 @@
     "Classe":"5ACT",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"5ACT",
@@ -10257,7 +10257,7 @@
     "Classe":"5ACT",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Manfredi G.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Desideri R.;Manfredi G.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"5ACT",
@@ -10335,7 +10335,7 @@
     "Classe":"5AEN",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"5AEN",
@@ -10401,13 +10401,13 @@
     "Classe":"5AEN",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(De Angelis I.;Fiorentini P.) (Lab. tecnologico)"
+    "Descrizione":"Laboratorio di sistemi e automazione (De Angelis I.;Fiorentini P.) (Lab. tecnologico)"
   },
   {
     "Classe":"5AEN",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Fabbretti M.;Cionco F.)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Fabbretti M.;Cionco F.)"
   },
   {
     "Classe":"5AEN",
@@ -10431,7 +10431,7 @@
     "Classe":"5AEN",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di sistemi e automazione\n(De Angelis I.;Fiorentini P.) (Lab. tecnologico)"
+    "Descrizione":"Laboratorio di sistemi e automazione (De Angelis I.;Fiorentini P.) (Lab. tecnologico)"
   },
   {
     "Classe":"5AEN",
@@ -10515,7 +10515,7 @@
     "Classe":"5AET",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"5AET",
@@ -10539,7 +10539,7 @@
     "Classe":"5AET",
     "Ora":"2",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"5AET",
@@ -10569,7 +10569,7 @@
     "Classe":"5AET",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"5AET",
@@ -10581,7 +10581,7 @@
     "Classe":"5AET",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"5AET",
@@ -10599,19 +10599,19 @@
     "Classe":"5AET",
     "Ora":"4",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Ugolini C.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Ugolini C.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5AET",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Ugolini C.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Ugolini C.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5AET",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"5AET",
@@ -10629,13 +10629,13 @@
     "Classe":"5AET",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Ugolini C.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"Laboratorio di sistemi automatici (Cannarella L.;Ugolini C.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5AET",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.)\n(316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di TPSE (Giovannini A.;Proietti G.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"5AET",
@@ -10647,7 +10647,7 @@
     "Classe":"5AET",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"5AET",
@@ -10677,7 +10677,7 @@
     "Classe":"5AET",
     "Ora":"6",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Caddeo M.;Lazzari M.) (316-Lab. di elettrotecn. e TPSE)"
   },
   {
     "Classe":"5AET",
@@ -10737,7 +10737,7 @@
     "Classe":"5AIA",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"GPOI1\n(Turchetti E.)"
+    "Descrizione":"GPOI1 (Turchetti E.)"
   },
   {
     "Classe":"5AIA",
@@ -10797,7 +10797,7 @@
     "Classe":"5AIA",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"TPSIT\n(Turchetti E.)"
+    "Descrizione":"TPSIT (Turchetti E.)"
   },
   {
     "Classe":"5AIA",
@@ -10845,7 +10845,7 @@
     "Classe":"5AIA",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Camilli A.)"
+    "Descrizione":"Insegnamento della religione cattolica (Camilli A.)"
   },
   {
     "Classe":"5AIA",
@@ -10869,7 +10869,7 @@
     "Classe":"5AIA",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"lab. GPOI1 (Boccolini M.;Turchetti E.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"lab. GPOI1 (Boccolini M.;Turchetti E.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5AIA",
@@ -10899,7 +10899,7 @@
     "Classe":"5AIA",
     "Ora":"7",
     "Giorno":"Mar",
-    "Descrizione":"lab. GPOI1 (Boccolini M.;Turchetti E.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"lab. GPOI1 (Boccolini M.;Turchetti E.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5AIA",
@@ -10953,7 +10953,7 @@
     "Classe":"5AMM",
     "Ora":"2",
     "Giorno":"Lun",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Aula Corsi)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Aula Corsi)"
   },
   {
     "Classe":"5AMM",
@@ -10965,7 +10965,7 @@
     "Classe":"5AMM",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Zarletti S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Zarletti S.)"
   },
   {
     "Classe":"5AMM",
@@ -10983,7 +10983,7 @@
     "Classe":"5AMM",
     "Ora":"3",
     "Giorno":"Lun",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Aula Corsi)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Aula Corsi)"
   },
   {
     "Classe":"5AMM",
@@ -11031,7 +11031,7 @@
     "Classe":"5AMM",
     "Ora":"4",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di mecc, macch. ed en. (Nicolai G.;Pierini M.)\n(Lab. di macch. a fluido)"
+    "Descrizione":"Lab. di mecc, macch. ed en. (Nicolai G.;Pierini M.) (Lab. di macch. a fluido)"
   },
   {
     "Classe":"5AMM",
@@ -11049,7 +11049,7 @@
     "Classe":"5AMM",
     "Ora":"5",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Lab. di macch. utensili)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Lab. di macch. utensili)"
   },
   {
     "Classe":"5AMM",
@@ -11061,7 +11061,7 @@
     "Classe":"5AMM",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Lab. di mecc, macch. ed en. (Nicolai G.;Pierini M.)\n(Lab. di macch. a fluido)"
+    "Descrizione":"Lab. di mecc, macch. ed en. (Nicolai G.;Pierini M.) (Lab. di macch. a fluido)"
   },
   {
     "Classe":"5AMM",
@@ -11079,7 +11079,7 @@
     "Classe":"5AMM",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto\n(Lupattelli S.;Mancini V.) (Lab. di macch. utensili)"
+    "Descrizione":"Lab. di tecnologie meccaniche di processo e prodotto (Lupattelli S.;Mancini V.) (Lab. di macch. utensili)"
   },
   {
     "Classe":"5AMM",
@@ -11235,7 +11235,7 @@
     "Classe":"5BCT",
     "Ora":"4",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio SCSI 1 (Condina G.;Fazio M.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Condina G.;Fazio M.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"5BCT",
@@ -11247,13 +11247,13 @@
     "Classe":"5BCT",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"Meccanica, macchine e sistemi propulsivi\n(Monachello F.)"
+    "Descrizione":"Meccanica, macchine e sistemi propulsivi (Monachello F.)"
   },
   {
     "Classe":"5BCT",
     "Ora":"5",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Caddeo M.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Caddeo M.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"5BCT",
@@ -11265,25 +11265,25 @@
     "Classe":"5BCT",
     "Ora":"5",
     "Giorno":"Mer",
-    "Descrizione":"Laboratorio SCSI 1 (Condina G.;Fazio M.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Condina G.;Fazio M.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"5BCT",
     "Ora":"5",
     "Giorno":"Gio",
-    "Descrizione":"Insegnamento della religione cattolica\n(Bocci M.)"
+    "Descrizione":"Insegnamento della religione cattolica (Bocci M.)"
   },
   {
     "Classe":"5BCT",
     "Ora":"5",
     "Giorno":"Ven",
-    "Descrizione":"Meccanica, macchine e sistemi propulsivi\n(Monachello F.)"
+    "Descrizione":"Meccanica, macchine e sistemi propulsivi (Monachello F.)"
   },
   {
     "Classe":"5BCT",
     "Ora":"6",
     "Giorno":"Lun",
-    "Descrizione":"Laboratorio di elettrotecnica ed elettronica\n(Bruno A.;Caddeo M.)\n(314-Lab. elettronica e  telecom)"
+    "Descrizione":"Laboratorio di elettrotecnica ed elettronica (Bruno A.;Caddeo M.) (314-Lab. elettronica e  telecom)"
   },
   {
     "Classe":"5BCT",
@@ -11301,7 +11301,7 @@
     "Classe":"5BCT",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio SCSI 1 (Condina G.;Fazio M.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Condina G.;Fazio M.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"5BCT",
@@ -11331,7 +11331,7 @@
     "Classe":"5BCT",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"Laboratorio SCSI 1 (Condina G.;Fazio M.)\n(Lab. di progett. aeronautica)"
+    "Descrizione":"Laboratorio SCSI 1 (Condina G.;Fazio M.) (Lab. di progett. aeronautica)"
   },
   {
     "Classe":"5BCT",
@@ -11385,7 +11385,7 @@
     "Classe":"5BIA",
     "Ora":"2",
     "Giorno":"Mer",
-    "Descrizione":"GPOI1\n(Martino Rana S.)"
+    "Descrizione":"GPOI1 (Martino Rana S.)"
   },
   {
     "Classe":"5BIA",
@@ -11415,19 +11415,19 @@
     "Classe":"5BIA",
     "Ora":"3",
     "Giorno":"Mer",
-    "Descrizione":"Insegnamento della religione cattolica\n(Camilli A.)"
+    "Descrizione":"Insegnamento della religione cattolica (Camilli A.)"
   },
   {
     "Classe":"5BIA",
     "Ora":"3",
     "Giorno":"Gio",
-    "Descrizione":"TPSIT\n(Ranucci G.)"
+    "Descrizione":"TPSIT (Ranucci G.)"
   },
   {
     "Classe":"5BIA",
     "Ora":"3",
     "Giorno":"Ven",
-    "Descrizione":"lab. GPOI1 (Boccolini M.;Martino Rana S.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"lab. GPOI1 (Boccolini M.;Martino Rana S.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5BIA",
@@ -11457,7 +11457,7 @@
     "Classe":"5BIA",
     "Ora":"4",
     "Giorno":"Ven",
-    "Descrizione":"lab. GPOI1 (Boccolini M.;Martino Rana S.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"lab. GPOI1 (Boccolini M.;Martino Rana S.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5BIA",
@@ -11565,7 +11565,7 @@
     "Classe":"5CIA",
     "Ora":"1",
     "Giorno":"Mer",
-    "Descrizione":"GPOI1\n(Martino Rana S.)"
+    "Descrizione":"GPOI1 (Martino Rana S.)"
   },
   {
     "Classe":"5CIA",
@@ -11577,7 +11577,7 @@
     "Classe":"5CIA",
     "Ora":"1",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di TPSIT (Messore L.;Muzzi F.)\n(117 - Lab. di sistemi e reti)"
+    "Descrizione":"Laboratorio di TPSIT (Messore L.;Muzzi F.) (117 - Lab. di sistemi e reti)"
   },
   {
     "Classe":"5CIA",
@@ -11607,7 +11607,7 @@
     "Classe":"5CIA",
     "Ora":"2",
     "Giorno":"Ven",
-    "Descrizione":"Laboratorio di TPSIT (Messore L.;Muzzi F.)\n(117 - Lab. di sistemi e reti)"
+    "Descrizione":"Laboratorio di TPSIT (Messore L.;Muzzi F.) (117 - Lab. di sistemi e reti)"
   },
   {
     "Classe":"5CIA",
@@ -11619,7 +11619,7 @@
     "Classe":"5CIA",
     "Ora":"3",
     "Giorno":"Mar",
-    "Descrizione":"Insegnamento della religione cattolica\n(Scorsi S.)"
+    "Descrizione":"Insegnamento della religione cattolica (Scorsi S.)"
   },
   {
     "Classe":"5CIA",
@@ -11709,7 +11709,7 @@
     "Classe":"5CIA",
     "Ora":"6",
     "Giorno":"Mar",
-    "Descrizione":"TPSIT\n(Muzzi F.)"
+    "Descrizione":"TPSIT (Muzzi F.)"
   },
   {
     "Classe":"5CIA",
@@ -11721,7 +11721,7 @@
     "Classe":"5CIA",
     "Ora":"6",
     "Giorno":"Gio",
-    "Descrizione":"lab. GPOI1 (Boccolini M.;Martino Rana S.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"lab. GPOI1 (Boccolini M.;Martino Rana S.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5CIA",
@@ -11739,7 +11739,7 @@
     "Classe":"5CIA",
     "Ora":"7",
     "Giorno":"Mar",
-    "Descrizione":"Laboratorio di TPSIT (Messore L.;Muzzi F.)\n(117 - Lab. di sistemi e reti)"
+    "Descrizione":"Laboratorio di TPSIT (Messore L.;Muzzi F.) (117 - Lab. di sistemi e reti)"
   },
   {
     "Classe":"5CIA",
@@ -11751,7 +11751,7 @@
     "Classe":"5CIA",
     "Ora":"7",
     "Giorno":"Gio",
-    "Descrizione":"lab. GPOI1 (Boccolini M.;Martino Rana S.)\n(203-Lab. di sist. elett. e elettrot.)"
+    "Descrizione":"lab. GPOI1 (Boccolini M.;Martino Rana S.) (203-Lab. di sist. elett. e elettrot.)"
   },
   {
     "Classe":"5CIA",
