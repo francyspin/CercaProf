@@ -126,15 +126,30 @@ function cercaAdesso() {
   const oggi = new Date();
   const giorno = giorni[oggi.getDay()];
   const ora_scuola = oraCorrenteScuola();
+
+  // Prendi gli altri filtri dal DOM
+  const classe = document.getElementById('classe_select').value;
+  const docente = document.getElementById('docente_select').value;
+  const aula    = document.getElementById('aula_select').value;
+
   let risultati = [];
+
   if (ora_scuola) {
-    risultati = orario.filter(item =>
-      item.Giorno === giorno &&
-      item.Ora == ora_scuola
-    );
+    risultati = orario.filter(item => {
+      let ok = true;
+      ok = ok && item.Giorno === giorno;
+      ok = ok && item.Ora.toString() === ora_scuola.toString();
+      ok = ok && item.Descrizione && item.Descrizione !== "nan";
+      if (classe)  ok = ok && item.Classe === classe;
+      if (docente) ok = ok && item.Descrizione.includes(docente);
+      if (aula)    ok = ok && item.Descrizione.includes(aula);
+      return ok;
+    });
   }
+
   mostraRisultati(risultati, ora_scuola, giorno, true);
 }
+
 
 function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode = false, onlyClassGiorno = false){
   const box = document.getElementById('risultati');

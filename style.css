@@ -244,3 +244,45 @@ h1 {
   from {opacity:0;}
   to {opacity:1;}
 }
+@media (max-width: 900px) {
+  body { margin: 3vw; }
+  h1 { font-size: 1.5em; padding: 14px 0; max-width: 99vw; border-radius: 12px; }
+  .tabella-e-pagine { 
+    flex-direction: column; 
+    gap: 0; 
+    align-items: center;
+    max-width: 99vw;
+  }
+  .paginazione {
+    flex-direction: row;
+    min-width: 0;
+    max-width: 98vw;
+    padding: 10px 0 0 0;
+    gap: 10px;
+    margin-bottom: 17px;
+  }
+  .btn-pagi { font-size: 1em; min-width: 44px; min-height: 34px; }
+  .orario-tabella { font-size: 13px; max-width: 98vw; }
+  .form-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .form-group select,
+  .form-group input {
+    width: 98vw;
+    min-width: 120px;
+    max-width: 99vw;
+    padding: 13px 20px 13px 10px;
+    font-size: 1.06em;
+  }
+  .form-group button {
+    font-size: 1.12em;
+    min-height: 44px;
+    width: 98vw;
+    max-width: 99vw;
+    margin-bottom: 6px;
+  }
+  .benvenuto, .banner-lezioni { padding: 23px 4vw; }
+}
+
