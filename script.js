@@ -8,16 +8,43 @@
     cerca();
   }
 
-  // Mostra benvenuto all'avvio della pagina
-  function mostraBenvenuto() {
-    const box = document.getElementById('risultati');
-    box.innerHTML = `
-      <div class="benvenuto">
-        <h2>Benvenuto!</h2>
-        <p>Seleziona sopra i filtri per cercare docenti, classi o aule dell'orario scolastico!</p>
-      </div>
+const frasi = [
+  "Seleziona i filtri sopra per cercare nell'orario scolastico.",
+  "Premi <b>Cerca adesso</b> per vedere le lezioni attive.",
+  "Nella sezione docenti puoi scoprire tutte le ore disponibili.",
+  "Filtra per <b>aula</b> e trova laboratori liberi!",
+  () => {
+    const d = new Date();
+    return `Oggi è ${d.toLocaleDateString()}, sono le ${d.getHours()}:${d.getMinutes().toString().padStart(2,'0')}`;
+  }
+];
+
+function ciclaBannerFrasi() {
+  const box = document.getElementById('banner-frasi');
+  let idx = 0;
+  box.innerHTML = `<div class="frase-ciclica">${frasi[idx]}</div>`;
+setInterval(() => {
+  idx = (idx + 1) % frasi.length;
+  box.querySelector(".frase-ciclica").style.opacity = 0;
+  setTimeout(() => {
+    // SE funzione, la esegue; se stringa, la mostra
+    const frase = typeof frasi[idx] === "function" ? frasi[idx]() : frasi[idx];
+    box.querySelector(".frase-ciclica").innerHTML = frase;
+    box.querySelector(".frase-ciclica").style.opacity = 1;
+  }, 400);
+}, 3400);
+
+}
+ciclaBannerFrasi();
+
+  // Banner Benvenuto animato (fuori da risultati)
+  function mostraBannerBenvenuto() {
+    document.getElementById('banner-benvenuto').innerHTML = `
+      <span>🎓 Benvenuto! </span>
     `;
   }
+  mostraBannerBenvenuto();
+
   document.addEventListener('DOMContentLoaded', mostraBenvenuto);
 
   // Orari scuola, in cima!
@@ -64,6 +91,7 @@
   }
 
   function cerca() {
+    document.body.classList.remove('senza-lezioni');
     const classe = document.getElementById('classe_select').value;
     const docente = document.getElementById('docente_select').value;
     const aula = document.getElementById('aula_select').value;
@@ -89,14 +117,14 @@
     });
 
     // Se solo la classe è selezionata e nessun altro filtro
-    if (classe && !docente && !aula && !giorno && !ora) {
-  const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
-  let risultatiGiorno = risultati.filter(r => r.Giorno === giorniOrario[currentPage-1]);
-  // ORDINA per ora (numerico)
-  risultatiGiorno.sort((a, b) => Number(a.Ora) - Number(b.Ora));
-  mostraRisultati(risultatiGiorno, null, giorniOrario[currentPage-1], false, true);
-}
-else if (docente && !classe && !aula && !giorno && !ora) {
+  if (classe && !docente && !aula && !giorno && !ora) {
+    const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
+    let risultatiGiorno = risultati.filter(r => r.Giorno === giorniOrario[currentPage-1]);
+    // ORDINA per ora (numerico)
+    risultatiGiorno.sort((a, b) => Number(a.Ora) - Number(b.Ora));
+    mostraRisultati(risultatiGiorno, null, giorniOrario[currentPage-1], false, true);
+  }
+  else if (docente && !classe && !aula && !giorno && !ora) {
   const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
   let risultatiGiorno = risultati.filter(r => r.Giorno === giorniOrario[currentPage-1]);
   // ORDINA per ora (numerico)
@@ -104,8 +132,8 @@ else if (docente && !classe && !aula && !giorno && !ora) {
   mostraRisultati(risultatiGiorno, null, giorniOrario[currentPage-1], false, true);
 }
 
-    // Altrimenti ricerca e paginazione classica
-    else {
+  // Altrimenti ricerca e paginazione classica
+  else {
       mostraRisultati(risultati);
     }
   }
@@ -133,6 +161,7 @@ else if (docente && !classe && !aula && !giorno && !ora) {
   }
 
   function cercaAdesso() {
+    document.body.classList.remove('senza-lezioni');
     const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
     const oggi = new Date();
     const giorno = giorni[oggi.getDay()];
@@ -163,6 +192,7 @@ else if (docente && !classe && !aula && !giorno && !ora) {
 
 
   function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode = false, onlyClassGiorno = false){
+  document.body.classList.remove('senza-lezioni');
   const box = document.getElementById('risultati');
   let pagi = "";
   let table = "";
@@ -289,4 +319,3 @@ else if (docente && !classe && !aula && !giorno && !ora) {
     </div>
   `;
 }
-
