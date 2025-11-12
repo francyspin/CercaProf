@@ -3,13 +3,10 @@
   let currentPage = 1;
   const resultsPerPage = 5;
 
-window.vaiPagina = function(page) {
-  currentPage = page;
-  // Se vuoi gestire anche "cercaAdesso", salva una flag (es: window.adessoMode) e richiama la funzione giusta
-  // Oppure basta che cercaAdesso chiami mostraRisultati come sopra
-  cerca(); // o cercaAdesso() se stai già usando la visualizzazione oraria attuale!
-}
-
+  window.vaiPagina = function(page) {
+    currentPage = page;
+    cerca();
+  }
 
   // Mostra benvenuto all'avvio della pagina
   function mostraBenvenuto() {
@@ -162,14 +159,42 @@ window.vaiPagina = function(page) {
   }
 
 
-function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode = false, onlyClassGiorno = false){
+  function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode = false, onlyClassGiorno = false){
   const box = document.getElementById('risultati');
   let pagi = "";
+  let table = "";
 
-  // Se sei in cercaAdesso e NON ci sono lezioni, mostra il banner, NON serve paginazione
+  // ------ Banner speciale per cercaAdesso senza lezioni ------
   if(adessoMode && (!ora_scuola || ora_scuola === "" || typeof ora_scuola === "undefined" || risultati.length === 0)) {
     document.body.classList.add('senza-lezioni');
+    // PAGINAZIONE: almeno 1 bottone anche se nessun risultato (disabilitato)
+    pagi = `<div class="paginazione">`;
+    pagi += `<button class="btn-pagi" disabled>1</button>`;
+    pagi += `</div>`;
+    table = `<table class="orario-tabella">
+      <thead>
+        <tr>
+          <th>Classe</th>
+          <th>Giorno</th>
+          <th>Ora</th>
+          <th>Docente</th>
+          <th>Aula</th>
+          <th>Descrizione</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6" style="text-align:center; color:#e02538; font-size:1.16em"><em>Nessun risultato trovato.</em></td>
+        </tr>
+      </tbody>
+    </table>`;
     box.innerHTML = `
+      <div class="tabella-e-pagine">
+        ${pagi}
+        <div class="contenitore-tabella">
+          ${table}
+        </div>
+      </div>
       <div class="banner-lezioni">
         <h2>Non ci sono lezioni attive al momento!</h2>
         <p>Le lezioni sono finite oppure non sono ancora iniziate.<br>
@@ -179,20 +204,33 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
     return;
   }
 
-  // PAGINAZIONE CLASSICA SEMPRE (anche per cercaAdesso)
-  const totalPages = Math.ceil(risultati.length / resultsPerPage);
-  if (currentPage > totalPages) currentPage = 1;
-  const start = (currentPage - 1) * resultsPerPage;
-  const end = start + resultsPerPage;
-  const risultatiPagina = risultati.slice(start, end);
+  // ------- CASO NORMALE: tabella e paginazione sempre -------
+  let risultatiPagina = risultati;
+  let totalPages = 1;
 
-  pagi = `<div class="paginazione">`;
-  for(let p=1; p<=Math.max(totalPages, 1); p++) {
-    pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${p})"${p===currentPage?' style="font-weight:bold;"':''} ${totalPages === 0 ? 'disabled' : ''}>${p}</button>`;
+  if (onlyClassGiorno) { // paginazione per giorno
+    const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
+    pagi = `<div class="paginazione">`;
+    for(let p=1; p<=5; p++) {
+      pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${p})"${p===currentPage?' style="font-weight:bold;"':''}>${giorniOrario[p-1]}</button>`;
+    }
+    pagi += `</div>`;
+    // Nessun slicing qui: i risultati sono già filtrati per giorno
+  } else { // paginazione classica ogni 5
+    totalPages = Math.ceil(risultati.length / resultsPerPage);
+    pagi = `<div class="paginazione">`;
+    // Mostra almeno 1 bottone, anche se nessun risultato
+    for(let p=1; p<=Math.max(totalPages, 1); p++) {
+      pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${p})"${p===currentPage?' style="font-weight:bold;"':''} ${totalPages === 0 ? 'disabled' : ''}>${p}</button>`;
+    }
+    pagi += `</div>`;
+    // Slicing per pagina
+    const start = (currentPage - 1) * resultsPerPage;
+    const end = start + resultsPerPage;
+    risultatiPagina = risultati.slice(start, end);
   }
-  pagi += `</div>`;
 
-  let table;
+  // ---- Tabella con header, risultati o messaggio vuoto ----
   if (risultatiPagina.length === 0) {
     table = `<table class="orario-tabella">
       <thead>
@@ -238,6 +276,7 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
     </table>`;
   }
 
+  // ------ Output finale, sempre con paginazione ------
   box.innerHTML = `
     <div class="tabella-e-pagine">
       ${pagi}
