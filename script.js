@@ -38,7 +38,7 @@ function mostraBannerBenvenuto() {
 }
 const frasi = [
     "Seleziona i filtri sopra per cercare nell'orario scolastico.",
-    "Premi <b>Cerca adesso</b> per vedere le lezioni attive.",
+    "Premi <b>Vedi lezioni attive</b> per vedere le lezioni che si stanno tenendo in questo momento.",
     "Nella sezione docenti puoi scoprire tutte le ore disponibili.",
     "Filtra per <b>aula</b> e trova laboratori liberi!",
     function () {
