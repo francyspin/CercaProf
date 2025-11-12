@@ -35,7 +35,8 @@ fetch('orario_unificato.json')
     orario = data;
     data.forEach(item => {
       classiSet.add(item.Classe);
-      let matchDoc = item.Descrizione.match(/([A-Z][a-z]+ [A-Z]\.?)/g);
+let matchDoc = item.Descrizione.match(/\b([A-Z][a-z]+(?: [Dd]e| [Dd]i| [Dd]a| [Dd]el| [Dd]ella)?(?: [A-Z][a-z]+)? [A-Z]\.?)(?=\)|;|,|$)/g);
+
       if(matchDoc) matchDoc.forEach(nome => docentiSet.add(nome));
       let matchAula = item.Descrizione.match(/(\bLab\..+|\bAula.+|\bPalestre\b.+|\b[0-9]{3}|\b[ABC][0-9]{2,3}|[A-Z]+\s?\d{1,3})$/i);
       if(matchAula) aulaSet.add(matchAula[0].trim());
