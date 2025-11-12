@@ -18,19 +18,21 @@ body.senza-lezioni {
 h1 {
   color: #fff;
   background: linear-gradient(94deg, #1976D2 10%, #4fc3f7 90%);
-  padding: 20px 0 16px 0;
-  width: 100%;
-  max-width: 700px;
-  margin: 24px auto 34px auto;
-  border-radius: 24px;
-  font-size: 2.5em;
+  display: inline-block;      /* L'isola si adatta al titolo */
+  padding: 26px 60px;         /* ↑ più aria ai lati! */
+  border-radius: 32px;
+  font-size: 2.7em;
   font-weight: 900;
   letter-spacing: 2px;
-  box-shadow: 0 10px 34px #cadcff66, 0 1px 2px #fff9;
+  box-shadow: 0 10px 38px #cadcff66, 0 1px 2px #fff9;
   text-shadow: 0 2px 16px #22507644, 0 4px 28px #4fc3f777;
   user-select: none;
   transition: background 0.6s;
+  white-space: nowrap;         /* Tutto su una riga */
+  margin: 36px auto 42px auto; /* Centra l'isola */
 }
+
+
 
 .form-group {
   display: flex;
@@ -176,6 +178,14 @@ h1 {
   }
   .btn-pagi { font-size: 1em; min-width: 44px; min-height: 34px; }
   .contenitore-tabella { max-width: 99vw; }
+}
+@media (max-width: 900px) {
+  h1 {
+    padding: 18px 10px 12px 10px; /* lato più stretto su telefoni */
+    font-size: 1.7em;
+    border-radius: 16px;
+    margin: 18px auto 27px auto;
+  }
 }
 
 
@@ -355,7 +365,6 @@ h1 {
   background-size: 200% 200%;
   animation: benvenutoGradient 12s ease-in-out infinite;
 }
-
 @keyframes benvenutoGradient {
   0%   { background-position: 0% 50%; }
   30%  { background-position: 100% 50%; }
