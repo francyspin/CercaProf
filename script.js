@@ -202,22 +202,9 @@ if(adessoMode && (!ora_scuola || ora_scuola === "" || typeof ora_scuola === "und
 
 
   let risultatiPagina = risultati;
-  let totalPages = 1;
-  if (onlyClassGiorno) {
-    const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
-    pagi = `<div class="paginazione">`;
-    for(let p=1; p<=5; p++)
-      pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${p})"${p===currentPage?' style="font-weight:bold;"':''}>${giorniOrario[p-1]}</button>`;
-    pagi += `</div>`;
-  } else {
-    totalPages = Math.ceil(risultati.length / resultsPerPage);
-    pagi = `<div class="paginazione">`;
-    for(let p=1; p<=Math.max(totalPages, 1); p++)
-      pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${p})"${p===currentPage?' style="font-weight:bold;"':''}${totalPages === 0 ? ' disabled' : ''}>${p}</button>`;
-    pagi += `</div>`;
-    const start = (currentPage - 1) * resultsPerPage, end = start + resultsPerPage;
-    risultatiPagina = risultati.slice(start, end);
-  }
+  let totalPages = Math.ceil(risultati.length / resultsPerPage);
+  pagi = generaPaginazione(currentPage, totalPages);
+
 
   if (risultatiPagina.length === 0) {
     table = `<table class="orario-tabella">
@@ -278,3 +265,29 @@ function oraCorrenteScuola() {
 
 /* --- AVVIO PAGINA: HOME BENVENUTO --- */
 document.addEventListener('DOMContentLoaded', mostraHome);
+
+function generaPaginazione(currentPage, totalPages) {
+  const maxShown = 10;
+  let start = Math.floor((currentPage-1) / maxShown) * maxShown + 1;
+  let end = Math.min(start + maxShown - 1, totalPages);
+  let pagi = `<div class="paginazione">`;
+
+  // Freccia indietro, solo se blocco >1
+  if (start > 1) {
+    pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${start-1})">&laquo;</button>`;
+  }
+
+  // Bottoni numerici
+  for (let p = start; p <= end; p++) {
+    pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${p})"${p===currentPage?' style="font-weight:bold;"':''}>${p}</button>`;
+  }
+
+  // Freccia avanti, solo se blocco non è l'ultimo
+  if (end < totalPages) {
+    pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${end+1})">&raquo;</button>`;
+  }
+
+  pagi += `</div>`;
+  return pagi;
+}
+

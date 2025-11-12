@@ -133,16 +133,18 @@ h1 {
 
 .paginazione {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;         /* PERMETTE PIÙ RIGHE */
   justify-content: center;
-  gap: 10px;
+  gap: 8px 10px;           /* verticale, orizzontale */
   margin-bottom: 18px;
   margin-top: 4px;
   background: transparent;
   border-radius: 0;
   box-shadow: none;
   padding: 0;
+  max-width: 98vw;         /* Limita la larghezza dove serve! */
 }
+
 .btn-pagi {
   padding: 10px 18px;
   border-radius: 13px;
@@ -346,16 +348,13 @@ h1 {
     padding: 11px 7px;
   }
   .paginazione {
-    flex-direction: row;
-    gap: 5px;
-    margin: 13px 0;
-    padding: 0;
+    gap: 10px 8px;         /* piu aria tra righe/colonne */
+    max-width: 99vw;
   }
   .btn-pagi {
-    font-size: 1em;
-    min-width: 38px;
-    min-height: 33px;
-    border-radius: 11px;
+    min-width: 33px;
+    min-height: 31px;
+    font-size: 0.97em;
   }
   .banner-lezioni {
     padding: 19px 2vw 12px 2vw;
