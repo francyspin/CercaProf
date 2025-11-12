@@ -90,17 +90,20 @@
 
     // Se solo la classe è selezionata e nessun altro filtro
     if (classe && !docente && !aula && !giorno && !ora) {
-      // Visualizza orario per un giorno alla volta, ogni pagina = un giorno
-      const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
-      risultati = risultati.filter(r => r.Giorno === giorniOrario[currentPage-1]);
-      mostraRisultati(risultati, null, giorniOrario[currentPage-1], false, true);
-    }
-    // Se solo il docente è selezionato e nessun altro filtro
-    else if (docente && !classe && !aula && !giorno && !ora) {
-      const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
-      risultati = risultati.filter(r => r.Giorno === giorniOrario[currentPage-1]);
-      mostraRisultati(risultati, null, giorniOrario[currentPage-1], false, true);
-    }
+  const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
+  let risultatiGiorno = risultati.filter(r => r.Giorno === giorniOrario[currentPage-1]);
+  // ORDINA per ora (numerico)
+  risultatiGiorno.sort((a, b) => Number(a.Ora) - Number(b.Ora));
+  mostraRisultati(risultatiGiorno, null, giorniOrario[currentPage-1], false, true);
+}
+else if (docente && !classe && !aula && !giorno && !ora) {
+  const giorniOrario = ["Lun", "Mar", "Mer", "Gio", "Ven"];
+  let risultatiGiorno = risultati.filter(r => r.Giorno === giorniOrario[currentPage-1]);
+  // ORDINA per ora (numerico)
+  risultatiGiorno.sort((a, b) => Number(a.Ora) - Number(b.Ora));
+  mostraRisultati(risultatiGiorno, null, giorniOrario[currentPage-1], false, true);
+}
+
     // Altrimenti ricerca e paginazione classica
     else {
       mostraRisultati(risultati);
