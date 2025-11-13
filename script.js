@@ -416,6 +416,7 @@ function mostraGrigliaOrario(risultati, tipo) {
                     materia = materia.replace(/\s{2,}/g, ' ').replace(/\s+-\s+/g, '-').trim();
 
                            // Aggiungi la classe se è selezionato un docente
+                    // Aggiungi la classe se è selezionato un docente
                     const classeText = tipo === 'docente' ? `<div class="riga-classe">Classe: ${item.Classe}</div>` : '';
                     
                     let contenuto = `

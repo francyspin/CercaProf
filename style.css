@@ -542,10 +542,11 @@ h1 {
   color: #1a3d6b;
 }
 
-.riga-aula {
-  font-size: 0.8em;
-  color: #555;
-  opacity: 0.85;
+.riga-classe {
+    font-size: 0.85em;
+    color: #888;
+    font-weight: 400;
+    margin-top: 2px;
 }
 
 .orario-tabella,
