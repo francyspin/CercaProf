@@ -197,20 +197,25 @@ function cercaAdesso() {
     document.getElementById('banner-benvenuto').style.display = "none";
     document.getElementById('banner-frasi').style.display = "none";
     document.body.classList.remove('senza-lezioni');
+    
     const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
     const oggi = new Date();
     const giorno = giorni[oggi.getDay()];
-    const ora_scuola = oraCorrenteScuola();
+    const ora_scuola = oraCorrenteScuola(); // Restituisce l'ora (es. "1", "2") o stringa vuota
+    
     currentPage = 1;
     const classe = document.getElementById('classe_select').value;
     const docente = document.getElementById('docente_select').value;
     const aula = document.getElementById('aula_select').value;
+    
     const boxRisultati = document.getElementById('risultati');
     boxRisultati.classList.add('risultati-nascosti');
     boxRisultati.style.display = 'none';
+
     setTimeout(() => {
         let risultati = [];
-        if (ora_scuola) {
+        // Eseguiamo il filtro solo se siamo in orario scolastico
+        if (ora_scuola && ora_scuola !== "") {
             risultati = orario.filter(item => {
                 let ok = true;
                 ok = ok && item.Giorno === giorno;
@@ -222,7 +227,10 @@ function cercaAdesso() {
                 return ok;
             });
         }
+
+        // Passiamo i risultati e lo stato dell'ora scolastica
         mostraRisultati(risultati, ora_scuola, giorno, true);
+        
         boxRisultati.style.display = 'block';
         setTimeout(() => { boxRisultati.classList.remove('risultati-nascosti'); }, 10);
     }, 50);
@@ -230,60 +238,123 @@ function cercaAdesso() {
 
 /* === MOSTRA RISULTATI (Tabella) === */
 function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode = false){
+    // Rimuoviamo preventivamente la classe rossa, la rimetteremo solo se necessario
     document.body.classList.remove('senza-lezioni');
+    
     const box = document.getElementById('risultati');
     let pagi = "";
     let table = "";
 
-    if(adessoMode && (!ora_scuola || ora_scuola === "" || typeof ora_scuola === "undefined" || risultati.length === 0)) {
-        document.body.classList.add('senza-lezioni');
-        box.innerHTML = `
-            <div class="banner-lezioni">
-                <div class="icona-banner">⚠️</div>
-                <h2>Non ci sono lezioni attive al momento!</h2>
-                <p>Le lezioni sono finite oppure non sono ancora iniziate.<br>
-                Nessuna classe o docente risulta impegnato ora.</p>
-            </div>
-        `;
-        return;
+    /* === GESTIONE "VEDI LEZIONI ATTIVE" (ADESSO MODE) === */
+    if (adessoMode) {
+        
+        // CASO 1: Fuori orario scolastico (Scuola chiusa/Lezioni finite)
+        if (!ora_scuola || ora_scuola === "" || typeof ora_scuola === "undefined") {
+            document.body.classList.add('senza-lezioni'); // Qui va bene il rosso
+            box.innerHTML = `
+                <div class="banner-lezioni">
+                    <div class="icona-banner">⚠️</div>
+                    <h2>Non ci sono lezioni attive al momento!</h2>
+                    <p>Le lezioni sono finite oppure non sono ancora iniziate.</p>
+                </div>
+            `;
+            return;
+        }
+
+        // CASO 2: In orario, ma nessun risultato (Docente/Classe LIBERI)
+        if (risultati.length === 0) {
+            const filtroDocente = document.getElementById('docente_select').value;
+            const filtroClasse = document.getElementById('classe_select').value;
+            
+            let titolo = "Nessuna lezione";
+            let messaggio = `Attualmente (<b>${ora_scuola}ª ora</b>) non risulta nessuna lezione.`;
+
+            if (filtroDocente) {
+                titolo = "Docente Libero";
+                messaggio = `Il prof. <b>${filtroDocente}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
+            } else if (filtroClasse) {
+                titolo = "Classe Libera";
+                messaggio = `La classe <b>${filtroClasse}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
+            }
+
+            // NON aggiungiamo 'senza-lezioni', così lo sfondo resta Blu (bello).
+            // Usiamo un banner bianco/verde pulito.
+            box.innerHTML = `
+                <div class="banner-lezioni" style="background: #fff; border-color: #4caf50; color: #2e7d32;">
+                    <div class="icona-banner" style="font-size: 2.5em;">☕</div>
+                    <h2 style="color: #2e7d32; margin-bottom: 10px;">${titolo}</h2>
+                    <p style="color: #4caf50; font-weight:600;">${messaggio}</p>
+                </div>
+            `;
+            return;
+        }
     }
 
+    /* === GENERAZIONE TABELLA === */
     const totalPages = Math.ceil(risultati.length / resultsPerPage);
-    if (totalPages > 1) {
+    
+    if (!adessoMode && totalPages > 1) {
         pagi = generaPaginazione(currentPage, totalPages);
     }
-    const start = (currentPage - 1) * resultsPerPage;
-    const end = start + resultsPerPage;
-    const risultatiPagina = risultati.slice(start, end);
+    
+    const risultatiDaMostrare = adessoMode ? risultati : risultati.slice((currentPage - 1) * resultsPerPage, (currentPage - 1) * resultsPerPage + resultsPerPage);
 
-    if (risultatiPagina.length === 0 && risultati.length === 0) {
+    if (risultatiDaMostrare.length === 0 && !adessoMode) {
         table = `<table class="orario-tabella">
-            <thead><tr><th>Classe</th><th>Giorno</th><th>Ora</th><th>Docente</th><th>Descrizione</th></tr></thead>
-            <tbody><tr><td colspan="6" style="text-align:center; color:#e02538; font-size:1.16em"><em>Nessun risultato trovato.</em></td></tr></tbody>
+            <tbody><tr><td colspan="5" style="text-align:center; color:#e02538;"><em>Nessun risultato trovato.</em></td></tr></tbody>
         </table>`;
     } else {
-        table = `<table class="orario-tabella">
-            <thead><tr><th>Classe</th><th>Giorno</th><th>Ora</th><th>Docente</th><th>Descrizione</th></tr></thead>
+        // Nota: width: auto nella tabella permette di stringersi
+        table = `<table class="orario-tabella" style="${adessoMode ? 'width: auto;' : ''}">
+            <thead>
+                <tr>
+                    <th>Classe</th>
+                    ${!adessoMode ? '<th>Giorno</th>' : ''} 
+                    <th>Ora</th>
+                    <th>Docente</th>
+                    <th>Materia/Aula</th>
+                </tr>
+            </thead>
             <tbody>
-                ${risultatiPagina.map(item=>`
+                ${risultatiDaMostrare.map(item => `
                     <tr>
-                        <td>${item.Classe}</td>
-                        <td>${item.Giorno}</td>
-                        <td>${item.Ora}</td>
-                        <td>${estraiDocenti(item.Descrizione).join(' / ')}</td>
-                        <td>${item.Descrizione}</td>
-                        <td>${item.Descrizione}</td>
+                        <td><b>${item.Classe}</b></td>
+                        ${!adessoMode ? `<td>${item.Giorno}</td>` : ''}
+                        <td>${item.Ora}ª</td>
+                        <td>${estraiDocenti(item.Descrizione).join('<br>')}</td>
+                        <td>${item.Descrizione.replace(/\(.*\)/, '')} <br> <small>${estraiAula(item.Descrizione)}</small></td>
                     </tr>
                 `).join('')}
             </tbody>
         </table>`;
     }
 
-    let contatore = `<div class="contatore-risultati" style="text-align:left; margin-bottom:10px; font-weight:500; color:#0b4c8c;">
-        Trovati ${risultati.length} risultati. ${totalPages > 1 ? `Pagina ${currentPage} di ${totalPages}.` : ''}
-    </div>`;
+    let contatore = "";
+    if (!adessoMode) {
+        contatore = `<div class="contatore-risultati" style="text-align:left; margin-bottom:10px;">
+            Trovati ${risultati.length} risultati.
+        </div>`;
+    } else {
+        contatore = `<div class="contatore-risultati" style="text-align:center; margin-bottom:15px; font-size:1.1em; color:#0b4c8c;">
+            🟢 Lezioni in corso adesso (<b>${ora_scuola}ª ora</b>)
+        </div>`;
+    }
 
-    box.innerHTML = `<div class="tabella-e-pagine">${contatore}${pagi}<div class="contenitore-tabella">${table}</div></div>`;
+    // MODIFICA CHIAVE PER LO SPAZIO BIANCO:
+    // width: fit-content e margin: 0 auto centrano il box e lo stringono al contenuto.
+    let containerStyle = "";
+    if (adessoMode) {
+        containerStyle = "width: fit-content; margin: 0 auto; display: table;"; 
+    }
+
+    box.innerHTML = `
+        <div class="tabella-e-pagine">
+            ${contatore}
+            ${pagi}
+            <div class="contenitore-tabella" style="${containerStyle}">
+                ${table}
+            </div>
+        </div>`;
 }
 
 /* === MOSTRA RISULTATI (Griglia oraria) === */
@@ -389,4 +460,3 @@ function generaPaginazione(currentPage, totalPages) {
 
 /* === AVVIO PAGINA === */
 document.addEventListener('DOMContentLoaded', mostraHome);
-    

@@ -9,11 +9,21 @@ body {
   text-align: center;
   transition: background 0.5s;
 }
+
 @keyframes bgMove {
-  0% {background-position: 0% 50%;}
-  80% {background-position: 80% 51%;}
-  100% {background-position: 0% 50%;}
+  0% {
+    background-position: 0% 50%;
+  }
+
+  80% {
+    background-position: 80% 51%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
 body.senza-lezioni {
   background: #ffeaea;
 }
@@ -32,7 +42,7 @@ h1 {
   user-select: none;
   transition: background 0.6s;
   white-space: nowrap;
-  margin: 0 auto 22px auto;  
+  margin: 0 auto 22px auto;
 }
 
 /* --- GRUPPI FORM --- */
@@ -43,6 +53,7 @@ h1 {
   margin-bottom: 24px;
   align-items: center;
 }
+
 .form-group-principale {
   display: flex;
   flex-wrap: wrap;
@@ -51,6 +62,7 @@ h1 {
   width: 100%;
   max-width: 650px;
 }
+
 .form-group-filtri {
   display: flex;
   justify-content: center;
@@ -63,6 +75,7 @@ h1 {
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
 .form-group-filtri select {
   appearance: none;
   padding: 10px 32px 10px 12px;
@@ -83,11 +96,13 @@ h1 {
   background-size: 18px;
   padding-right: 32px;
 }
+
 .form-group-filtri select:focus {
   border-color: #1976D2;
   background: #f0faff;
   box-shadow: 0 0 8px #b7eafc;
 }
+
 .btn-adesso {
   padding: 14px 28px;
   font-size: 1.15em;
@@ -101,11 +116,13 @@ h1 {
   transition: all 0.2s;
   flex-grow: 1;
 }
+
 .btn-adesso:hover {
   background: #1a78c2;
   box-shadow: 0 2px 10px #b2daf7;
   transform: translateY(-1px);
 }
+
 .btn-reset {
   padding: 14px 24px;
   font-size: 1.1em;
@@ -118,10 +135,12 @@ h1 {
   transition: all 0.2s;
   flex-basis: 180px;
 }
+
 .btn-reset:hover {
   background: #ffebee;
   border-color: #ef9a9a;
 }
+
 .form-group {
   display: none;
 }
@@ -136,9 +155,13 @@ h1 {
   transition: opacity 0.4s ease-out;
   opacity: 1;
 }
-.risultati-nascosti { opacity: 0; }
-#risultati > .banner-lezioni,
-#risultati > .benvenuto {
+
+.risultati-nascosti {
+  opacity: 0;
+}
+
+#risultati>.banner-lezioni,
+#risultati>.benvenuto {
   margin-left: auto;
   margin-right: auto;
 }
@@ -156,6 +179,7 @@ h1 {
   gap: 8px 10px;
   margin-bottom: 18px;
 }
+
 .btn-pagi {
   padding: 10px 18px;
   border-radius: 13px;
@@ -169,11 +193,14 @@ h1 {
   box-shadow: 0 1px 2px #e8f2fc;
   transition: background 0.13s, color 0.13s, border 0.13s;
 }
-.btn-pagi:hover, .btn-pagi:focus {
+
+.btn-pagi:hover,
+.btn-pagi:focus {
   background: #e0f2ff;
   color: #14449a;
   border: 2px solid #63b4fd;
 }
+
 .btn-pagi.active {
   background: #2186eb !important;
   color: #fff !important;
@@ -182,22 +209,28 @@ h1 {
 
 /* Contenitore tabella scorrevole */
 .contenitore-tabella {
-  width: 100%;
-  overflow-x: auto;
+  max-width: 600px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
   background: #fff;
   border-radius: 14px;
   border: 2px solid #e0eaff;
   box-shadow: 0 1px 12px #e4f3fc;
   margin-bottom: 24px;
+  overflow-x: auto;
 }
+
 
 /* TABELLONE */
 .orario-tabella {
-  width: 100%;
-  border-collapse: collapse;
-  background: transparent;
-  margin: 0;
+  width: auto;
+  max-width: 98vw;
+  margin: 0 auto;
+  /* puoi aggiungere un min-width se vuoi leggibilità */
+  min-width: 320px;
 }
+
 .orario-tabella th,
 .orario-tabella td {
   padding: 12px 17px;
@@ -206,6 +239,7 @@ h1 {
   font-weight: 480;
   white-space: nowrap;
 }
+
 .orario-tabella th {
   background: #e7f3ff;
   color: #257fe2;
@@ -214,8 +248,10 @@ h1 {
   font-size: 1.15em;
   border-bottom: 2.4px solid #b0d9fd;
 }
-.orario-tabella tr:last-child td {
-  border-bottom: none;
+
+.orario-tabella td:last-child {
+  width: 100%;
+  /* L'ultima colonna si prende tutto lo spazio extra se necessario */
 }
 
 /* RISULTATI ITEM */
@@ -228,13 +264,16 @@ h1 {
   box-shadow: 0 2px 16px #e7ecf5;
   text-align: left;
 }
-.result-item b { color: #114bbe; }
+
+.result-item b {
+  color: #114bbe;
+}
 
 /* --- BANNER --- */
 .benvenuto {
   max-width: 430px;
   margin: 40px auto;
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 15px;
   box-shadow: 0 1px 17px #cce7fd66;
   padding: 24px 16px;
@@ -248,6 +287,7 @@ h1 {
   filter: drop-shadow(0 0 24px #8cc7fecc);
   animation: fadeIn 0.5s;
 }
+
 .benvenuto h2 {
   color: #1976D2;
   margin-bottom: 7px;
@@ -256,12 +296,14 @@ h1 {
   letter-spacing: 1px;
   text-shadow: 0 1px 12px #7fbcfb55;
 }
+
 .benvenuto p {
   font-size: 1.03em;
   color: #286085;
   margin-bottom: 0;
   margin-top: 3px;
 }
+
 .banner-lezioni {
   max-width: 600px;
   margin: 24px auto 22px auto;
@@ -275,7 +317,11 @@ h1 {
   animation: fadeIn 0.6s;
   backdrop-filter: blur(2px);
 }
-.banner-lezioni::before { content: none !important; }
+
+.banner-lezioni::before {
+  content: none !important;
+}
+
 .banner-lezioni .icona-banner {
   font-size: 3em;
   width: 100%;
@@ -285,6 +331,7 @@ h1 {
   opacity: 0.97;
   display: block;
 }
+
 .banner-lezioni h2 {
   color: #e6255e;
   font-size: 2.1em;
@@ -294,16 +341,23 @@ h1 {
   margin-top: 0;
   text-align: center;
 }
+
 .banner-lezioni p {
   color: #a13450;
   font-size: 1.15em;
   margin-bottom: 0;
   font-weight: 500;
 }
+
 /* Fade in */
 @keyframes fadeIn {
-  from { opacity: 0;}
-  to { opacity: 1;}
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* BANNER BENVEUTO GRADIENTE */
@@ -327,17 +381,30 @@ h1 {
   background-size: 200% 200%;
   animation: benvenutoGradient 12s ease-in-out infinite;
 }
+
 @keyframes benvenutoGradient {
-  0%   { background-position: 0% 50%; }
-  30%  { background-position: 100% 50%; }
-  60%  { background-position: 60% 0%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  30% {
+    background-position: 100% 50%;
+  }
+
+  60% {
+    background-position: 60% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
 #banner-frasi {
   max-width: 410px;
   margin: 3px auto 12px auto;
   padding: 11px 14px;
-  background: rgba(255,255,255,0.75);
+  background: rgba(255, 255, 255, 0.75);
   color: #2676d9;
   font-size: 1.09em;
   border-radius: 16px;
@@ -348,103 +415,113 @@ h1 {
   font-weight: 500;
   animation: fadeIn 1.2s;
 }
-#banner-frasi .frase-ciclica { transition: opacity 0.5s; }
+
+#banner-frasi .frase-ciclica {
+  transition: opacity 0.5s;
+}
 
 /* --- STILI TABELLA GRIGLIA ORARIO (NUOVO) --- */
 .contenitore-tabella.griglia-settimanale {
-    padding: 0;
+  transition: width 0.3s;
+  padding: 0;
 }
-
+.orario-tabella[style*="width: auto"] th, 
+.orario-tabella[style*="width: auto"] td {
+    padding: 10px 15px; /* Un po' meno padding laterale */
+    white-space: nowrap; /* Evita che il testo vada a capo creando spazi strani */
+}
 .orario-griglia {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
 }
 
 .orario-griglia th,
 .orario-griglia td {
-    border: 1px solid #e0eaff;
-    padding: 8px 5px;
-    text-align: center;
-    font-weight: 500;
+  border: 1px solid #e0eaff;
+  padding: 8px 5px;
+  text-align: center;
+  font-weight: 500;
 }
 
 .orario-griglia th {
-    background: #e7f3ff;
-    color: #257fe2;
-    font-size: 1em;
-    font-weight: 700;
-    text-transform: uppercase;
+  background: #e7f3ff;
+  color: #257fe2;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .orario-griglia .ora-header {
-    background: #f0f4ff;
-    font-weight: 800;
-    color: #0b4c8c;
-    width: 60px;
+  background: #f0f4ff;
+  font-weight: 800;
+  color: #0b4c8c;
+  width: 60px;
 }
 
 .orario-griglia .lezione-attiva {
-    background: #fffafa;
-    position: relative;
+  background: #fffafa;
+  position: relative;
 }
 
 .orario-griglia .libero {
-    background: #f7fff7;
-    color: #92bfa2;
-    font-style: italic;
-    font-size: 0.9em;
+  background: #f7fff7;
+  color: #92bfa2;
+  font-style: italic;
+  font-size: 0.9em;
 }
 
 .orario-griglia .cella-lezione {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2px 0;
-    min-height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 0;
+  min-height: 45px;
 }
 
 .orario-griglia .cella-lezione span {
-    font-weight: 700;
-    color: #1a76d2;
-    line-height: 1.2;
+  font-weight: 700;
+  color: #1a76d2;
+  line-height: 1.2;
 }
+
 .orario-griglia .cella-lezione small {
-    font-size: 0.8em;
-    color: #777;
-    display: block;
-    margin-top: 2px;
+  font-size: 0.8em;
+  color: #777;
+  display: block;
+  margin-top: 2px;
 }
 
 .cella-lezione {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 6px;
-    line-height: 1.3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px;
+  line-height: 1.3em;
 }
 
 .riga-materia {
-    font-weight: 600;
-    font-size: 1em;
-    margin-bottom: 2px;
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 2px;
 }
 
 .riga-docente {
-    font-size: 0.9em;
-    color: #1a3d6b;
+  font-size: 0.9em;
+  color: #1a3d6b;
 }
 
 .riga-aula {
-    font-size: 0.8em;
-    color: #555;
-    opacity: 0.85;
+  font-size: 0.8em;
+  color: #555;
+  opacity: 0.85;
 }
 
-.orario-tabella, .orario-griglia {
+.orario-tabella,
+.orario-griglia {
   overflow-x: auto;
   display: block;
 }
@@ -453,6 +530,7 @@ h1 {
 /* RESPONSIVE MOBILE - VERSIONE CORRETTA       */
 /* ============================================ */
 @media (max-width: 600px) {
+
   /* LAYOUT GENERALE - Flexbox per riordinare */
   body {
     padding: 12px 8px;
@@ -462,12 +540,29 @@ h1 {
   }
 
   /* RIORDINO ELEMENTI SU MOBILE */
-  h1 { order: 1; }
-  #orologio-dinamico { order: 2; }
-  #banner-benvenuto { order: 3; }
-  #banner-frasi { order: 4; }
-  .form-group-wrapper { order: 5; }
-  #risultati { order: 6; }
+  h1 {
+    order: 1;
+  }
+
+  #orologio-dinamico {
+    order: 2;
+  }
+
+  #banner-benvenuto {
+    order: 3;
+  }
+
+  #banner-frasi {
+    order: 4;
+  }
+
+  .form-group-wrapper {
+    order: 5;
+  }
+
+  #risultati {
+    order: 6;
+  }
 
   /* TITOLO PRINCIPALE - rimane dentro, più piccolo */
   h1 {
@@ -555,17 +650,28 @@ h1 {
   }
 
   .contenitore-tabella {
-    max-width: 100%;
-    width: calc(100vw - 16px);
-    margin: 0 auto 16px auto !important;
-    padding: 0;
-    border-radius: 10px;
+    width: fit-content;
+    /* IL PUNTO CHIAVE: Il box si restringe al contenuto */
+    min-width: 300px;
+    /* Una larghezza minima di sicurezza */
+    max-width: 95%;
+    /* Non superare mai la larghezza dello schermo */
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 14px;
+    border: 2px solid #e0eaff;
+    box-shadow: 0 1px 12px #e4f3fc;
+    margin-bottom: 24px;
+    overflow-x: hidden;
+    /* Nasconde scrollbar orizzontale */
   }
 
   /* TABELLA ORARIO */
   .orario-tabella {
-    font-size: 0.85em;
-    max-width: 100%;
+    width: 100%;
+    /* La tabella riempie tutto lo spazio del contenitore ristretto */
+    margin: 0 auto;
   }
 
   .orario-tabella th,
