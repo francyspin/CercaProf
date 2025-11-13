@@ -209,7 +209,7 @@ h1 {
 
 /* Contenitore tabella scorrevole */
 .contenitore-tabella {
-  max-width: 600px;
+  max-width: 1000px;
   width: auto;
   margin-left: auto;
   margin-right: auto;
@@ -220,24 +220,48 @@ h1 {
   margin-bottom: 24px;
   overflow-x: auto;
 }
+/* === STILE SPECIFICO PER MODALITÀ "ADESSO" === */
 
+/* Base (Mobile): La tabella si adatta al contenuto stretto */
+.contenitore-tabella.mode-adesso {
+    width: fit-content;
+    margin: 0 auto;
+    display: table; /* Aiuta a centrare fit-content */
+}
+
+/* Desktop/Tablet (Schermi > 768px): Miglioriamo la leggibilità */
+@media (min-width: 768px) {
+    .contenitore-tabella.mode-adesso {
+        /* Impostiamo una larghezza minima per non farla sembrare "povera" su schermi grandi */
+        min-width: 500px; 
+        /* Manteniamo comunque un limite per non avere lo spazio bianco gigante */
+        max-width: 800px; 
+    }
+
+    /* Aumentiamo il padding delle celle SOLO in questa modalità per renderla più ariosa */
+    .contenitore-tabella.mode-adesso .orario-tabella th,
+    .contenitore-tabella.mode-adesso .orario-tabella td {
+        padding: 16px 30px; /* Più spazio laterale = più leggibile */
+        font-size: 1.1em;   /* Testo leggermente più grande */
+    }
+}
 
 /* TABELLONE */
 .orario-tabella {
-  width: auto;
-  max-width: 98vw;
-  margin: 0 auto;
-  /* puoi aggiungere un min-width se vuoi leggibilità */
-  min-width: 320px;
+    width: 100%; 
+    border-collapse: collapse;
+    table-layout: fixed; /* <--- QUESTO È IL SEGRETO: Forza larghezze stabili */
 }
 
 .orario-tabella th,
 .orario-tabella td {
-  padding: 12px 17px;
-  border-bottom: 1.6px solid #e9eef6;
-  text-align: left;
-  font-weight: 480;
-  white-space: nowrap;
+    padding: 12px 10px; /* Un po' di respiro */
+    word-wrap: break-word; /* Se il testo è lunghissimo, va a capo invece di rompere la tabella */
+    vertical-align: middle; /* Testo centrato verticalmente */
+}
+
+.orario-tabella th {
+    width: 10%; 
 }
 
 .orario-tabella th {
@@ -250,9 +274,13 @@ h1 {
 }
 
 .orario-tabella td:last-child {
-  width: 100%;
+  width: 45%;
   /* L'ultima colonna si prende tutto lo spazio extra se necessario */
 }
+.orario-tabella th:nth-last-child(2) {
+    width: 25%;
+}
+
 
 /* RISULTATI ITEM */
 .result-item {

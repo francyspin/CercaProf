@@ -238,19 +238,25 @@ function cercaAdesso() {
 
 /* === MOSTRA RISULTATI (Tabella) === */
 function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode = false){
-    // Rimuoviamo preventivamente la classe rossa, la rimetteremo solo se necessario
+    // Inizializza o usa la variabile globale, se non esiste la imposta a 1
+    const paginaCorrente = typeof currentPage !== 'undefined' ? currentPage : 1; 
+    const risultatiPerPagina = typeof resultsPerPage !== 'undefined' ? resultsPerPage : 15;
+
     document.body.classList.remove('senza-lezioni');
     
     const box = document.getElementById('risultati');
     let pagi = "";
     let table = "";
+    
+    // Controlla se l'utente ha selezionato un docente per la logica di visualizzazione
+    const filtroDocenteSelezionato = document.getElementById('docente_select').value;
 
     /* === GESTIONE "VEDI LEZIONI ATTIVE" (ADESSO MODE) === */
     if (adessoMode) {
         
-        // CASO 1: Fuori orario scolastico (Scuola chiusa/Lezioni finite)
+        // CASO 1: Fuori orario scolastico
         if (!ora_scuola || ora_scuola === "" || typeof ora_scuola === "undefined") {
-            document.body.classList.add('senza-lezioni'); // Qui va bene il rosso
+            document.body.classList.add('senza-lezioni');
             box.innerHTML = `
                 <div class="banner-lezioni">
                     <div class="icona-banner">⚠️</div>
@@ -263,22 +269,19 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
 
         // CASO 2: In orario, ma nessun risultato (Docente/Classe LIBERI)
         if (risultati.length === 0) {
-            const filtroDocente = document.getElementById('docente_select').value;
             const filtroClasse = document.getElementById('classe_select').value;
             
             let titolo = "Nessuna lezione";
             let messaggio = `Attualmente (<b>${ora_scuola}ª ora</b>) non risulta nessuna lezione.`;
 
-            if (filtroDocente) {
+            if (filtroDocenteSelezionato) {
                 titolo = "Docente Libero";
-                messaggio = `Il prof. <b>${filtroDocente}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
+                messaggio = `Il prof. <b>${filtroDocenteSelezionato}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
             } else if (filtroClasse) {
                 titolo = "Classe Libera";
                 messaggio = `La classe <b>${filtroClasse}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
             }
 
-            // NON aggiungiamo 'senza-lezioni', così lo sfondo resta Blu (bello).
-            // Usiamo un banner bianco/verde pulito.
             box.innerHTML = `
                 <div class="banner-lezioni" style="background: #fff; border-color: #4caf50; color: #2e7d32;">
                     <div class="icona-banner" style="font-size: 2.5em;">☕</div>
@@ -291,21 +294,23 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
     }
 
     /* === GENERAZIONE TABELLA === */
-    const totalPages = Math.ceil(risultati.length / resultsPerPage);
+    const totalPages = Math.ceil(risultati.length / risultatiPerPagina);
     
     if (!adessoMode && totalPages > 1) {
-        pagi = generaPaginazione(currentPage, totalPages);
+        if (typeof generaPaginazione !== 'undefined') {
+             pagi = generaPaginazione(paginaCorrente, totalPages);
+        }
     }
     
-    const risultatiDaMostrare = adessoMode ? risultati : risultati.slice((currentPage - 1) * resultsPerPage, (currentPage - 1) * resultsPerPage + resultsPerPage);
+    const risultatiDaMostrare = adessoMode ? risultati : risultati.slice((paginaCorrente - 1) * risultatiPerPagina, (paginaCorrente - 1) * risultatiPerPagina + risultatiPerPagina);
 
     if (risultatiDaMostrare.length === 0 && !adessoMode) {
         table = `<table class="orario-tabella">
             <tbody><tr><td colspan="5" style="text-align:center; color:#e02538;"><em>Nessun risultato trovato.</em></td></tr></tbody>
         </table>`;
     } else {
-        // Nota: width: auto nella tabella permette di stringersi
-        table = `<table class="orario-tabella" style="${adessoMode ? 'width: auto;' : ''}">
+        
+        table = `<table class="orario-tabella ${adessoMode ? 'now-mode' : ''}">
             <thead>
                 <tr>
                     <th>Classe</th>
@@ -316,15 +321,34 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
                 </tr>
             </thead>
             <tbody>
-                ${risultatiDaMostrare.map(item => `
-                    <tr>
-                        <td><b>${item.Classe}</b></td>
-                        ${!adessoMode ? `<td>${item.Giorno}</td>` : ''}
-                        <td>${item.Ora}ª</td>
-                        <td>${estraiDocenti(item.Descrizione).join('<br>')}</td>
-                        <td>${item.Descrizione.replace(/\(.*\)/, '')} <br> <small>${estraiAula(item.Descrizione)}</small></td>
-                    </tr>
-                `).join('')}
+                ${risultatiDaMostrare.map(item => {
+                    
+                    // 1. Contenuto della cella Docente (solo i nomi)
+                    const cellaDocente = `${estraiDocenti(item.Descrizione).join('<br>')}`;
+
+                    // 2. Aggiungi la classe alla Materia/Aula se si sta filtrando per Docente
+                    let classeInMateria = '';
+                    if (!adessoMode && filtroDocenteSelezionato) {
+                        // La classe sarà sotto la materia e prima dell'aula (in grassetto)
+                        classeInMateria = `<br><span style="font-size: 0.9em; font-weight: 700; color: #1976D2;">Classe: ${item.Classe}</span>`;
+                    }
+                    
+                    // 3. Contenuto della cella Materia/Aula: Materia + Classe (se filtro Docente) + Aula
+                    const materia = item.Descrizione.replace(/\s*\(.*\)/, '').trim(); 
+                    const aula = estraiAula(item.Descrizione);
+                    const cellaMateria = `${materia}${classeInMateria} <br> <small>${aula}</small>`;
+
+
+                    return `
+                        <tr>
+                            <td><b>${item.Classe}</b></td>
+                            ${!adessoMode ? `<td>${item.Giorno}</td>` : ''}
+                            <td>${item.Ora}ª</td>
+                            <td class="cella-docente">${cellaDocente}</td>
+                            <td class="cella-materia">${cellaMateria}</td>
+                        </tr>
+                    `;
+                }).join('')}
             </tbody>
         </table>`;
     }
@@ -340,18 +364,13 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
         </div>`;
     }
 
-    // MODIFICA CHIAVE PER LO SPAZIO BIANCO:
-    // width: fit-content e margin: 0 auto centrano il box e lo stringono al contenuto.
-    let containerStyle = "";
-    if (adessoMode) {
-        containerStyle = "width: fit-content; margin: 0 auto; display: table;"; 
-    }
+    let extraClass = adessoMode ? "mode-adesso" : "";
 
     box.innerHTML = `
         <div class="tabella-e-pagine">
             ${contatore}
             ${pagi}
-            <div class="contenitore-tabella" style="${containerStyle}">
+            <div class="contenitore-tabella ${extraClass}">
                 ${table}
             </div>
         </div>`;
@@ -396,9 +415,13 @@ function mostraGrigliaOrario(risultati, tipo) {
                     materia = materia.replace(/[\(\);,]/g, '');
                     materia = materia.replace(/\s{2,}/g, ' ').replace(/\s+-\s+/g, '-').trim();
 
+                           // Aggiungi la classe se è selezionato un docente
+                    const classeText = tipo === 'docente' ? `<div class="riga-classe">Classe: ${item.Classe}</div>` : '';
+                    
                     let contenuto = `
                         <div class="riga-materia">${materia || 'Materia non trovata'}</div>
                         ${docenteText ? `<div class="riga-docente">${docenteText}</div>` : ''}
+                        ${classeText}
                     `;
                     table += `<div class="cella-lezione">${contenuto}</div>`;
                 });
