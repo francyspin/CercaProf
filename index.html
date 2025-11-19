@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Orario Scolastico ITT</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,6 +20,11 @@
                 Annulla Filtri
             </button>
         </div>
+
+        <!-- Pulsante modalità scura -->
+        <button id="darkModeToggle" class="dark-mode-btn" aria-pressed="false"
+            title="Attiva/disattiva modalità scura">🌙 Modalità Scura</button>
+
 
         <div class="form-group-filtri">
             <select id="classe_select">
@@ -66,4 +69,59 @@
 
     <script src="script.js"></script>
 </body>
+<script>
+(function(){
+  // crea bottone se manca
+  function ensureButton() {
+    let btn = document.getElementById('darkModeToggle');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'darkModeToggle';
+      btn.className = 'dark-mode-btn';
+      btn.title = 'Attiva/disattiva modalità scura';
+      btn.innerText = '🌙 Modalità Scura';
+      document.body.appendChild(btn);
+    }
+    return btn;
+  }
+
+  function setDarkMode(on, save=true) {
+    if (on) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    // aria-pressed + testo bottone
+    const btn = document.getElementById('darkModeToggle');
+    if (btn) {
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.innerText = on ? '☀️ Modalità Chiara' : '🌙 Modalità Scura';
+    }
+    if (save) localStorage.setItem('itt_dark_mode', on ? '1' : '0');
+  }
+  
+  // all'avvio, applica preferenza salvata (se presente)
+  document.addEventListener('DOMContentLoaded', function(){
+    const btn = ensureButton();
+
+    // leggi preferenza salvata o preferenza sistema
+    const saved = localStorage.getItem('itt_dark_mode');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === '1') {
+      setDarkMode(true, false);
+    } else if (saved === '0') {
+      setDarkMode(false, false);
+    } else {
+      // nessuna preferenza salvata -> segui sistema
+      setDarkMode(prefersDark, false);
+    }
+
+    btn.addEventListener('click', function(){
+      const isOn = document.body.classList.contains('dark-mode');
+      setDarkMode(!isOn, true);
+    });
+  });
+})();
+</script>
+
 </html>

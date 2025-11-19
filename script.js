@@ -482,5 +482,7 @@ function generaPaginazione(currentPage, totalPages) {
     return pagi;
 }
 
+
+
 /* === AVVIO PAGINA === */
 document.addEventListener('DOMContentLoaded', mostraHome);
