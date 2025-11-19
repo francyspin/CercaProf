@@ -458,7 +458,7 @@ function oraCorrenteScuola() {
         let eMinuti = eH * 60 + eM;
         if(nowMinuti >= sMinuti && nowMinuti < eMinuti) return (i+1).toString();
     }
-    return "";
+    return " ";
 }
 
 /* === PAGINAZIONE === */
@@ -481,8 +481,6 @@ function generaPaginazione(currentPage, totalPages) {
     pagi += `</div>`;
     return pagi;
 }
-
-
 
 /* === AVVIO PAGINA === */
 document.addEventListener('DOMContentLoaded', mostraHome);
