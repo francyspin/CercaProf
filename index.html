@@ -2,126 +2,86 @@
 <html lang="it">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Orario Scolastico ITT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Orario Scolastico ITT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Orario Scolastico ITTVT</h1>
-    <div id="orologio-dinamico"></div>
-    <div class="form-group-wrapper">
-        <div class="form-group-principale">
-            <button onclick="cercaAdesso()" class="btn-adesso">
-                🚀 Vedi Lezioni Attive (Adesso)
-            </button>
-            <button onclick="resetFiltri()" class="btn-reset">
-                Annulla Filtri
-            </button>
-        </div>
+  <!-- Orologio Dinamico -->
+  <div id="orologio-dinamico">
+    <div class="ora-corrente">--:--</div>
+    <div class="ora-scolastica">Caricamento...</div>
+  </div>
 
-        <!-- Pulsante modalità scura -->
-        <button id="darkModeToggle" class="dark-mode-btn" aria-pressed="false"
-            title="Attiva/disattiva modalità scura">🌙 Modalità Scura</button>
+  <!-- Dark Mode Button -->
+  <button id="darkModeToggle" class="dark-mode-btn" aria-pressed="false" title="Attiva/disattiva modalità scura">🌙 Modalità Scura</button>
 
+  <h1>Orario Scolastico ITTVT</h1>
 
-        <div class="form-group-filtri">
-            <select id="classe_select">
-                <option value="">Filtra per Classe...</option>
-            </select>
-            <select id="docente_select">
-                <option value="">Filtra per Docente...</option>
-            </select>
-            <select id="aula_select">
-                <option value="">Filtra per Aula...</option>
-            </select>
-
-            <select id="giorno_select">
-                <option value="">Qualsiasi Giorno</option>
-                <option value="Lun">Lunedì</option>
-                <option value="Mar">Martedì</option>
-                <option value="Mer">Mercoledì</option>
-                <option value="Gio">Giovedì</option>
-                <option value="Ven">Venerdì</option>
-            </select>
-            <select id="ora_select">
-                <option value="">Qualsiasi Ora</option>
-                <option value="1">1ª ora</option>
-                <option value="2">2ª ora</option>
-                <option value="3">3ª ora</option>
-                <option value="4">4ª ora</option>
-                <option value="5">5ª ora</option>
-                <option value="6">6ª ora</option>
-                <option value="7">7ª ora</option>
-            </select>
-        </div>
+  <div class="form-group-wrapper">
+    <!-- Filtri prima -->
+    <div class="form-group-filtri">
+      <select id="classe_select">
+        <option value="">Filtra per Classe...</option>
+      </select>
+      <select id="docente_select">
+        <option value="">Filtra per Docente...</option>
+      </select>
+      <select id="aula_select">
+        <option value="">Filtra per Aula...</option>
+      </select>
+      <select id="giorno_select">
+        <option value="">Qualsiasi Giorno</option>
+        <option value="Lun">Lunedì</option>
+        <option value="Mar">Martedì</option>
+        <option value="Mer">Mercoledì</option>
+        <option value="Gio">Giovedì</option>
+        <option value="Ven">Venerdì</option>
+      </select>
+      <select id="ora_select">
+        <option value="">Qualsiasi Ora</option>
+        <option value="1">1ª ora</option>
+        <option value="2">2ª ora</option>
+        <option value="3">3ª ora</option>
+        <option value="4">4ª ora</option>
+        <option value="5">5ª ora</option>
+        <option value="6">6ª ora</option>
+        <option value="7">7ª ora</option>
+      </select>
     </div>
 
-    <!-- Banner benvenuto fuori dal box -->
-    <div id="banner-benvenuto"></div>
-    
-    <!-- Banner frasi cicliche sotto il benvenuto -->
-    <div id="banner-frasi"></div>
+    <!-- Pulsanti di azione dopo -->
+    <div class="form-group-principale">
+      <button onclick="cercaAdesso()" class="btn-adesso">
+        🚀 Vedi Lezioni Attive
+      </button>
+      <button onclick="resetFiltri()" class="btn-reset">
+        Annulla Filtri
+      </button>
+    </div>
+  </div>
 
-    <!-- Il box dei risultati/tabella -->
-    <div id="risultati"></div>
+  <!-- Banner benvenuto -->
+  <div id="banner-benvenuto"></div>
 
-    <script src="script.js"></script>
+  <!-- Banner frasi cicliche -->
+  <div id="banner-frasi"></div>
+
+  <!-- Risultati -->
+  <div id="risultati"></div>
+
+  <!-- COLLEGAMENTO AL FILE JS ESTERNO -->
+  <script src="script.js"></script>
+
+  <div class="bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
 </body>
-<script>
-(function(){
-  // crea bottone se manca
-  function ensureButton() {
-    let btn = document.getElementById('darkModeToggle');
-    if (!btn) {
-      btn = document.createElement('button');
-      btn.id = 'darkModeToggle';
-      btn.className = 'dark-mode-btn';
-      btn.title = 'Attiva/disattiva modalità scura';
-      btn.innerText = '🌙 Modalità Scura';
-      document.body.appendChild(btn);
-    }
-    return btn;
-  }
-
-  function setDarkMode(on, save=true) {
-    if (on) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-    // aria-pressed + testo bottone
-    const btn = document.getElementById('darkModeToggle');
-    if (btn) {
-      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      btn.innerText = on ? '☀️ Modalità Chiara' : '🌙 Modalità Scura';
-    }
-    if (save) localStorage.setItem('itt_dark_mode', on ? '1' : '0');
-  }
-
-  // all'avvio, applica preferenza salvata (se presente)
-  document.addEventListener('DOMContentLoaded', function(){
-    const btn = ensureButton();
-
-    // leggi preferenza salvata o preferenza sistema
-    const saved = localStorage.getItem('itt_dark_mode');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (saved === '1') {
-      setDarkMode(true, false);
-    } else if (saved === '0') {
-      setDarkMode(false, false);
-    } else {
-      // nessuna preferenza salvata -> segui sistema
-      setDarkMode(prefersDark, false);
-    }
-
-    btn.addEventListener('click', function(){
-      const isOn = document.body.classList.contains('dark-mode');
-      setDarkMode(!isOn, true);
-    });
-  });
-})();
-</script>
 
 </html>

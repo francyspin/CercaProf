@@ -1,21 +1,20 @@
+/* =========================================================
+   JS PULITO E UNIFICATO - Versione "orario_unificato"
+   ========================================================= */
+
+/* ============================
+   VARIABILI GLOBALI
+   ============================ */
 let orario = null;
 let docentiSet = new Set(), aulaSet = new Set(), classiSet = new Set();
 let currentPage = 1;
 const resultsPerPage = 5;
 
-window.vaiPagina = function(page) {
-    currentPage = page;
-    cerca();
-};
-
-window.resetFiltri = function() {
-    currentPage = 1;
-    mostraHome();
-};
-
-/* === FUNZIONI DI ESTRAZIONE === */
+/* ============================
+   FUNZIONI UTILI (ESTRAZIONE)
+   ============================ */
 function estraiDocenti(desc) {
-    // Prende solo i docenti dalla prima parentesi tonda
+    if (!desc || typeof desc !== 'string') return [];
     let match = desc.match(/\(([^()]*)\)/);
     if (match && match[1]) {
         return match[1].split(/[;,]\s*/).map(x => x.trim()).filter(x => x.length > 0);
@@ -23,7 +22,7 @@ function estraiDocenti(desc) {
     return [];
 }
 function estraiAula(desc) {
-    // Prende solo l'aula dalla seconda parentesi tonda (se c'è)
+    if (!desc || typeof desc !== 'string') return '';
     let matches = desc.match(/\(([^()]*)\)/g);
     if (matches && matches.length > 1) {
         let aulaRaw = matches[1].replace(/[()]/g, '').trim();
@@ -32,9 +31,12 @@ function estraiAula(desc) {
     return '';
 }
 
-/* === LOGICA DI BANNER E FRASI === */
+/* ============================
+   BANNER / FRASI CICLICHE
+   ============================ */
 function mostraBannerBenvenuto() {
-    document.getElementById('banner-benvenuto').innerHTML = `<span>🎓 Benvenuto! </span>`;
+    const el = document.getElementById('banner-benvenuto');
+    if (el) el.innerHTML = `<span>🎓 Benvenuto! </span>`;
 }
 const frasi = [
     "Seleziona i filtri sopra per cercare nell'orario scolastico.",
@@ -45,56 +47,57 @@ const frasi = [
         const d = new Date();
         const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
         const giorno = giorni[d.getDay()];
-        
         let oraScuola = oraCorrenteScuola();
-        
-        // Verifica se siamo in un giorno scolastico (Lun-Ven)
         const isGiornoScolastico = giorno !== 'Dom' && giorno !== 'Sab';
-        
         if (oraScuola !== null) {
-            // Siamo in orario scolastico
             return `Oggi è ${d.toLocaleDateString()}, ora scolastica attuale: <b>${oraScuola}ª ora</b>`;
         } else if (isGiornoScolastico) {
-            // Giorno scolastico ma fuori orario
             return `Oggi è ${d.toLocaleDateString()}, <b>attualmente fuori orario scolastico</b> ⏰`;
         } else {
-            // Weekend
             return `Oggi è ${d.toLocaleDateString()}, <b>buon weekend!</b> 🎉`;
         }
     }
 ];
 function ciclaBannerFrasi() {
     const box = document.getElementById('banner-frasi');
+    if (!box) return;
     let idx = 0;
     box.innerHTML = `<div class="frase-ciclica">${typeof frasi[idx] === "function" ? frasi[idx]() : frasi[idx]}</div>`;
-    if(box.dataset.cicla) return;
+    if (box.dataset.cicla) return;
     box.dataset.cicla = "1";
     setInterval(() => {
         idx = (idx + 1) % frasi.length;
-        box.querySelector(".frase-ciclica").style.opacity = 0;
+        const node = box.querySelector(".frase-ciclica");
+        if (!node) return;
+        node.style.opacity = 0;
         setTimeout(() => {
             const frase = typeof frasi[idx] === "function" ? frasi[idx]() : frasi[idx];
-            box.querySelector(".frase-ciclica").innerHTML = frase;
-            box.querySelector(".frase-ciclica").style.opacity = 1;
+            node.innerHTML = frase;
+            node.style.opacity = 1;
         }, 400);
     }, 3400);
 }
 function mostraHome() {
-    document.getElementById('banner-benvenuto').style.display = "";
-    document.getElementById('banner-frasi').style.display = "";
+    const bBen = document.getElementById('banner-benvenuto');
+    const bFra = document.getElementById('banner-frasi');
+    if (bBen) bBen.style.display = "";
+    if (bFra) bFra.style.display = "";
     mostraBannerBenvenuto();
     ciclaBannerFrasi();
-    document.getElementById('risultati').style.display = "none";
+    const risultati = document.getElementById('risultati');
+    if (risultati) risultati.style.display = "none";
     document.body.classList.remove('senza-lezioni');
-    // Resetta i filtri
-    document.getElementById('classe_select').value = "";
-    document.getElementById('docente_select').value = "";
-    document.getElementById('aula_select').value = "";
-    document.getElementById('giorno_select').value = "";
-    document.getElementById('ora_select').value = "";
+
+    // Resetta filtri (se esistono)
+    ['classe_select','docente_select','aula_select','giorno_select','ora_select'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = "";
+    });
 }
 
-/* === INTERVALLI ORARI === */
+/* ============================
+   INTERVALLI ORARI (per oraCorrenteScuola)
+   ============================ */
 const orari_scuola = {
     "Lun": ["08:00-09:00","09:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00","13:20-14:10"],
     "Ven": ["08:00-09:00","09:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00","13:20-14:10"],
@@ -103,8 +106,41 @@ const orari_scuola = {
     "Gio": ["08:00-08:50","08:50-09:45","09:45-10:40","10:40-11:35","11:35-12:30","12:30-13:20","13:20-14:10"],
 };
 
-/* === POPOLAMENTO FILTRI === */
+/* ============================
+   OROLOGIO DINAMICO
+   ============================ */
+function aggiornaOrologio() {
+  const now = new Date();
+  const ore = String(now.getHours()).padStart(2, '0');
+  const minuti = String(now.getMinutes()).padStart(2, '0');
+  const secondi = String(now.getSeconds()).padStart(2, '0');
+  
+  const oraCorrente = document.querySelector('#orologio-dinamico .ora-corrente');
+  const oraScolastica = document.querySelector('#orologio-dinamico .ora-scolastica');
+  
+  if (oraCorrente) {
+    oraCorrente.textContent = `${ore}:${minuti}:${secondi}`;
+  }
+  
+  const oraScolasticaCalcolata = calcolaOraScolastica(now);
+  
+  if (oraScolastica) {
+    oraScolastica.textContent = oraScolasticaCalcolata.testo;
+    if (oraScolasticaCalcolata.fuori) {
+      oraScolastica.classList.add('fuori-orario');
+    } else {
+      oraScolastica.classList.remove('fuori-orario');
+    }
+  }
+}
+setInterval(aggiornaOrologio, 1000);
+aggiornaOrologio();
+
+/* ============================
+   POPOLAMENTO SELECT (filtri)
+   ============================ */
 function aggiornaSelect(sel, values, placeholderText) {
+    if (!sel) return;
     sel.innerHTML = '';
     let ph = document.createElement("option");
     ph.value = "";
@@ -119,21 +155,31 @@ function aggiornaSelect(sel, values, placeholderText) {
     });
 }
 
+/* ============================
+   CARICAMENTO DATI (JSON)
+   ============================ */
 fetch('orario_unificato.json')
     .then(resp => resp.json())
     .then(data => {
         orario = data;
         data.forEach(item => {
-            classiSet.add(item.Classe);
-            estraiDocenti(item.Descrizione).forEach(nome => docentiSet.add(nome));
-            let aula = estraiAula(item.Descrizione);
-            if(aula) aulaSet.add(aula);
+            if (item && item.Classe) classiSet.add(item.Classe);
+            if (item && item.Descrizione) {
+                estraiDocenti(item.Descrizione).forEach(nome => {
+                    if (nome) docentiSet.add(nome);
+                });
+                let aula = estraiAula(item.Descrizione);
+                if (aula) aulaSet.add(aula);
+            }
         });
+
         aggiornaSelect(document.getElementById('classe_select'), classiSet, "Filtra per Classe...");
         aggiornaSelect(document.getElementById('docente_select'), docentiSet, "Filtra per Docente...");
         aggiornaSelect(document.getElementById('aula_select'), aulaSet, "Filtra per Aula...");
+
         ['classe_select','docente_select','aula_select','giorno_select','ora_select'].forEach(id => {
-            document.getElementById(id).addEventListener('change', function() {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('change', function() {
                 currentPage = 1;
                 cerca();
             });
@@ -141,24 +187,27 @@ fetch('orario_unificato.json')
     })
     .catch(error => console.error('Errore nel caricamento dei dati JSON:', error));
 
-/* === FUNZIONI DI RICERCA CENTRALE === */
+/* ============================
+   RICERCA / FILTRI PRINCIPALE
+   ============================ */
 function cerca() {
-    document.getElementById('banner-benvenuto').style.display = "none";
-    document.getElementById('banner-frasi').style.display = "none";
+    const bBen = document.getElementById('banner-benvenuto');
+    const bFra = document.getElementById('banner-frasi');
+    if (bBen) bBen.style.display = "none";
+    if (bFra) bFra.style.display = "none";
     document.body.classList.remove('senza-lezioni');
 
-    const classe = document.getElementById('classe_select').value;
-    const docente = document.getElementById('docente_select').value;
-    const aula = document.getElementById('aula_select').value;
-    const giorno = document.getElementById('giorno_select').value;
-    const ora = document.getElementById('ora_select').value;
+    const classe = (document.getElementById('classe_select') || {}).value || "";
+    const docente = (document.getElementById('docente_select') || {}).value || "";
+    const aula = (document.getElementById('aula_select') || {}).value || "";
+    const giorno = (document.getElementById('giorno_select') || {}).value || "";
+    const ora = (document.getElementById('ora_select') || {}).value || "";
 
     if (!classe && !docente && !aula && !giorno && !ora) {
         mostraHome();
         return;
     }
 
-    // Verifica che il dataset sia pronto
     if (!orario || orario.length === 0) {
         alert('Errore: dati non caricati.');
         return;
@@ -166,15 +215,14 @@ function cerca() {
 
     let vistaGriglia = false, tipoGriglia = '';
     if (classe && !docente && !aula && !giorno && !ora) {
-        vistaGriglia = true;
-        tipoGriglia = 'classe';
+        vistaGriglia = true; tipoGriglia = 'classe';
     } else if (docente && !classe && !aula && !giorno && !ora) {
-        vistaGriglia = true;
-        tipoGriglia = 'docente';
+        vistaGriglia = true; tipoGriglia = 'docente';
     }
 
     const boxRisultati = document.getElementById('risultati');
-    boxRisultati.classList.add('risultati-nascosti');
+    if (boxRisultati) boxRisultati.classList.add('risultati-nascosti');
+
     setTimeout(() => {
         let risultati = orario.filter(item => {
             let ok = true;
@@ -188,46 +236,52 @@ function cerca() {
         });
 
         risultati.sort((a, b) => {
-            const giorni = ["Lun", "Mar", "Mer", "Gio", "Ven"];
+            const giorniArr = ["Lun", "Mar", "Mer", "Gio", "Ven"];
             if (a.Giorno !== b.Giorno) {
-                return giorni.indexOf(a.Giorno) - giorni.indexOf(b.Giorno);
+                return giorniArr.indexOf(a.Giorno) - giorniArr.indexOf(b.Giorno);
             }
             return Number(a.Ora) - Number(b.Ora);
         });
 
-        if (vistaGriglia) {
-            mostraGrigliaOrario(risultati, tipoGriglia);
-        } else {
-            mostraRisultati(risultati);
+        if (vistaGriglia) mostraGrigliaOrario(risultati, tipoGriglia);
+        else mostraRisultati(risultati);
+
+        if (boxRisultati) {
+            boxRisultati.style.display = 'block';
+            setTimeout(() => { boxRisultati.classList.remove('risultati-nascosti'); }, 30);
         }
-        boxRisultati.style.display = 'block';
-        setTimeout(() => { boxRisultati.classList.remove('risultati-nascosti'); }, 30);
     }, 80);
 }
 
+/* ============================
+   "VEDI ADESSO" (cercaAdesso)
+   ============================ */
 function cercaAdesso() {
-    document.getElementById('banner-benvenuto').style.display = "none";
-    document.getElementById('banner-frasi').style.display = "none";
+    const bBen = document.getElementById('banner-benvenuto');
+    const bFra = document.getElementById('banner-frasi');
+    if (bBen) bBen.style.display = "none";
+    if (bFra) bFra.style.display = "none";
     document.body.classList.remove('senza-lezioni');
-    
+
     const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
     const oggi = new Date();
     const giorno = giorni[oggi.getDay()];
     const ora_scuola = oraCorrenteScuola();
-    
+
     currentPage = 1;
-    const classe = document.getElementById('classe_select').value;
-    const docente = document.getElementById('docente_select').value;
-    const aula = document.getElementById('aula_select').value;
-    
+    const classe = (document.getElementById('classe_select') || {}).value || "";
+    const docente = (document.getElementById('docente_select') || {}).value || "";
+    const aula = (document.getElementById('aula_select') || {}).value || "";
+
     const boxRisultati = document.getElementById('risultati');
-    boxRisultati.classList.add('risultati-nascosti');
-    boxRisultati.style.display = 'none';
+    if (boxRisultati) {
+        boxRisultati.classList.add('risultati-nascosti');
+        boxRisultati.style.display = 'none';
+    }
 
     setTimeout(() => {
         let risultati = [];
-        
-        // Eseguiamo il filtro solo se siamo in orario scolastico (ora_scuola non è null)
+
         if (ora_scuola !== null) {
             risultati = orario.filter(item => {
                 let ok = true;
@@ -241,14 +295,19 @@ function cercaAdesso() {
             });
         }
 
-        // Passiamo i risultati e lo stato dell'ora scolastica
         mostraRisultati(risultati, ora_scuola, giorno, true);
-        
-        boxRisultati.style.display = 'block';
-        setTimeout(() => { boxRisultati.classList.remove('risultati-nascosti'); }, 10);
+
+        if (boxRisultati) {
+            boxRisultati.style.display = 'block';
+            setTimeout(() => { boxRisultati.classList.remove('risultati-nascosti'); }, 10);
+        }
     }, 50);
 }
 
+/* ============================
+   MOSTRA RISULTATI (tabella)
+   Versione CORRETTA con Colori
+   ============================ */
 function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode = false){
     const paginaCorrente = typeof currentPage !== 'undefined' ? currentPage : 1; 
     const risultatiPerPagina = typeof resultsPerPage !== 'undefined' ? resultsPerPage : 15;
@@ -259,180 +318,25 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
     let pagi = "";
     let table = "";
     
-    const filtroDocenteSelezionato = document.getElementById('docente_select').value;
+    const filtroDocenteSelezionato = (document.getElementById('docente_select') || {}).value || "";
 
-    /* === GESTIONE "VEDI LEZIONI ATTIVE" (ADESSO MODE) === */
+    /* === ADESSO MODE === */
     if (adessoMode) {
-        
-        // Verifica se l'ora scolastica è valida
         const oraValida = ora_scuola && ora_scuola.trim() !== "" && !isNaN(parseInt(ora_scuola));
-        
-        // CASO 1: Fuori orario scolastico
         if (!oraValida) {
             document.body.classList.add('senza-lezioni');
-            
-            // Determina se è weekend o giorno scolastico
-            const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
-            const oggi = new Date();
-            const giornoCorrente = giorni[oggi.getDay()];
-            const isWeekend = giornoCorrente === 'Dom' || giornoCorrente === 'Sab';
-            
-            let messaggioExtra = isWeekend 
-                ? "Goditi il weekend! 🎉" 
-                : "Le lezioni sono finite oppure non sono ancora iniziate. ⏰";
-            
-            box.innerHTML = `
-                <div class="banner-lezioni">
-                    <div class="icona-banner">⚠️</div>
-                    <h2>Non ci sono lezioni attive al momento!</h2>
-                    <p>${messaggioExtra}</p>
-                </div>
-            `;
-            return;
-        }
-
-        // CASO 2: In orario, ma nessun risultato (Docente/Classe LIBERI)
-        if (risultati.length === 0) {
-            const filtroClasse = document.getElementById('classe_select').value;
-            
-            let titolo = "Nessuna lezione";
-            let messaggio = `Attualmente (<b>${ora_scuola}ª ora</b>) non risulta nessuna lezione.`;
-
-            if (filtroDocenteSelezionato) {
-                titolo = "Docente Libero";
-                messaggio = `Il prof. <b>${filtroDocenteSelezionato}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
-            } else if (filtroClasse) {
-                titolo = "Classe Libera";
-                messaggio = `La classe <b>${filtroClasse}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
-            }
-
-            box.innerHTML = `
-                <div class="banner-lezioni" style="background: #fff; border-color: #4caf50; color: #2e7d32;">
-                    <div class="icona-banner" style="font-size: 2.5em;">☕</div>
-                    <h2 style="color: #2e7d32; margin-bottom: 10px;">${titolo}</h2>
-                    <p style="color: #4caf50; font-weight:600;">${messaggio}</p>
-                </div>
-            `;
-            return;
-        }
-    }
-
-    /* === GENERAZIONE TABELLA === */
-    const totalPages = Math.ceil(risultati.length / risultatiPerPagina);
-    
-    if (!adessoMode && totalPages > 1) {
-        if (typeof generaPaginazione !== 'undefined') {
-             pagi = generaPaginazione(paginaCorrente, totalPages);
-        }
-    }
-    
-    const risultatiDaMostrare = adessoMode ? risultati : risultati.slice((paginaCorrente - 1) * risultatiPerPagina, (paginaCorrente - 1) * risultatiPerPagina + risultatiPerPagina);
-
-    if (risultatiDaMostrare.length === 0 && !adessoMode) {
-        table = `<table class="orario-tabella">
-            <tbody><tr><td colspan="5" style="text-align:center; color:#e02538;"><em>Nessun risultato trovato.</em></td></tr></tbody>
-        </table>`;
-    } else {
-        
-        table = `<table class="orario-tabella ${adessoMode ? 'now-mode' : ''}">
-            <thead>
-                <tr>
-                    <th>Classe</th>
-                    ${!adessoMode ? '<th>Giorno</th>' : ''} 
-                    <th>Ora</th>
-                    <th>Docente</th>
-                    <th>Materia/Aula</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${risultatiDaMostrare.map(item => {
-                    
-                    const cellaDocente = `${estraiDocenti(item.Descrizione).join('<br>')}`;
-
-                    let classeInMateria = '';
-                    if (!adessoMode && filtroDocenteSelezionato) {
-                        classeInMateria = `<br><span style="font-size: 0.9em; font-weight: 700; color: #1976D2;">Classe: ${item.Classe}</span>`;
-                    }
-                    
-                    const materia = item.Descrizione.replace(/\s*\(.*\)/, '').trim(); 
-                    const aula = estraiAula(item.Descrizione);
-                    const cellaMateria = `${materia}${classeInMateria} <br> <small>${aula}</small>`;
-
-                    return `
-                        <tr>
-                            <td><b>${item.Classe}</b></td>
-                            ${!adessoMode ? `<td>${item.Giorno}</td>` : ''}
-                            <td>${item.Ora}ª</td>
-                            <td class="cella-docente">${cellaDocente}</td>
-                            <td class="cella-materia">${cellaMateria}</td>
-                        </tr>
-                    `;
-                }).join('')}
-            </tbody>
-        </table>`;
-    }
-
-    let contatore = "";
-    if (!adessoMode) {
-        contatore = `<div class="contatore-risultati" style="text-align:left; margin-bottom:10px;">
-            Trovati ${risultati.length} risultati.
-        </div>`;
-    } else {
-        contatore = `<div class="contatore-risultati" style="text-align:center; margin-bottom:15px; font-size:1.1em; color:#0b4c8c;">
-            🟢 Lezioni in corso adesso (<b>${ora_scuola}ª ora</b>)
-        </div>`;
-    }
-
-    let extraClass = adessoMode ? "mode-adesso" : "";
-
-    box.innerHTML = `
-        <div class="tabella-e-pagine">
-            ${contatore}
-            ${pagi}
-            <div class="contenitore-tabella ${extraClass}">
-                ${table}
-            </div>
-        </div>`;
-}
-
-/* === MOSTRA RISULTATI (Tabella) === */
-function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode = false){
-    // Inizializza o usa la variabile globale, se non esiste la imposta a 1
-    const paginaCorrente = typeof currentPage !== 'undefined' ? currentPage : 1; 
-    const risultatiPerPagina = typeof resultsPerPage !== 'undefined' ? resultsPerPage : 15;
-
-    document.body.classList.remove('senza-lezioni');
-    
-    const box = document.getElementById('risultati');
-    let pagi = "";
-    let table = "";
-    
-    // Controlla se l'utente ha selezionato un docente per la logica di visualizzazione
-    const filtroDocenteSelezionato = document.getElementById('docente_select').value;
-
-    /* === GESTIONE "VEDI LEZIONI ATTIVE" (ADESSO MODE) === */
-    if (adessoMode) {
-        
-        // CASO 1: Fuori orario scolastico
-        if (!ora_scuola || ora_scuola === "" || typeof ora_scuola === "undefined") {
-            document.body.classList.add('senza-lezioni');
-            box.innerHTML = `
+            if (box) box.innerHTML = `
                 <div class="banner-lezioni">
                     <div class="icona-banner">⚠️</div>
                     <h2>Non ci sono lezioni attive al momento!</h2>
                     <p>Le lezioni sono finite oppure non sono ancora iniziate.</p>
-                </div>
-            `;
+                </div>`;
             return;
         }
-
-        // CASO 2: In orario, ma nessun risultato (Docente/Classe LIBERI)
         if (risultati.length === 0) {
-            const filtroClasse = document.getElementById('classe_select').value;
-            
+            const filtroClasse = (document.getElementById('classe_select') || {}).value || "";
             let titolo = "Nessuna lezione";
             let messaggio = `Attualmente (<b>${ora_scuola}ª ora</b>) non risulta nessuna lezione.`;
-
             if (filtroDocenteSelezionato) {
                 titolo = "Docente Libero";
                 messaggio = `Il prof. <b>${filtroDocenteSelezionato}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
@@ -440,27 +344,23 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
                 titolo = "Classe Libera";
                 messaggio = `La classe <b>${filtroClasse}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
             }
-
-            box.innerHTML = `
+            if (box) box.innerHTML = `
                 <div class="banner-lezioni" style="background: #fff; border-color: #4caf50; color: #2e7d32;">
                     <div class="icona-banner" style="font-size: 2.5em;">☕</div>
                     <h2 style="color: #2e7d32; margin-bottom: 10px;">${titolo}</h2>
                     <p style="color: #4caf50; font-weight:600;">${messaggio}</p>
-                </div>
-            `;
+                </div>`;
             return;
         }
     }
 
-    /* === GENERAZIONE TABELLA === */
+    /* === TABELLA / PAGINAZIONE === */
     const totalPages = Math.ceil(risultati.length / risultatiPerPagina);
-    
     if (!adessoMode && totalPages > 1) {
         if (typeof generaPaginazione !== 'undefined') {
              pagi = generaPaginazione(paginaCorrente, totalPages);
         }
     }
-    
     const risultatiDaMostrare = adessoMode ? risultati : risultati.slice((paginaCorrente - 1) * risultatiPerPagina, (paginaCorrente - 1) * risultatiPerPagina + risultatiPerPagina);
 
     if (risultatiDaMostrare.length === 0 && !adessoMode) {
@@ -468,7 +368,6 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
             <tbody><tr><td colspan="5" style="text-align:center; color:#e02538;"><em>Nessun risultato trovato.</em></td></tr></tbody>
         </table>`;
     } else {
-        
         table = `<table class="orario-tabella ${adessoMode ? 'now-mode' : ''}">
             <thead>
                 <tr>
@@ -481,30 +380,27 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
             </thead>
             <tbody>
                 ${risultatiDaMostrare.map(item => {
+                    const docentiArray = estraiDocenti(item.Descrizione);
+                    const cellaDocente = docentiArray.join('<br>');
                     
-                    // 1. Contenuto della cella Docente (solo i nomi)
-                    const cellaDocente = `${estraiDocenti(item.Descrizione).join('<br>')}`;
-
-                    // 2. Aggiungi la classe alla Materia/Aula se si sta filtrando per Docente
                     let classeInMateria = '';
                     if (!adessoMode && filtroDocenteSelezionato) {
-                        // La classe sarà sotto la materia e prima dell'aula (in grassetto)
-                        classeInMateria = `<br><span style="font-size: 0.9em; font-weight: 700; color: #1976D2;">Classe: ${item.Classe}</span>`;
+                        classeInMateria = `<br><span class="cella-classe">(Classe: ${item.Classe})</span>`;
                     }
                     
-                    // 3. Contenuto della cella Materia/Aula: Materia + Classe (se filtro Docente) + Aula
                     const materia = item.Descrizione.replace(/\s*\(.*\)/, '').trim(); 
-                    const aula = estraiAula(item.Descrizione);
-                    const cellaMateria = `${materia}${classeInMateria} <br> <small>${aula}</small>`;
-
+                    const aulaRaw = estraiAula(item.Descrizione);
+                    const aulaHtml = aulaRaw ? `<br><small><span class="cella-aula">📍 ${aulaRaw}</span></small>` : '';
+                    
+                    const cellaMateria = `${materia}${classeInMateria}${aulaHtml}`;
 
                     return `
                         <tr>
-                            <td><b>${item.Classe}</b></td>
+                            <td class="cella-classe">${item.Classe}</td>
                             ${!adessoMode ? `<td>${item.Giorno}</td>` : ''}
                             <td>${item.Ora}ª</td>
                             <td class="cella-docente">${cellaDocente}</td>
-                            <td class="cella-materia">${cellaMateria}</td>
+                            <td>${cellaMateria}</td>
                         </tr>
                     `;
                 }).join('')}
@@ -512,30 +408,44 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
         </table>`;
     }
 
-    let contatore = "";
-    if (!adessoMode) {
-        contatore = `<div class="contatore-risultati" style="text-align:left; margin-bottom:10px;">
-            Trovati ${risultati.length} risultati.
-        </div>`;
-    } else {
-        contatore = `<div class="contatore-risultati" style="text-align:center; margin-bottom:15px; font-size:1.1em; color:#0b4c8c;">
-            🟢 Lezioni in corso adesso (<b>${ora_scuola}ª ora</b>)
-        </div>`;
-    }
-
-    let extraClass = adessoMode ? "mode-adesso" : "";
-
-    box.innerHTML = `
-        <div class="tabella-e-pagine">
-            ${contatore}
-            ${pagi}
-            <div class="contenitore-tabella ${extraClass}">
-                ${table}
-            </div>
-        </div>`;
+let contatore = "";
+if (!adessoMode) {
+    contatore = `<div class="info-risultati">
+        <span class="icona-risultati">📋</span>
+        <strong>${risultati.length}</strong> ${risultati.length === 1 ? 'risultato trovato' : 'risultati trovati'}
+    </div>`;
+} else {
+    contatore = `<div class="info-risultati attive">
+        <span class="icona-risultati">🟢</span>
+        Lezioni in corso adesso (<strong>${ora_scuola}ª ora</strong>)
+    </div>`;
 }
 
-/* === MOSTRA RISULTATI (Griglia oraria) === */
+let extraClass = adessoMode ? "mode-adesso" : "";
+
+let headerRisultati = "";
+if (!adessoMode && risultati.length > 0) {
+    headerRisultati = `<div class="header-risultati">
+        <div class="contatore-risultati">${risultati.length} risultati</div>
+        ${pagi}
+    </div>`;
+} else if (!adessoMode) {
+    headerRisultati = pagi;
+}
+
+if (box) box.innerHTML = `
+    <div class="tabella-e-pagine">
+        ${contatore}
+        ${pagi}
+        <div class="contenitore-tabella ${extraClass}">
+            ${table}
+        </div>
+    </div>`;
+}
+
+/* ============================
+   MOSTRA GRIGLIA SETTIMANALE
+   ============================ */
 function mostraGrigliaOrario(risultati, tipo) {
     const giorni = ["Lun", "Mar", "Mer", "Gio", "Ven"];
     const ore = ["1", "2", "3", "4", "5", "6", "7"];
@@ -554,39 +464,45 @@ function mostraGrigliaOrario(risultati, tipo) {
     let table = `<table class="orario-griglia">
         <thead><tr><th>Ora</th>${giorni.map(g=>`<th>${g}</th>`).join('')}</tr></thead>
         <tbody>`;
+    
     ore.forEach(o => {
         table += `<tr><td class="ora-header">${o}ª</td>`;
         giorni.forEach(g => {
             const lezioni = griglia[g][o];
             table += `<td class="${lezioni.length > 0 ? 'lezione-attiva' : 'libero'}">`;
+            
             if (lezioni.length > 0) {
                 lezioni.forEach(item => {
                     const desc = item.Descrizione;
                     const docentiTrovati = estraiDocenti(desc);
-                    const docenteText = docentiTrovati.length > 0 ? docentiTrovati.join(' / ') : '';
                     const aulaText = estraiAula(desc);
 
-                    // Materia (ripulita)
+                    // Estrai materia pulita
                     let materia = desc;
-                    if(docentiTrovati.length > 0) docentiTrovati.forEach(d => materia = materia.replace(d, ''));
-                    if(aulaText) materia = materia.replace(aulaText, '');
-                    materia = materia.replace(/\([\s\S]*?\)/g, '');
-                    materia = materia.replace(/[\(\);,]/g, '');
-                    materia = materia.replace(/\s{2,}/g, ' ').replace(/\s+-\s+/g, '-').trim();
+                    if (docentiTrovati.length > 0) docentiTrovati.forEach(d => materia = materia.replace(d, ''));
+                    if (aulaText) materia = materia.replace(aulaText, '');
+                    materia = materia.replace(/\([\s\S]*?\)/g, '').replace(/[\(\);,]/g, '').replace(/\s{2,}/g, ' ').trim();
 
-                           // Aggiungi la classe se è selezionato un docente
-                    // Aggiungi la classe se è selezionato un docente
-                    const classeText = tipo === 'docente' ? `<div class="riga-classe">Classe: ${item.Classe}</div>` : '';
+                    // Layout semplice e pulito
+                    table += `<div class="cella-lezione">`;
+                    table += `<div class="materia-griglia">${materia}</div>`;
                     
-                    let contenuto = `
-                        <div class="riga-materia">${materia || 'Materia non trovata'}</div>
-                        ${docenteText ? `<div class="riga-docente">${docenteText}</div>` : ''}
-                        ${classeText}
-                    `;
-                    table += `<div class="cella-lezione">${contenuto}</div>`;
+                    if (docentiTrovati.length > 0) {
+                        table += `<div class="info-griglia"><span class="cella-docente">${docentiTrovati.join(', ')}</span></div>`;
+                    }
+                    
+                    if (tipo === 'docente') {
+                        table += `<div class="info-griglia"><span class="cella-classe">${item.Classe}</span></div>`;
+                    }
+                    
+                    if (aulaText) {
+                        table += `<div class="info-griglia"><span class="cella-aula">${aulaText}</span></div>`;
+                    }
+                    
+                    table += `</div>`;
                 });
             } else {
-                table += `<span class="slot-libero">LIBERO</span>`;
+                table += `<span class="slot-libero">—</span>`;
             }
             table += `</td>`;
         });
@@ -595,20 +511,61 @@ function mostraGrigliaOrario(risultati, tipo) {
     table += `</tbody></table>`;
 
     const box = document.getElementById('risultati');
-    box.innerHTML = `<div class="contenitore-tabella griglia-settimanale">${table}</div>`;
-    box.style.display = 'block';
-    setTimeout(() => { box.classList.remove('risultati-nascosti'); }, 30);
+    if (box) {
+        box.innerHTML = `<div class="contenitore-tabella griglia-settimanale">${table}</div>`;
+        box.style.display = 'block';
+        setTimeout(() => { box.classList.remove('risultati-nascosti'); }, 30);
+    }
 }
 
-/* === ORA CORRENTE === */
-/* === ORA CORRENTE === */
+
+/* ============================
+   calcolaOraScolastica / oraCorrenteScuola
+   ============================ */
+function calcolaOraScolastica(data) {
+  const giorno = data.getDay(); // 0=domenica, 6=sabato
+  const ore = data.getHours();
+  const minuti = data.getMinutes();
+  const minutiTotali = ore * 60 + minuti;
+  
+  if (giorno === 0 || giorno === 6) {
+    return { testo: '📅 Weekend', fuori: true };
+  }
+  
+  const orari = [
+    { inizio: 8 * 60, fine: 8 * 60 + 50, ora: 1 },
+    { inizio: 8 * 60 + 50, fine: 9 * 60 + 40, ora: 2 },
+    { inizio: 9 * 60 + 40, fine: 10 * 60 + 30, ora: 3 },
+    { inizio: 10 * 60 + 40, fine: 11 * 60 + 30, ora: 4 },
+    { inizio: 11 * 60 + 30, fine: 12 * 60 + 20, ora: 5 },
+    { inizio: 12 * 60 + 20, fine: 13 * 60 + 10, ora: 6 },
+    { inizio: 13 * 60 + 10, fine: 14 * 60, ora: 7 }
+  ];
+  
+  if (minutiTotali < orari[0].inizio) {
+    const minutiMancanti = orari[0].inizio - minutiTotali;
+    return { testo: `⏰ Inizio tra ${minutiMancanti} min`, fuori: true };
+  }
+  
+  for (let i = 0; i < orari.length; i++) {
+    const slot = orari[i];
+    if (minutiTotali >= slot.inizio && minutiTotali < slot.fine) {
+      const minutiRimasti = slot.fine - minutiTotali;
+      return { testo: `📚 ${slot.ora}ª ora (${minutiRimasti} min)`, fuori: false };
+    }
+    if (i < orari.length - 1 && minutiTotali >= slot.fine && minutiTotali < orari[i + 1].inizio) {
+      return { testo: `☕ Intervallo`, fuori: true };
+    }
+  }
+  return { testo: '🏠 Lezioni terminate', fuori: true };
+}
 function oraCorrenteScuola() {
     const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
     const oggi = new Date();
     const giorno = giorni[oggi.getDay()];
     const ora = oggi.getHours(), min = oggi.getMinutes();
     let intervalli = orari_scuola[giorno];
-    if(!intervalli) return null; // MODIFICATO: ritorna null invece di ""
+    if(!intervalli) return null;
     for(let i=0; i<intervalli.length; i++) {
         let [start, end] = intervalli[i].split("-");
         let [sH, sM] = start.split(":").map(Number);
@@ -618,29 +575,119 @@ function oraCorrenteScuola() {
         let eMinuti = eH * 60 + eM;
         if(nowMinuti >= sMinuti && nowMinuti < eMinuti) return (i+1).toString();
     }
-    return null; // MODIFICATO: ritorna null invece di " "
+    return null;
 }
 
-/* === PAGINAZIONE === */
+/* ============================
+   PAGINAZIONE (UI)
+   ============================ */
 function generaPaginazione(currentPage, totalPages) {
     const maxShown = 10;
     let start = Math.floor((currentPage-1) / maxShown) * maxShown + 1;
     let end = Math.min(start + maxShown - 1, totalPages);
-    let pagi = `<div class="paginazione">`;
+    let pagi = `<div class="paginazione-wrapper">
+        <div class="label-paginazione">Pagina:</div>
+        <div class="paginazione">`;
 
     if (start > 1) {
-        pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${start-1})">&laquo;</button>`;
+        pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${start-1})" title="Pagina precedente">&laquo;</button>`;
     }
     for (let p = start; p <= end; p++) {
         const isActive = p === currentPage;
         pagi += `<button class="btn-pagi ${isActive ? 'active' : ''}" onclick="window.vaiPagina(${p})">${p}</button>`;
     }
     if (end < totalPages) {
-        pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${end+1})">&raquo;</button>`;
+        pagi += `<button class="btn-pagi" onclick="window.vaiPagina(${end+1})" title="Pagina successiva">&raquo;</button>`;
     }
-    pagi += `</div>`;
+    pagi += `</div></div>`;
     return pagi;
 }
+window.vaiPagina = function(page) {
+    currentPage = page;
+    cerca();
+};
+window.resetFiltri = function() {
+    currentPage = 1;
+    mostraHome();
+};
 
-/* === AVVIO PAGINA === */
-document.addEventListener('DOMContentLoaded', mostraHome);
+/* ============================
+   DARK MODE (IIFE) - mantiene funzionalità e localStorage
+   ============================ */
+/* ============================
+   DARK MODE (Versione definitiva e unica)
+   ============================ */
+(function () {
+  const btn = document.getElementById('darkModeToggle');
+
+  function setDarkMode(on, save = true) {
+    if (on) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    
+    btn.setAttribute('aria-pressed', on);
+    btn.innerHTML = on ? '☀️ Modalità Chiara' : '🌙 Modalità Scura';
+    
+    if (save) localStorage.setItem('itt_dark_mode', on ? '1' : '0');
+  }
+
+  function initializeDarkMode() {
+    const saved = localStorage.getItem('itt_dark_mode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (saved === '1') setDarkMode(true, false);
+    else if (saved === '0') setDarkMode(false, false);
+    else setDarkMode(prefersDark, false); // prima volta → segue il sistema
+
+    btn.addEventListener('click', () => {
+      const isOn = document.body.classList.contains('dark-mode');
+      setDarkMode(!isOn, true);
+    });
+  }
+
+  // Supporta anche cambio preferenza sistema mentre la pagina è aperta
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('itt_dark_mode')) { // solo se l'utente non ha scelto manualmente
+      setDarkMode(e.matches, false);
+    }
+  });
+
+  // Avvio
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeDarkMode);
+  } else {
+    initializeDarkMode();
+  }
+})();
+
+/* ============================
+   INIZIALIZZAZIONE FINALE
+   (unico DOMContentLoaded, pulito)
+   ============================ */
+document.addEventListener('DOMContentLoaded', function() {
+  // Mostra home iniziale
+  mostraHome();
+
+  // Aggiungi listener ai pulsanti principali se esistono
+  const btnAdesso = document.querySelector('.btn-adesso');
+  if (btnAdesso) btnAdesso.addEventListener('click', cercaAdesso);
+
+  // Assicura handler per reset filtri se presente
+  const btnReset = document.querySelector('.btn-reset');
+  if (btnReset) btnReset.addEventListener('click', function() {
+    currentPage = 1;
+    mostraHome();
+  });
+
+  // Eventuali select (se fetch non le ha ancora popolati, gli handler verranno aggiunti al termine del fetch)
+  ['classe_select','docente_select','aula_select','giorno_select','ora_select'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('change', function() {
+          currentPage = 1;
+          cerca();
+      });
+  });
+});
+
