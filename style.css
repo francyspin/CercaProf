@@ -1,10 +1,10 @@
 /* ============================================ */
-/* 0. IMPORT FONT (Poppins)                     */
+/* 0. IMPORT FONT (Poppins)                     */
 /* ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ============================================ */
-/* 1. PALETTE COLORI                            */
+/* 1. PALETTE COLORI                            */
 /* ============================================ */
 :root {
   /* Colori primari */
@@ -36,148 +36,209 @@
   --shadow-md: 0 4px 12px rgba(103, 58, 183, 0.2);
   --shadow-lg: 0 8px 24px rgba(103, 58, 183, 0.25);
 
-/* Colore accento celle */
+  /* Colore accento celle */
   --color-docente: #E1BEE7;
 }
 
 /* ============================================ */
-/* 2. BODY E SFONDO                             */
+/* 2. BODY E SFONDO                             */
 /* ============================================ */
 body {
   margin-top: -20px;
   padding: 30px;
   min-height: 100vh;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   position: relative;
   overflow-x: hidden;
 
   background-color: #FAFAFA;
   background-attachment: fixed;
-  
-  background-image: 
+
+  background-image:
     radial-gradient(circle at 0% 0%, rgba(209, 196, 233, 0.4) 0%, transparent 50%),
     radial-gradient(circle at 100% 100%, rgba(149, 117, 205, 0.2) 0%, transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(243, 229, 245, 0.5) 100%);
-    
+
   transition: background 0.3s ease;
 }
 
-body::before, body::after {
-  content: '';
-  position: fixed;
-  z-index: -1;
-  border-radius: 50%;
-}
-
-body::before {
-  width: 300px;
-  height: 300px;
-  top: -50px;
-  left: -100px;
-  background: linear-gradient(135deg, rgba(179, 157, 219, 0.3), rgba(103, 58, 183, 0.1));
-  filter: blur(60px);
-}
-
-body::after {
-  width: 400px;
-  height: 400px;
-  bottom: -100px;
-  right: -100px;
-  background: linear-gradient(135deg, rgba(149, 117, 205, 0.2), rgba(126, 87, 194, 0.1));
-  filter: blur(80px);
-}
-
-body > * {
+body>* {
   position: relative;
   z-index: 1;
 }
 
-body.senza-lezioni {
-  background-color: #F3E5F5;
-  background-image: 
-    radial-gradient(circle at 0% 0%, rgba(149, 117, 205, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(103, 58, 183, 0.05) 0%, transparent 50%);
+/* ============================================ */
+/* SFONDO ANIMATO - ELEMENTI                    */
+/* ============================================ */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body::before {
+  width: 800px;
+  height: 800px;
+  top: -200px;
+  left: -250px;
+  background: linear-gradient(135deg,
+    rgba(179, 157, 219, 0.6),
+    rgba(149, 117, 205, 0.5),
+    rgba(209, 196, 233, 0.7)
+  );
+  filter: blur(120px);
+  animation: float-gradient-1 18s ease-in-out infinite;
+}
+
+body::after {
+  width: 700px;
+  height: 700px;
+  bottom: -200px;
+  right: -200px;
+  background: linear-gradient(135deg,
+    rgba(149, 117, 205, 0.55),
+    rgba(126, 87, 194, 0.5),
+    rgba(179, 157, 219, 0.6)
+  );
+  filter: blur(120px);
+  animation: float-gradient-2 22s ease-in-out infinite;
+}
+
+/* ANIMAZIONI CHIAVE */
+@keyframes float-gradient-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+@keyframes float-gradient-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translate(-30px, 20px) scale(1.15) rotate(5deg);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(25px, -25px) scale(0.95) rotate(-5deg);
+    opacity: 0.5;
+  }
 }
 
 /* ============================================ */
-/* 3. DARK MODE                                 */
+/* 3. DARK MODE                                 */
 /* ============================================ */
 body.dark-mode {
   --bg-light: #120E26;
   --bg-white: #1F1A38;
   --bg-card: #2A2356;
-  
+
   --text-primary: #EDE7F6;
   --text-secondary: #D1C4E9;
-  --text-light: #9575CD;
-  
+  --text-light: #2A2356;
+
   --border-light: #4527A0;
   --border-medium: #5E35B1;
-  
+
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  
+
   /* Colori specifici celle - DARK MODE */
   --color-docente: #E1BEE7;
   --color-aula: #80DEEA;
   --color-classe: #FFB74D;
-  
+
   background-color: #120E26;
-  background-image: 
+  background-image:
     radial-gradient(circle at 0% 0%, rgba(49, 27, 146, 0.4) 0%, transparent 60%),
     radial-gradient(circle at 100% 100%, rgba(74, 20, 140, 0.3) 0%, transparent 60%);
 }
 
+/* Dark mode - animazione */
 body.dark-mode::before {
-  background: linear-gradient(135deg, rgba(94, 53, 177, 0.2), rgba(49, 27, 146, 0.1));
+  background: linear-gradient(135deg,
+    rgba(94, 53, 177, 0.4),
+    rgba(49, 27, 146, 0.3),
+    rgba(103, 58, 183, 0.4)
+  );
+  animation: float-gradient-1 30s ease-in-out infinite;
 }
 
 body.dark-mode::after {
-  background: linear-gradient(135deg, rgba(103, 58, 183, 0.15), rgba(69, 39, 160, 0.1));
+  background: linear-gradient(135deg,
+    rgba(103, 58, 183, 0.4),
+    rgba(69, 39, 160, 0.3),
+    rgba(94, 53, 177, 0.4)
+  );
+  animation: float-gradient-2 35s ease-in-out infinite;
 }
 
+
 /* ============================================ */
-/* 4. COMPONENTI UI                             */
+/* 4. COMPONENTI UI                             */
 /* ============================================ */
 
 h1 {
   color: #fff;
   background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
   display: inline-block;
-  padding: 20px 40px;
+  padding: 18px 36px;
   border-radius: 20px;
-  font-size: 2.2em;
-  font-weight: 700;
+  font-size: 2em;
+  font-weight: 600;
   letter-spacing: -0.5px;
   box-shadow: var(--shadow-md);
   user-select: none;
   transition: transform 0.2s;
   white-space: nowrap;
   margin: 0 auto 24px auto;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.15);
-  border: 1px solid rgba(255,255,255,0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 h1:hover {
   transform: translateY(-2px);
 }
 
+/* Dark Mode Button - Floating in alto a destra */
 .dark-mode-btn {
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 10px 18px;
-  font-size: 0.9em;
-  font-weight: 600;
-  background: var(--bg-white);
-  color: var(--primary);
-  border: 2px solid var(--border-light);
-  border-radius: 50px;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  font-size: 1.5em;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(103, 58, 183, 0.4);
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(103, 58, 183, 0.5);
 }
 
 body.dark-mode .dark-mode-btn {
@@ -186,7 +247,7 @@ body.dark-mode .dark-mode-btn {
   border-color: var(--border-light);
 }
 
-.form-group-filtri, 
+.form-group-filtri,
 .contenitore-tabella,
 .benvenuto,
 #banner-frasi {
@@ -197,7 +258,7 @@ body.dark-mode .dark-mode-btn {
 }
 
 /* ============================================ */
-/* BANNER FRASI                                 */
+/* BANNER FRASI                                 */
 /* ============================================ */
 #banner-frasi {
   max-width: 600px;
@@ -226,13 +287,13 @@ body.dark-mode .dark-mode-btn {
 }
 
 /* ============================================ */
-/* FORM E FILTRI                                */
+/* FORM E FILTRI                                */
 /* ============================================ */
 .form-group-wrapper {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
   align-items: center;
 }
 
@@ -297,7 +358,7 @@ body.dark-mode .form-group-filtri select {
 }
 
 /* ============================================ */
-/* BOTTONI                                      */
+/* BOTTONI                                      */
 /* ============================================ */
 .btn-adesso {
   padding: 8px 20px;
@@ -329,12 +390,12 @@ body.dark-mode .form-group-filtri select {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   color: #D32F2F;
   background: #FFEBEE;
   border: 2px solid #FFCDD2;
   border-radius: 12px;
-  
+
   cursor: pointer;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
@@ -382,15 +443,15 @@ body.dark-mode .btn-pagi.active {
 }
 
 /* ============================================ */
-/* BANNER "RELAX"                               */
+/* BANNER "RELAX"                               */
 /* ============================================ */
 .banner-lezioni {
   max-width: 600px;
   margin: 24px auto;
-  padding: 24px 24px; 
+  padding: 24px 24px;
   text-align: center;
   border-radius: 24px;
-  
+
   background: linear-gradient(135deg, #673AB7 0%, #512DA8 100%);
   border: none;
   box-shadow: 0 8px 24px rgba(103, 58, 183, 0.3);
@@ -406,16 +467,22 @@ body.dark-mode .btn-pagi.active {
 .banner-lezioni::before {
   content: '🌙';
   display: block;
-  font-size: 2.2em; 
+  font-size: 2.2em;
   margin-bottom: 8px;
   animation: floatIcon 3s ease-in-out infinite;
 }
 
 @keyframes floatIcon {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
 
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
 .banner-lezioni h2 {
   color: #FFF;
   font-size: 1.5em;
@@ -430,18 +497,20 @@ body.dark-mode .btn-pagi.active {
 }
 
 /* ============================================ */
-/* TABELLE E RISULTATI                          */
+/* TABELLE E RISULTATI                          */
 /* ============================================ */
 #risultati {
   width: 100%;
   max-width: 1080px;
-  margin: 32px auto 0 auto;
+  margin: 48px auto 0 auto;
   padding: 0 10px;
   box-sizing: border-box;
   transition: opacity 0.3s ease;
 }
 
-.risultati-nascosti { opacity: 0; }
+.risultati-nascosti {
+  opacity: 0;
+}
 
 .paginazione {
   display: flex;
@@ -530,16 +599,16 @@ body.dark-mode .orario-tabella td {
   border-bottom-color: #5E35B1;
 }
 
-.orario-tabella tr:last-child td { 
-  border-bottom: none; 
+.orario-tabella tr:last-child td {
+  border-bottom: none;
 }
 
-.orario-tabella tr:hover td { 
-  background: #F3E5F5; 
+.orario-tabella tr:hover td {
+  background: #F3E5F5;
 }
 
-body.dark-mode .orario-tabella tr:hover td { 
-  background-color: rgba(149, 117, 205, 0.25) !important; 
+body.dark-mode .orario-tabella tr:hover td {
+  background-color: rgba(149, 117, 205, 0.25) !important;
 }
 
 /* Contatore risultati visibile in dark mode */
@@ -572,8 +641,9 @@ body.dark-mode .contatore-risultati {
   background: rgba(149, 117, 205, 0.15);
   color: var(--text-secondary);
 }
+
 /* ============================================ */
-/* INFO RISULTATI E PAGINAZIONE MIGLIORATI      */
+/* INFO RISULTATI E PAGINAZIONE MIGLIORATI      */
 /* ============================================ */
 
 /* Info risultati con icona */
@@ -686,31 +756,14 @@ body.dark-mode .info-risultati strong {
 }
 
 body.dark-mode .btn-pagi[title]:hover::after {
-  background: #EDE7F6;
-  color: #1F1A38;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .btn-pagi[title]:hover::after {
-  background: #EDE7F6;
-  color: #1F1A38;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .btn-pagi[title]:hover::after {
   background: #1F1A38;
   color: white;
   border: 1px solid var(--border-light);
-}
-
-body.dark-mode .btn-pagi[title]:hover::after {
-  background: #EDE7F6;
-  color: #1F1A38;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* ============================================ */
-/* COLORI CELLE - MINIMALISTA                   */
+/* COLORI CELLE - MINIMALISTA                   */
 /* ============================================ */
 
 /* SOLO IL DOCENTE colorato (elemento più importante) */
@@ -732,17 +785,16 @@ td.cella-classe,
 span.cella-classe,
 .cella-aula,
 span.cella-aula {
-  color: var(--text-primary) !important;
+  color: #424242 !important; /* NUOVO COLORE LIGHT MODE */
   font-weight: 500 !important;
 }
-
-/* Dark Mode - font più pesante */
 
 /* Dark Mode - font più pesante */
 body.dark-mode .cella-classe,
 body.dark-mode td.cella-classe,
 body.dark-mode span.cella-classe {
   font-weight: 700 !important;
+  color: var(--text-secondary) !important;
 }
 
 body.dark-mode .cella-docente,
@@ -753,6 +805,7 @@ body.dark-mode td.cella-docente {
 body.dark-mode .cella-aula,
 body.dark-mode span.cella-aula {
   font-weight: 700 !important;
+  color: var(--text-secondary) !important;
 }
 
 /* Banner Benvenuto */
@@ -796,12 +849,12 @@ body.dark-mode #banner-benvenuto {
 }
 
 /* ============================================ */
-/* NUMERI ORA GRIGLIA - DARK MODE               */
+/* NUMERI ORA GRIGLIA - DARK MODE               */
 /* ============================================ */
 
 .orario-griglia td.ora-header {
   font-weight: 600;
-  color: var(--text-primary);
+  color: #212121; /* Nero scuro in light mode */
 }
 
 /* Colonna ore più stretta */
@@ -823,23 +876,25 @@ body.dark-mode .orario-griglia th {
   color: #EDE7F6;
 }
 
-.orario-griglia .lezione-attiva { 
-  background: var(--bg-white); 
+.orario-griglia .lezione-attiva {
+  background: var(--bg-white);
 }
 
 .orario-griglia .libero {
-  background: #E8F5E9;
-  color: var(--success);
+  background: var(--bg-light);
+  color: var(--text-secondary);
   font-style: italic;
+  opacity: 0.8;
 }
 
 body.dark-mode .orario-griglia .libero {
-  background: #1B5E20;
-  color: #A5D6A7;
+  background: rgba(149, 117, 205, 0.2);
+  color: #D1C4E9;
+  opacity: 1;
 }
 
 /* ============================================ */
-/* OROLOGIO DINAMICO                            */
+/* OROLOGIO DINAMICO                            */
 /* ============================================ */
 #orologio-dinamico {
   position: fixed;
@@ -851,7 +906,7 @@ body.dark-mode .orario-griglia .libero {
   padding: 10px 14px;
   box-shadow: var(--shadow-md);
   z-index: 1000;
-  min-width: 140px;
+  min-width: 100px;
   text-align: left;
 }
 
@@ -888,7 +943,7 @@ body.dark-mode #orologio-dinamico .ora-scolastica.fuori-orario {
 }
 
 /* ============================================ */
-/* GRIGLIA SETTIMANALE - STILE PULITO           */
+/* GRIGLIA SETTIMANALE - STILE PULITO           */
 /* ============================================ */
 
 /* Celle della griglia */
@@ -905,11 +960,17 @@ body.dark-mode #orologio-dinamico .ora-scolastica.fuori-orario {
 
 /* Slot vuoto */
 .slot-libero {
-  color: var(--text-light);
-  font-size: 1.5em;
-  opacity: 0.3;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  opacity: 1;
+  font-weight: 500;
+  font-style: italic;
 }
 
+body.dark-mode .slot-libero {
+  color: #D1C4E9;
+  font-weight: 600;
+}
 /* Contenitore lezione */
 .cella-lezione {
   background: transparent;
@@ -927,7 +988,7 @@ body.dark-mode #orologio-dinamico .ora-scolastica.fuori-orario {
 .materia-griglia {
   font-size: 0.95em;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #212121; /* Nero scuro in light mode */
   margin-bottom: 4px;
   line-height: 1.3;
 }
@@ -937,10 +998,11 @@ body.dark-mode #orologio-dinamico .ora-scolastica.fuori-orario {
   font-size: 0.85em;
   line-height: 1.4;
   margin: 2px 0;
+  color: #424242; /* Grigio scuro in light mode */
 }
 
 /* Separatore tra lezioni multiple */
-.cella-lezione + .cella-lezione {
+.cella-lezione+.cella-lezione {
   padding-top: 12px;
   border-top: 1px solid var(--border-light);
   margin-top: 12px;
@@ -952,7 +1014,7 @@ body.dark-mode .materia-griglia {
 }
 
 /* Dark mode - separatore */
-body.dark-mode .cella-lezione + .cella-lezione {
+body.dark-mode .cella-lezione+.cella-lezione {
   border-top-color: rgba(149, 117, 205, 0.3);
 }
 
@@ -966,11 +1028,11 @@ body.dark-mode .cella-lezione + .cella-lezione {
     min-width: 110px;
     font-size: 0.85em;
   }
-  
+
   .materia-griglia {
     font-size: 0.9em;
   }
-  
+
   .info-griglia {
     font-size: 0.8em;
   }
@@ -978,7 +1040,70 @@ body.dark-mode .cella-lezione + .cella-lezione {
 
 
 /* ============================================ */
-/* RESPONSIVE                                   */
+/* STILE BOTTONI INLINE (GLOBALE)               */
+/* ============================================ */
+/* Queste regole devono stare FUORI dalle media query per funzionare sempre */
+
+.btn-adesso-inline,
+.btn-reset-inline {
+  padding: 0 20px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 0.95em;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid;
+  flex-grow: 1;/* Si allargano per riempire lo spazio */
+  flex-basis: 150px; /* Larghezza minima ideale */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px; /* Un po' di aria se vanno a capo */
+}
+
+/* Stile specifico Adesso */
+.btn-adesso-inline {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-adesso-inline:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Stile specifico Reset */
+.btn-reset-inline {
+  background: transparent;
+  color: var(--error);
+  border-color: rgba(229, 57, 53, 0.3);
+}
+
+.btn-reset-inline:hover {
+  background: #FFEBEE;
+  color: #D32F2F;
+  border-color: #D32F2F;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode per i bottoni */
+body.dark-mode .btn-reset-inline {
+  color: #EF9A9A;
+  border-color: #EF9A9A;
+}
+
+body.dark-mode .btn-reset-inline:hover {
+  background: rgba(229, 57, 53, 0.2);
+  color: #FFCDD2;
+}
+
+/* ============================================ */
+/* RESPONSIVE (MOBILE)                          */
 /* ============================================ */
 @media (max-width: 600px) {
   body {
@@ -987,69 +1112,58 @@ body.dark-mode .cella-lezione + .cella-lezione {
     font-size: 0.95em;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
-  #orologio-dinamico {
-    position: relative;
-    top: 0;
-    left: 0;
-    margin: 0 auto 16px auto;
-    width: calc(100% - 16px);
-    max-width: 300px;
-    text-align: center;
+  /* 🛑 ELIMINAZIONE DI TUTTI GLI ELEMENTI DI SFONDO E BANNER SU MOBILE */
+  #banner-benvenuto,
+  #banner-frasi,
+  .info-cards,
+  body::before,
+  body::after {
+    display: none !important;
   }
 
-  .dark-mode-btn {
-    padding: 0 !important;
-    font-size: 0 !important;
-    width: 44px !important;
-    height: 44px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .dark-mode-btn::before {
-    content: '🌙';
-    font-size: 22px;
-  }
-  body.dark-mode .dark-mode-btn::before { content: '☀️'; }
-
+  /* 1. Titolo */
   h1 {
+    order: 1;
     font-size: 1.5em;
     padding: 16px 24px;
     white-space: normal;
     width: fit-content;
+    margin: 0 auto 10px auto;
   }
 
-  #orologio-dinamico { order: 2; }
-  #banner-benvenuto { order: 3; font-size: 1.3em !important; }
-  #banner-frasi { order: 4; }
-  .form-group-wrapper { order: 5; width: 100%; }
-  #risultati { order: 6; }
-
-  .form-group-principale { 
-    flex-direction: row !important; 
-    gap: 8px !important; 
-  }
-  
-  .btn-adesso { 
-    flex: 1 !important; 
-    min-width: auto !important;
-  }
-  
-  .btn-reset { 
-    flex: 0.5 !important; 
-    min-width: auto !important; 
-    padding: 0 12px !important;
+  /* 2. Orologio */
+  #orologio-dinamico {
+    order: 2;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto 20px auto;
+    width: calc(100% - 16px);
+    max-width: 150px;
+    text-align: center;
   }
 
+  /* 3. Filtri */
+  .form-group-wrapper {
+    order: 3;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Griglia filtri mobile (2 colonne) */
   .form-group-filtri {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     padding: 12px !important;
+    gap: 8px !important;
+    width: 100%;
+    max-width: 100%;
   }
 
+  /* Select su 1 colonna */
   .form-group-filtri select {
     width: 100% !important;
     max-width: 100% !important;
@@ -1058,10 +1172,77 @@ body.dark-mode .cella-lezione + .cella-lezione {
     height: 44px;
   }
 
-  .contenitore-tabella { max-width: 100%; }
-  .orario-tabella th, .orario-tabella td { padding: 10px 6px; font-size: 0.9em; }
-  .paginazione { gap: 4px !important; }
-  .btn-pagi { min-width: 36px !important; height: 36px !important; padding: 0 !important; }
-  
-  body::before, body::after { display: none; }
+  /* ❗ I bottoni adesso occupano DUE colonne (tutta la larghezza) */
+  .btn-adesso-inline,
+  .btn-reset-inline {
+    grid-column: span 2;
+    font-size: 0.9em;
+    padding: 0 10px;
+    height: 48px;
+    margin-top: 0;
+  }
+
+  /* 4. Risultati */
+  #risultati {
+    order: 4;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Dark mode button mobile */
+  .dark-mode-btn {
+    width: 50px !important;
+    height: 50px !important;
+    bottom: 10px !important;
+    right: 20px !important;;
+    font-size: 1.3em !important;
+  }
+
+  /* -------------------------------------------- */
+  /* NUOVE REGOLE PER GRIGLIA ORARIA SU MOBILE (<600px) */
+  /* -------------------------------------------- */
+
+  /* Celle più compatte */
+  .orario-griglia td {
+    min-width: 80px;
+    padding: 6px 4px;
+    font-size: 0.8em;
+  }
+
+  /* Materia/Titolo (il più grande) */
+  .materia-griglia {
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  /* Info secondarie (Docente, Aula, Classe) */
+  .info-griglia {
+    font-size: 0.75em;
+    line-height: 1.2;
+    margin: 1px 0;
+  }
+
+  /* Separatore tra lezioni multiple */
+  .cella-lezione+.cella-lezione {
+    padding-top: 6px;
+    border-top: 1px solid var(--border-light);
+    margin-top: 6px;
+  }
+
+  /* Intestazione giorni ridotta */
+  .orario-griglia th {
+    padding: 8px 4px;
+    font-size: 0.8em;
+  }
+
+  /* Colonna Ore ridotta */
+  .orario-griglia td.ora-header,
+  .orario-griglia th:first-child {
+    width: 45px;
+    min-width: 45px;
+    max-width: 45px;
+    padding: 6px 2px;
+    font-size: 0.8em;
+  }
 }

@@ -6,71 +6,86 @@
   <title>Orario Scolastico ITT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="additions.css">
 </head>
 
 <body>
+
+  <!-- Dark Mode Button -->
+  <button id="darkModeToggle" class="dark-mode-btn" aria-pressed="false" title="Attiva/disattiva modalità scura">🌙 Modalità Scura</button>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>Orario Scolastico ITTVT</h1>
+  </div>
+
   <!-- Orologio Dinamico -->
   <div id="orologio-dinamico">
     <div class="ora-corrente">--:--</div>
     <div class="ora-scolastica">Caricamento...</div>
   </div>
-
-  <!-- Dark Mode Button -->
-  <button id="darkModeToggle" class="dark-mode-btn" aria-pressed="false" title="Attiva/disattiva modalità scura">🌙 Modalità Scura</button>
-
-  <h1>Orario Scolastico ITTVT</h1>
-
-  <div class="form-group-wrapper">
-    <!-- Filtri prima -->
-    <div class="form-group-filtri">
-      <select id="classe_select">
-        <option value="">Filtra per Classe...</option>
-      </select>
-      <select id="docente_select">
-        <option value="">Filtra per Docente...</option>
-      </select>
-      <select id="aula_select">
-        <option value="">Filtra per Aula...</option>
-      </select>
-      <select id="giorno_select">
-        <option value="">Qualsiasi Giorno</option>
-        <option value="Lun">Lunedì</option>
-        <option value="Mar">Martedì</option>
-        <option value="Mer">Mercoledì</option>
-        <option value="Gio">Giovedì</option>
-        <option value="Ven">Venerdì</option>
-      </select>
-      <select id="ora_select">
-        <option value="">Qualsiasi Ora</option>
-        <option value="1">1ª ora</option>
-        <option value="2">2ª ora</option>
-        <option value="3">3ª ora</option>
-        <option value="4">4ª ora</option>
-        <option value="5">5ª ora</option>
-        <option value="6">6ª ora</option>
-        <option value="7">7ª ora</option>
-      </select>
-    </div>
-
-    <!-- Pulsanti di azione dopo -->
-    <div class="form-group-principale">
-      <button onclick="cercaAdesso()" class="btn-adesso">
-        🚀 Vedi Lezioni Attive
-      </button>
-      <button onclick="resetFiltri()" class="btn-reset">
-        Annulla Filtri
-      </button>
-    </div>
+  
+<div class="form-group-wrapper">
+  <div class="form-group-filtri">
+    <select id="classe_select">
+      <option value="">Filtra per Classe...</option>
+    </select>
+    <select id="docente_select">
+      <option value="">Filtra per Docente...</option>
+    </select>
+    <select id="aula_select">
+      <option value="">Filtra per Aula...</option>
+    </select>
+    <select id="giorno_select">
+      <option value="">Qualsiasi Giorno</option>
+      <option value="Lun">Lunedì</option>
+      <option value="Mar">Martedì</option>
+      <option value="Mer">Mercoledì</option>
+      <option value="Gio">Giovedì</option>
+      <option value="Ven">Venerdì</option>
+    </select>
+    <select id="ora_select">
+      <option value="">Qualsiasi Ora</option>
+      <option value="1">1ª ora</option>
+      <option value="2">2ª ora</option>
+      <option value="3">3ª ora</option>
+      <option value="4">4ª ora</option>
+      <option value="5">5ª ora</option>
+      <option value="6">6ª ora</option>
+      <option value="7">7ª ora</option>
+    </select>
+    
+    <!-- BOTTONI DENTRO I FILTRI -->
+    <button onclick="cercaAdesso()" class="btn-adesso-inline">
+      🚀 Lezioni Attive
+    </button>
+    <button onclick="resetFiltri()" class="btn-reset-inline">
+      ✕ Reset
+    </button>
   </div>
-
-  <!-- Banner benvenuto -->
-  <div id="banner-benvenuto"></div>
-
-  <!-- Banner frasi cicliche -->
-  <div id="banner-frasi"></div>
+</div>
 
   <!-- Risultati -->
   <div id="risultati"></div>
+
+  <!-- Info Cards (visibili quando non ci sono risultati) -->
+  <div class="info-cards" id="infoCards">
+    <div class="info-card">
+      <div class="info-icon">🔍</div>
+      <h3>Ricerca Veloce</h3>
+      <p>Usa i filtri per trovare rapidamente docenti, classi o aule specifiche</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">⚡</div>
+      <h3>Lezioni Attive</h3>
+      <p>Clicca su "Lezioni Attive" per vedere cosa sta succedendo ora</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🌙</div>
+      <h3>Dark Mode</h3>
+      <p>Attiva la modalità scura per una migliore esperienza notturna</p>
+    </div>
+  </div>
 
   <!-- COLLEGAMENTO AL FILE JS ESTERNO -->
   <script src="script.js"></script>

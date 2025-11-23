@@ -86,6 +86,8 @@ function mostraHome() {
     ciclaBannerFrasi();
     const risultati = document.getElementById('risultati');
     if (risultati) risultati.style.display = "none";
+    const infoCards = document.getElementById('infoCards');
+    if (infoCards) infoCards.style.display = "grid";
     document.body.classList.remove('senza-lezioni');
 
     // Resetta filtri (se esistono)
@@ -176,6 +178,12 @@ fetch('orario_unificato.json')
         aggiornaSelect(document.getElementById('classe_select'), classiSet, "Filtra per Classe...");
         aggiornaSelect(document.getElementById('docente_select'), docentiSet, "Filtra per Docente...");
         aggiornaSelect(document.getElementById('aula_select'), aulaSet, "Filtra per Aula...");
+        
+        // Popola statistiche
+        document.getElementById('statDocenti').textContent = docentiSet.size;
+        document.getElementById('statClassi').textContent = classiSet.size;
+        document.getElementById('statAule').textContent = aulaSet.size;
+        document.getElementById('statLezioni').textContent = data.filter(item => item.Descrizione && item.Descrizione !== 'nan').length;
 
         ['classe_select','docente_select','aula_select','giorno_select','ora_select'].forEach(id => {
             const el = document.getElementById(id);
@@ -195,6 +203,8 @@ function cerca() {
     const bFra = document.getElementById('banner-frasi');
     if (bBen) bBen.style.display = "none";
     if (bFra) bFra.style.display = "none";
+    const infoCards = document.getElementById('infoCards');
+    if (infoCards) infoCards.style.display = "none";
     document.body.classList.remove('senza-lezioni');
 
     const classe = (document.getElementById('classe_select') || {}).value || "";
@@ -261,6 +271,8 @@ function cercaAdesso() {
     const bFra = document.getElementById('banner-frasi');
     if (bBen) bBen.style.display = "none";
     if (bFra) bFra.style.display = "none";
+    const infoCards = document.getElementById('infoCards');
+    if (infoCards) infoCards.style.display = "none";
     document.body.classList.remove('senza-lezioni');
 
     const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
@@ -502,7 +514,7 @@ function mostraGrigliaOrario(risultati, tipo) {
                     table += `</div>`;
                 });
             } else {
-                table += `<span class="slot-libero">—</span>`;
+                table += `<span class="slot-libero">Libero</span>`;
             }
             table += `</td>`;
         });
@@ -628,8 +640,7 @@ window.resetFiltri = function() {
     }
     
     btn.setAttribute('aria-pressed', on);
-    btn.innerHTML = on ? '☀️ Modalità Chiara' : '🌙 Modalità Scura';
-    
+    btn.innerHTML = on ? '☀️' : '🌙'; // Solo emoji, no testo    
     if (save) localStorage.setItem('itt_dark_mode', on ? '1' : '0');
   }
 
