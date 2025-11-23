@@ -337,12 +337,15 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
         const oraValida = ora_scuola && ora_scuola.trim() !== "" && !isNaN(parseInt(ora_scuola));
         if (!oraValida) {
             document.body.classList.add('senza-lezioni');
-            if (box) box.innerHTML = `
+            if (box) {
+            box.innerHTML = `
                 <div class="banner-lezioni">
                     <div class="icona-banner">⚠️</div>
                     <h2>Non ci sono lezioni attive al momento!</h2>
                     <p>Le lezioni sono finite oppure non sono ancora iniziate.</p>
                 </div>`;
+            setTimeout(() => box.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        }
             return;
         }
         if (risultati.length === 0) {
@@ -356,12 +359,15 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
                 titolo = "Classe Libera";
                 messaggio = `La classe <b>${filtroClasse}</b> non ha lezione alla <b>${ora_scuola}ª ora</b>.`;
             }
-            if (box) box.innerHTML = `
+            if (box) {
+                box.innerHTML = `
                 <div class="banner-lezioni" style="background: #fff; border-color: #4caf50; color: #2e7d32;">
                     <div class="icona-banner" style="font-size: 2.5em;">☕</div>
                     <h2 style="color: #2e7d32; margin-bottom: 10px;">${titolo}</h2>
                     <p style="color: #4caf50; font-weight:600;">${messaggio}</p>
                 </div>`;
+                setTimeout(() => box.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+            }
             return;
         }
     }
@@ -445,7 +451,8 @@ if (!adessoMode && risultati.length > 0) {
     headerRisultati = pagi;
 }
 
-if (box) box.innerHTML = `
+if (box) {
+    box.innerHTML = `
     <div class="tabella-e-pagine">
         ${contatore}
         ${pagi}
@@ -453,6 +460,10 @@ if (box) box.innerHTML = `
             ${table}
         </div>
     </div>`;
+    if (risultati.length > 0 || adessoMode) {
+        setTimeout(() => box.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+}
 }
 
 /* ============================
@@ -526,7 +537,10 @@ function mostraGrigliaOrario(risultati, tipo) {
     if (box) {
         box.innerHTML = `<div class="contenitore-tabella griglia-settimanale">${table}</div>`;
         box.style.display = 'block';
-        setTimeout(() => { box.classList.remove('risultati-nascosti'); }, 30);
+        setTimeout(() => { 
+            box.classList.remove('risultati-nascosti');
+            box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
 }
 
