@@ -1,18 +1,14 @@
-/* =========================================================
-   JS PULITO E UNIFICATO - Versione "orario_unificato"
-   ========================================================= */
-
-/* ============================
-   VARIABILI GLOBALI
-   ============================ */
+// ============================
+//   VARIABILI GLOBALI
+// ============================
 let orario = null;
 let docentiSet = new Set(), aulaSet = new Set(), classiSet = new Set();
 let currentPage = 1;
 const resultsPerPage = 5;
 
-/* ============================
-   FUNZIONI UTILI (ESTRAZIONE)
-   ============================ */
+// ============================
+//   FUNZIONI UTILI (ESTRAZIONE)
+// ============================
 function estraiDocenti(desc) {
     if (!desc || typeof desc !== 'string') return [];
     let match = desc.match(/\(([^()]*)\)/);
@@ -31,9 +27,9 @@ function estraiAula(desc) {
     return '';
 }
 
-/* ============================
-   BANNER / FRASI CICLICHE
-   ============================ */
+// ============================
+//   BANNER / FRASI CICLICHE
+// ============================
 function mostraBannerBenvenuto() {
     const el = document.getElementById('banner-benvenuto');
     if (el) el.innerHTML = `<span>🎓 Benvenuto! </span>`;
@@ -97,15 +93,31 @@ function mostraHome() {
     });
 }
 
-/* ============================
-   INTERVALLI ORARI (per oraCorrenteScuola)
-   ============================ */
-const orari_scuola = {
-    "Lun": ["08:00-09:00","09:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00","13:20-14:10"],
-    "Ven": ["08:00-09:00","09:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00","13:20-14:10"],
+// ============================
+//   INTERVALLI ORARI (per oraCorrenteScuola)
+// ============================
+const orari_scuola_per_classi = {
+  "1_3_4_5": {
+    "Lun": ["08:00-09:00","09:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00"],
+    "Mar": ["08:00-08:50","08:50-09:45","09:45-10:40","10:40-11:35","11:35-12:30","12:30-13:20","13:20-14:10"],
+    "Mer": ["08:00-08:50","08:50-09:45","09:45-10:40","10:40-11:35","11:35-12:30","12:30-13:20"],
+    "Gio": ["08:00-08:50","08:50-09:45","09:45-10:40","10:40-11:35","11:35-12:30","12:30-13:20","13:20-14:10"],
+    "Ven": ["08:00-09:00","09:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00"]
+  },
+  "2": {
+    "Lun": ["08:00-09:00","09:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00"],
     "Mar": ["08:00-08:50","08:50-09:45","09:45-10:40","10:40-11:35","11:35-12:30","12:30-13:20","13:20-14:10"],
     "Mer": ["08:00-08:50","08:50-09:45","09:45-10:40","10:40-11:35","11:35-12:30","12:30-13:20","13:20-14:10"],
     "Gio": ["08:00-08:50","08:50-09:45","09:45-10:40","10:40-11:35","11:35-12:30","12:30-13:20","13:20-14:10"],
+    "Ven": ["08:00-09:00","09:00-10:00","10:00-11:00","11:00-12:00","12:00-13:00","13:00-14:00"]
+  }
+};
+const intervalli_scuola = {
+  "Lun":  { start: "10:45", end: "11:00" },
+  "Ven":  { start: "10:45", end: "11:00" },
+  "Mar":  { start: "11:20", end: "11:35" },
+  "Mer":  { start: "11:20", end: "11:35" },
+  "Gio":  { start: "11:20", end: "11:35" }
 };
 
 /* ============================
@@ -134,6 +146,101 @@ function aggiornaOrologio() {
       oraScolastica.classList.remove('fuori-orario');
     }
   }
+  // 🟢 Aggiorna box "Prossima Lezione"
+  aggiornaProssimaLezione(now);
+}
+
+/* ============================
+   PROSSIMA LEZIONE
+   ============================ */
+function aggiornaProssimaLezione(data) {
+  const box = document.getElementById('prossima-lezione');
+  if (!box || !orario) return;
+
+  const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
+  const giorno = giorni[data.getDay()];
+  
+  if (giorno === "Dom" || giorno === "Sab") {
+    box.style.display = "none";
+    return;
+  }
+
+  const classeSel = (document.getElementById('classe_select') || {}).value || "";
+  if (!classeSel) {
+    box.style.display = "none";
+    return;
+  }
+
+  const ora_attuale = oraCorrenteScuola();
+  const isSeconda = classeSel.startsWith("2") || classeSel.includes("2");
+  const orariGiorno = isSeconda
+    ? orari_scuola_per_classi["2"][giorno]
+    : orari_scuola_per_classi["1_3_4_5"][giorno];
+
+  if (!orariGiorno) {
+    box.style.display = "none";
+    return;
+  }
+
+  let prossimaOra = null;
+  if (ora_attuale === "intervallo" || ora_attuale === null) {
+    const ore = data.getHours();
+    const min = data.getMinutes();
+    const nowMinuti = ore * 60 + min;
+
+    for (let i = 0; i < orariGiorno.length; i++) {
+      let [start] = orariGiorno[i].split("-");
+      let [sH, sM] = start.split(":").map(Number);
+      let sMin = sH * 60 + sM;
+
+      if (nowMinuti < sMin) {
+        prossimaOra = i + 1;
+        break;
+      }
+    }
+  } else if (parseInt(ora_attuale) < orariGiorno.length) {
+    prossimaOra = parseInt(ora_attuale) + 1;
+  }
+
+  if (!prossimaOra || prossimaOra > orariGiorno.length) {
+    box.style.display = "none";
+    return;
+  }
+
+  const prossimaLezione = orario.find(item => 
+    item.Classe === classeSel && 
+    item.Giorno === giorno && 
+    item.Ora === prossimaOra &&
+    item.Descrizione && 
+    item.Descrizione !== "nan"
+  );
+
+  if (!prossimaLezione) {
+    box.style.display = "none";
+    return;
+  }
+
+  const materia = prossimaLezione.Descrizione.replace(/\s*\(.*\)/, '').trim();
+  const docenti = estraiDocenti(prossimaLezione.Descrizione).join(", ");
+  const aula = estraiAula(prossimaLezione.Descrizione);
+  const orarioSlot = orariGiorno[prossimaOra - 1];
+  const [inizioOra] = orarioSlot.split("-");
+
+  const [oraInizio, minInizio] = inizioOra.split(":").map(Number);
+  const minutiInizio = oraInizio * 60 + minInizio;
+  const minutiNow = data.getHours() * 60 + data.getMinutes();
+  const minutiMancanti = minutiInizio - minutiNow;
+
+  box.innerHTML = `
+    <div class="prossima-lezione-content">
+      <div class="prossima-icona">⏰</div>
+      <div class="prossima-info">
+        <div class="prossima-titolo">Prossima lezione tra <strong>${minutiMancanti}</strong> min</div>
+        <div class="prossima-dettagli">${materia} • ${docenti}${aula ? ` • ${aula}` : ''}</div>
+      </div>
+    </div>
+  `;
+  box.style.display = "block";
 }
 setInterval(aggiornaOrologio, 1000);
 aggiornaOrologio();
@@ -179,11 +286,6 @@ fetch('orario_unificato.json')
         aggiornaSelect(document.getElementById('docente_select'), docentiSet, "Filtra per Docente...");
         aggiornaSelect(document.getElementById('aula_select'), aulaSet, "Filtra per Aula...");
         
-        // Popola statistiche
-        document.getElementById('statDocenti').textContent = docentiSet.size;
-        document.getElementById('statClassi').textContent = classiSet.size;
-        document.getElementById('statAule').textContent = aulaSet.size;
-        document.getElementById('statLezioni').textContent = data.filter(item => item.Descrizione && item.Descrizione !== 'nan').length;
 
         ['classe_select','docente_select','aula_select','giorno_select','ora_select'].forEach(id => {
             const el = document.getElementById(id);
@@ -294,6 +396,27 @@ function cercaAdesso() {
     setTimeout(() => {
         let risultati = [];
 
+        // 🟢 CASO SPECIALE: Intervallo
+        if (ora_scuola === "intervallo") {
+            const box = document.getElementById('risultati');
+            if (box) {
+                box.innerHTML = `
+                <div class="banner-lezioni" style="background: linear-gradient(135deg, #FFA726 0%, #FF9800 100%); border: none;">
+                    <div class="icona-banner" style="font-size: 3em;">☕</div>
+                    <h2 style="color: white; margin-bottom: 10px;">È l'intervallo!</h2>
+                    <p style="color: rgba(255,255,255,0.95); font-weight:500;">
+                        Tutti gli studenti e i docenti sono in pausa. Le lezioni riprenderanno a breve.
+                    </p>
+                </div>`;
+                setTimeout(() => box.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+            }
+            if (boxRisultati) {
+                boxRisultati.style.display = 'block';
+                setTimeout(() => { boxRisultati.classList.remove('risultati-nascosti'); }, 10);
+            }
+            return;
+        }
+
         if (ora_scuola !== null) {
             risultati = orario.filter(item => {
                 let ok = true;
@@ -315,7 +438,6 @@ function cercaAdesso() {
         }
     }, 50);
 }
-
 /* ============================
    MOSTRA RISULTATI (tabella)
    Versione CORRETTA con Colori
@@ -549,60 +671,111 @@ function mostraGrigliaOrario(risultati, tipo) {
    calcolaOraScolastica / oraCorrenteScuola
    ============================ */
 function calcolaOraScolastica(data) {
-  const giorno = data.getDay(); // 0=domenica, 6=sabato
-  const ore = data.getHours();
-  const minuti = data.getMinutes();
-  const minutiTotali = ore * 60 + minuti;
-  
-  if (giorno === 0 || giorno === 6) {
-    return { testo: '📅 Weekend', fuori: true };
-  }
-  
-  const orari = [
-    { inizio: 8 * 60, fine: 8 * 60 + 50, ora: 1 },
-    { inizio: 8 * 60 + 50, fine: 9 * 60 + 40, ora: 2 },
-    { inizio: 9 * 60 + 40, fine: 10 * 60 + 30, ora: 3 },
-    { inizio: 10 * 60 + 40, fine: 11 * 60 + 30, ora: 4 },
-    { inizio: 11 * 60 + 30, fine: 12 * 60 + 20, ora: 5 },
-    { inizio: 12 * 60 + 20, fine: 13 * 60 + 10, ora: 6 },
-    { inizio: 13 * 60 + 10, fine: 14 * 60, ora: 7 }
-  ];
-  
-  if (minutiTotali < orari[0].inizio) {
-    const minutiMancanti = orari[0].inizio - minutiTotali;
-    return { testo: `⏰ Inizio tra ${minutiMancanti} min`, fuori: true };
-  }
-  
-  for (let i = 0; i < orari.length; i++) {
-    const slot = orari[i];
-    if (minutiTotali >= slot.inizio && minutiTotali < slot.fine) {
-      const minutiRimasti = slot.fine - minutiTotali;
-      return { testo: `📚 ${slot.ora}ª ora (${minutiRimasti} min)`, fuori: false };
+    const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
+    const giorno = giorni[data.getDay()];
+
+    if (giorno === "Dom" || giorno === "Sab") {
+        return { testo: "📅 Weekend", fuori: true };
     }
-    if (i < orari.length - 1 && minutiTotali >= slot.fine && minutiTotali < orari[i + 1].inizio) {
-      return { testo: `☕ Intervallo`, fuori: true };
+
+    // classe selezionata
+    const classeSel = (document.getElementById('classe_select') || {}).value || "";
+    const isSeconda = classeSel.startsWith("2") || classeSel.includes("2");
+
+    const orariGiorno = isSeconda
+        ? orari_scuola_per_classi["2"][giorno]
+        : orari_scuola_per_classi["1_3_4_5"][giorno];
+
+    if (!orariGiorno) {
+        return { testo: "🏠 Lezioni terminate", fuori: true };
     }
-  }
-  return { testo: '🏠 Lezioni terminate', fuori: true };
+
+    const ore = data.getHours();
+    const min = data.getMinutes();
+    const nowMinuti = ore * 60 + min;
+
+    // prima dell'inizio delle lezioni
+    let [hS, mS] = orariGiorno[0].split("-")[0].split(":").map(Number);
+    let startMin = hS * 60 + mS;
+
+    if (nowMinuti < startMin) {
+        return { testo: `⏰ Inizio tra ${startMin - nowMinuti} min`, fuori: true };
+    }
+
+    // ciclo sugli intervalli
+    for (let i = 0; i < orariGiorno.length; i++) {
+        let [start, end] = orariGiorno[i].split("-");
+        let [sH, sM] = start.split(":").map(Number);
+        let [eH, eM] = end.split(":").map(Number);
+
+        let sMin = sH * 60 + sM;
+        let eMin = eH * 60 + eM;
+
+        if (nowMinuti >= sMin && nowMinuti < eMin) {
+            return {
+                testo: `📚 ${i + 1}ª ora (${eMin - nowMinuti} min)`,
+                fuori: false
+            };
+        }
+
+        // intervallo tra due ore
+        if (
+            i < orariGiorno.length - 1 &&
+            nowMinuti >= eMin &&
+            nowMinuti < (parseInt(orariGiorno[i + 1].split("-")[0].replace(":", "")) / 100 * 60)
+        ) {
+            return { testo: "☕ Intervallo", fuori: true };
+        }
+    }
+
+    return { testo: "🏠 Lezioni terminate", fuori: true };
 }
+
 function oraCorrenteScuola() {
     const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
     const oggi = new Date();
     const giorno = giorni[oggi.getDay()];
-    const ora = oggi.getHours(), min = oggi.getMinutes();
-    let intervalli = orari_scuola[giorno];
-    if(!intervalli) return null;
-    for(let i=0; i<intervalli.length; i++) {
-        let [start, end] = intervalli[i].split("-");
+    const ora = oggi.getHours();
+    const min = oggi.getMinutes();
+    const nowMinuti = ora * 60 + min;
+
+    const classeSel = (document.getElementById('classe_select') || {}).value || "";
+    const isSeconda = classeSel.startsWith("2") || classeSel.includes("2");
+
+    const orariGiorno = isSeconda
+        ? orari_scuola_per_classi["2"][giorno]
+        : orari_scuola_per_classi["1_3_4_5"][giorno];
+
+    if (!orariGiorno) return null;
+
+    // 🟢 controllo intervallo
+    const intervallo = intervalli_scuola[giorno];
+    if (intervallo) {
+        const [iH, iM] = intervallo.start.split(":").map(Number);
+        const [fH, fM] = intervallo.end.split(":").map(Number);
+        const iMin = iH * 60 + iM;
+        const fMin = fH * 60 + fM;
+
+        if (nowMinuti >= iMin && nowMinuti < fMin) return "intervallo";
+    }
+
+    // ore normali
+    for (let i = 0; i < orariGiorno.length; i++) {
+        let [start, end] = orariGiorno[i].split("-");
         let [sH, sM] = start.split(":").map(Number);
         let [eH, eM] = end.split(":").map(Number);
-        let nowMinuti = ora * 60 + min;
-        let sMinuti = sH * 60 + sM;
-        let eMinuti = eH * 60 + eM;
-        if(nowMinuti >= sMinuti && nowMinuti < eMinuti) return (i+1).toString();
+
+        let sMin = sH * 60 + sM;
+        let eMin = eH * 60 + eM;
+
+        if (nowMinuti >= sMin && nowMinuti < eMin) {
+            return (i + 1).toString();
+        }
     }
     return null;
 }
+
+
 
 /* ============================
    PAGINAZIONE (UI)
@@ -637,9 +810,87 @@ window.resetFiltri = function() {
     mostraHome();
 };
 
-/* ============================
-   DARK MODE (IIFE) - mantiene funzionalità e localStorage
-   ============================ */
+window.esportaPDF = function() {
+  const classe = (document.getElementById('classe_select') || {}).value || "";
+  const docente = (document.getElementById('docente_select') || {}).value || "";
+  const aula = (document.getElementById('aula_select') || {}).value || "";
+  
+  if (!classe && !docente && !aula) {
+    alert("⚠️ Seleziona almeno un filtro (Classe, Docente o Aula) prima di esportare!");
+    return;
+  }
+
+  let risultati = orario.filter(item => {
+    let ok = true;
+    if (classe) ok = ok && item.Classe === classe;
+    if (docente) ok = ok && estraiDocenti(item.Descrizione).includes(docente);
+    if (aula) ok = ok && estraiAula(item.Descrizione) === aula;
+    ok = ok && item.Descrizione && item.Descrizione !== "nan";
+    return ok;
+  });
+
+  if (risultati.length === 0) {
+    alert("⚠️ Nessun risultato da esportare!");
+    return;
+  }
+
+  let titolo = classe ? `Orario Classe ${classe}` : docente ? `Orario Prof. ${docente}` : `Orario Aula ${aula}`;
+
+  const giorni = ["Lun", "Mar", "Mer", "Gio", "Ven"];
+  const ore = ["1", "2", "3", "4", "5", "6", "7"];
+  const griglia = {};
+  giorni.forEach(g => {
+    griglia[g] = {};
+    ore.forEach(o => { griglia[g][o] = []; });
+  });
+
+  risultati.forEach(item => {
+    if (griglia[item.Giorno] && griglia[item.Giorno][item.Ora]) {
+      griglia[item.Giorno][item.Ora].push(item);
+    }
+  });
+
+  let tableHTML = '<table class="orario-griglia"><thead><tr><th>Ora</th>';
+  giorni.forEach(g => tableHTML += `<th>${g}</th>`);
+  tableHTML += '</tr></thead><tbody>';
+  
+  ore.forEach(o => {
+    tableHTML += `<tr><td class="ora-header">${o}ª</td>`;
+    giorni.forEach(g => {
+      const lezioni = griglia[g][o];
+      tableHTML += `<td class="${lezioni.length > 0 ? 'lezione-attiva' : 'libero'}">`;
+      
+      if (lezioni.length > 0) {
+        lezioni.forEach(item => {
+          const docentiTrovati = estraiDocenti(item.Descrizione);
+          const aulaText = estraiAula(item.Descrizione);
+          let materia = item.Descrizione.replace(/\s*\(.*\)/, '').trim();
+          
+          tableHTML += '<div class="cella-lezione">';
+          tableHTML += `<div class="materia-griglia">${materia}</div>`;
+          if (docentiTrovati.length > 0) tableHTML += `<div class="info-griglia"><span class="cella-docente">${docentiTrovati.join(', ')}</span></div>`;
+          if (aulaText) tableHTML += `<div class="info-griglia"><span class="cella-aula">${aulaText}</span></div>`;
+          tableHTML += '</div>';
+        });
+      } else {
+        tableHTML += '<span class="slot-libero">-</span>';
+      }
+      tableHTML += '</td>';
+    });
+    tableHTML += '</tr>';
+  });
+  tableHTML += '</tbody></table>';
+
+  let html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${titolo}</title><style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');*{margin:0;padding:0;box-sizing:border-box}@page{size:A4 landscape;margin:8mm}body{font-family:'Poppins',sans-serif;padding:8px;background:#FAFAFA;background-image:radial-gradient(circle at 0% 0%,rgba(209,196,233,0.4) 0%,transparent 50%),radial-gradient(circle at 100% 100%,rgba(149,117,205,0.2) 0%,transparent 50%)}h1{color:#fff;background:linear-gradient(135deg,#9575CD 0%,#673AB7 100%);display:block;padding:6px 16px;border-radius:10px;font-size:1em;font-weight:600;box-shadow:0 4px 12px rgba(103,58,183,0.2);margin:0 auto 8px;text-align:center;width:fit-content}.info-risultati{text-align:center;margin-bottom:6px;padding:4px 12px;background:#F3E5F5;border-radius:8px;color:#5E35B1;font-size:0.7em;font-weight:600}.contenitore-tabella{background:rgba(30,20,60,0.95);border-radius:10px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 32px rgba(0,0,0,0.3);overflow:hidden;width:100%;margin:0 auto}.orario-griglia{width:100%;border-collapse:separate;border-spacing:0;font-size:0.65em}.orario-griglia th{background-color:rgba(255,255,255,0.1);color:#fff;padding:5px 3px;text-align:center;font-weight:700;text-transform:uppercase;font-size:0.8em;letter-spacing:0.3px;border-bottom:1px solid rgba(255,255,255,0.1)}.orario-griglia td{padding:4px 3px;color:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.05);vertical-align:top;text-align:left;font-size:0.95em;max-height:80px;overflow:hidden}.orario-griglia td.ora-header{font-weight:600;text-align:center;width:35px;background-color:rgba(255,255,255,0.05)}.orario-griglia td.libero{text-align:center;vertical-align:middle;font-style:italic;opacity:0.5}.slot-libero{color:rgba(255,255,255,0.6);font-size:0.85em}.cella-lezione{margin-bottom:4px;padding-bottom:4px;border-bottom:1px solid rgba(255,255,255,0.06)}.cella-lezione:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}.materia-griglia{font-size:0.85em;font-weight:600;color:rgba(255,255,255,0.95);margin-bottom:1px;line-height:1.1}.info-griglia{font-size:0.7em;margin:0;color:rgba(255,255,255,0.8);line-height:1}.cella-docente{color:#9575CD!important;font-weight:600!important}.cella-aula{color:rgba(255,255,255,0.65)!important}@media print{body{background:#fff!important;padding:5mm;height:100vh}h1{background:linear-gradient(135deg,#673AB7 0%,#512DA8 100%)!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;page-break-after:avoid;margin-bottom:5px}.info{-webkit-print-color-adjust:exact;print-color-adjust:exact;page-break-after:avoid}.contenitore{box-shadow:none;border:2px solid #673AB7;background:rgba(30,20,60,0.95)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;page-break-inside:avoid;flex:1}table{page-break-inside:avoid;height:100%}th,td,.cella-lezione{-webkit-print-color-adjust:exact;print-color-adjust:exact;page-break-inside:avoid}}</style></head><body><h1>${titolo}</h1><div style="text-align:center;margin-bottom:6px;"><div class="info-risultati">📋 Orario Settimanale • ${new Date().toLocaleDateString('it-IT')}</div></div><div class="contenitore-tabella">${tableHTML}</div></body></html>`;
+
+  const finestra = window.open('', '_blank');
+  finestra.document.write(html);
+  finestra.document.close();
+  setTimeout(() => { finestra.print(); }, 800);
+};
+
+
+
 /* ============================
    DARK MODE (Versione definitiva e unica)
    ============================ */
@@ -716,3 +967,94 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+// OVERRIDE ESPORTA PDF - VERSIONE FINALE
+window.esportaPDF = function() {
+  const classe = (document.getElementById('classe_select') || {}).value || "";
+  const docente = (document.getElementById('docente_select') || {}).value || "";
+  const aula = (document.getElementById('aula_select') || {}).value || "";
+  
+  if (!classe && !docente && !aula) {
+    alert("⚠️ Seleziona almeno un filtro!");
+    return;
+  }
+
+  let risultati = orario.filter(item => {
+    let ok = true;
+    if (classe) ok = ok && item.Classe === classe;
+    if (docente) ok = ok && estraiDocenti(item.Descrizione).includes(docente);
+    if (aula) ok = ok && estraiAula(item.Descrizione) === aula;
+    ok = ok && item.Descrizione && item.Descrizione !== "nan";
+    return ok;
+  });
+
+  if (risultati.length === 0) {
+    alert("⚠️ Nessun risultato!");
+    return;
+  }
+
+  let nomeFile = classe ? `Orario_${classe}` : docente ? `Orario_${docente.replace(/\s+/g, '_')}` : `Orario_Aula_${aula}`;
+  let titolo = classe ? `Orario ${classe}` : docente ? `Prof. ${docente}` : `Aula ${aula}`;
+
+  const giorni = ["Lun", "Mar", "Mer", "Gio", "Ven"];
+  const ore = ["1", "2", "3", "4", "5", "6", "7"];
+  const griglia = {};
+  giorni.forEach(g => {
+    griglia[g] = {};
+    ore.forEach(o => { griglia[g][o] = []; });
+  });
+
+  risultati.forEach(item => {
+    if (griglia[item.Giorno] && griglia[item.Giorno][item.Ora]) {
+      griglia[item.Giorno][item.Ora].push(item);
+    }
+  });
+
+  let tableHTML = '<table style="width:100%;border-collapse:collapse;font-size:0.7em;"><thead><tr><th style="background:rgba(255,255,255,0.1);color:#fff;padding:5px 3px;text-align:center;font-weight:700;text-transform:uppercase;font-size:0.8em;border:1px solid rgba(255,255,255,0.1);">Ora</th>';
+  giorni.forEach(g => tableHTML += `<th style="background:rgba(255,255,255,0.1);color:#fff;padding:5px 3px;text-align:center;font-weight:700;text-transform:uppercase;font-size:0.8em;border:1px solid rgba(255,255,255,0.1);">${g}</th>`);
+  tableHTML += '</tr></thead><tbody>';
+  
+  ore.forEach(o => {
+    tableHTML += `<tr><td style="font-weight:600;text-align:center;padding:5px 3px;background:rgba(255,255,255,0.05);color:#fff;width:35px;border:1px solid rgba(255,255,255,0.1);">${o}ª</td>`;
+    giorni.forEach(g => {
+      const lezioni = griglia[g][o];
+      tableHTML += `<td style="padding:5px 3px;vertical-align:top;color:rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.1);">`;
+      
+      if (lezioni.length > 0) {
+        lezioni.forEach((item, idx) => {
+          const docenti = estraiDocenti(item.Descrizione);
+          const aulaItem = estraiAula(item.Descrizione);
+          let materia = item.Descrizione.replace(/\s*\(.*\)/, '').trim();
+          
+          if (idx > 0) tableHTML += '<div style="margin-top:3px;padding-top:3px;border-top:1px solid rgba(255,255,255,0.15);"></div>';
+          tableHTML += `<div style="font-weight:600;color:rgba(255,255,255,0.95);font-size:0.85em;">${materia}</div>`;
+          if (docenti.length > 0) tableHTML += `<div style="font-size:0.75em;color:#9575CD;">${docenti.join(', ')}</div>`;
+          if (aulaItem) tableHTML += `<div style="font-size:0.7em;color:rgba(255,255,255,0.7);">${aulaItem}</div>`;
+        });
+      } else {
+        tableHTML += '<span style="color:rgba(255,255,255,0.5);font-style:italic;font-size:0.8em;">Libero</span>';
+      }
+      tableHTML += '</td>';
+    });
+    tableHTML += '</tr>';
+  });
+  tableHTML += '</tbody></table>';
+
+  const elemento = document.createElement('div');
+  elemento.style.cssText = 'width:297mm;height:210mm;background:rgba(30,20,60,0.95);padding:8mm;box-sizing:border-box;font-family:Poppins,sans-serif;color:#fff;';
+  elemento.innerHTML = `
+    <h1 style="text-align:center;color:#fff;background:linear-gradient(135deg,#9575CD,#673AB7);padding:6px 16px;border-radius:10px;font-size:1em;margin:0 auto 6px;width:fit-content;">${titolo}</h1>
+    <p style="text-align:center;color:#D1C4E9;margin-bottom:6px;font-size:0.7em;">📋 Orario Settimanale • ${new Date().toLocaleDateString('it-IT')}</p>
+    ${tableHTML}
+  `;
+
+  const opt = {
+    margin: 0,
+    filename: `${nomeFile}.pdf`,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, backgroundColor: '#1e143c' },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+  };
+
+  html2pdf().set(opt).from(elemento).save();
+};

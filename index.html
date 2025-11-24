@@ -22,6 +22,7 @@
   <div id="orologio-dinamico">
     <div class="ora-corrente">--:--</div>
     <div class="ora-scolastica">Caricamento...</div>
+    <div id="prossima-lezione" style="display: none;"></div>
   </div>
   
 <div class="form-group-wrapper">
@@ -61,6 +62,8 @@
     <button onclick="resetFiltri()" class="btn-reset-inline">
       ✕ Reset
     </button>
+        <button onclick="esportaPDF()" class="btn-export-inline" title="Esporta orario in PDF">
+      📄 Esporta PDF
   </div>
 </div>
 
@@ -87,6 +90,7 @@
   </div>
 
   <!-- COLLEGAMENTO AL FILE JS ESTERNO -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="script.js"></script>
 
   <div class="bg-shapes">
