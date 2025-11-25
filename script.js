@@ -580,7 +580,7 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
                         <tr>
                             <td class="cella-classe">${item.Classe}</td>
                             ${!adessoMode ? `<td>${item.Giorno}</td>` : ''}
-                            <td>${item.Ora}ª${orarioSlot ? `<br><small style="font-size:0.8em;color:rgba(255,255,255,0.65);font-weight:500;background:rgba(0,0,0,0.1);padding:2px 6px;border-radius:3px;display:inline-block;margin-top:2px;">⏰ ${orarioSlot}</small>` : ''}</td>
+                            <td>${item.Ora}ª${orarioSlot ? `<br><small style="font-size:0.75em;color:var(--text-secondary);font-weight:400;">${orarioSlot}</small>` : ''}</td>
                             <td class="cella-docente">${cellaDocente}</td>
                             <td>${cellaMateria}</td>
                         </tr>
@@ -655,15 +655,14 @@ function mostraGrigliaOrario(risultati, tipo) {
     ore.forEach(o => {
         table += `<tr><td class="ora-header">${o}ª</td>`;
         giorni.forEach(g => {
-            const lezioni = griglia[g][o];
             const classeSel = (document.getElementById('classe_select') || {}).value || "";
             const isSeconda = classeSel.startsWith("2") || classeSel.includes("2");
-            const orariGiorno = isSeconda ? orari_scuola_per_classi["2"][g] : orari_scuola_per_classi["1_3_4_5"][g];
-            const orarioSlot = orariGiorno && orariGiorno[o - 1] ? `<div style="font-size:0.75em;font-weight:500;margin-bottom:4px;color:rgba(255,255,255,0.65);padding:2px 4px;background:rgba(0,0,0,0.15);border-radius:3px;display:inline-block;">⏰ ${orariGiorno[o - 1]}</div>` : '';
+            const lezioni = griglia[g][o];
+            const orariGiornoCorrente = isSeconda ? orari_scuola_per_classi["2"][g] : orari_scuola_per_classi["1_3_4_5"][g];
+            const orarioSlotCella = orariGiornoCorrente && orariGiornoCorrente[o - 1] ? orariGiornoCorrente[o - 1] : '';
             table += `<td class="${lezioni.length > 0 ? 'lezione-attiva' : 'libero'}">`;
             
             if (lezioni.length > 0) {
-                table += orarioSlot;
                 lezioni.forEach(item => {
                     const desc = item.Descrizione;
                     const docentiTrovati = estraiDocenti(desc);
@@ -677,6 +676,9 @@ function mostraGrigliaOrario(risultati, tipo) {
 
                     // Layout semplice e pulito
                     table += `<div class="cella-lezione">`;
+                    if (orarioSlotCella) {
+                        table += `<div class="orario-cella">🕐 ${orarioSlotCella}</div>`;
+                    }
                     table += `<div class="materia-griglia">${materia}</div>`;
                     
                     if (docentiTrovati.length > 0) {
@@ -694,7 +696,6 @@ function mostraGrigliaOrario(risultati, tipo) {
                     table += `</div>`;
                 });
             } else {
-                table += orarioSlot;
                 table += `<span class="slot-libero">Libero</span>`;
             }
             table += `</td>`;

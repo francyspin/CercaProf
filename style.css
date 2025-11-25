@@ -205,7 +205,7 @@ h1 {
   user-select: none;
   transition: transform 0.2s;
   white-space: nowrap;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 40px auto;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -294,7 +294,14 @@ body.dark-mode .dark-mode-btn {
   flex-direction: column;
   gap: 16px;
   margin-bottom: 20px;
+  margin-top: 30px;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .form-group-wrapper {
+    margin-top: 25px;
+  }
 }
 
 .form-group-principale {
@@ -1000,9 +1007,9 @@ body.dark-mode #banner-benvenuto {
 /* Colonna ore più stretta */
 .orario-griglia td.ora-header,
 .orario-griglia th:first-child {
-  width: 60px;
-  min-width: 60px;
-  max-width: 60px;
+  width: 75px;
+  min-width: 75px;
+  max-width: 75px;
   padding: 8px 4px;
   text-align: center;
 }
@@ -1139,6 +1146,23 @@ body.dark-mode .slot-libero {
   line-height: 1.4;
   margin: 2px 0;
   color: #424242; /* Grigio scuro in light mode */
+}
+
+/* Orario nelle celle */
+.orario-cella {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #9575CD;
+  margin-bottom: 4px;
+  background: rgba(149, 117, 205, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+body.dark-mode .orario-cella {
+  color: #B39DDB;
+  background: rgba(149, 117, 205, 0.2);
 }
 
 /* Separatore tra lezioni multiple */
@@ -1343,8 +1367,35 @@ body.dark-mode .stat-card {
   padding: 32px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s;
+  border: 2px solid rgba(103, 58, 183, 0.3);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #673AB7, #9575CD, #673AB7);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.info-card:hover::before {
+  opacity: 1;
 }
 
 .info-card:hover {
@@ -1353,7 +1404,11 @@ body.dark-mode .stat-card {
 
 body.dark-mode .info-card {
   background: rgba(31, 26, 56, 0.95);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(149, 117, 205, 0.4);
+}
+
+body.dark-mode .info-card::before {
+  background: linear-gradient(45deg, #9575CD, #B39DDB, #9575CD);
 }
 
 .info-icon {
@@ -1425,7 +1480,7 @@ body.dark-mode .info-card {
     padding: 8px 12px;
     white-space: nowrap;
     width: fit-content;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 25px auto !important;
   }
 
   /* 2. Orologio */
@@ -1445,6 +1500,8 @@ body.dark-mode .info-card {
     order: 3;
     width: 100%;
     align-items: center;
+    margin-top: 0 !important;
+    margin-bottom: 20px;
   }
 
   /* Griglia filtri mobile (2 colonne) */
