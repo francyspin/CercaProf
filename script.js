@@ -398,8 +398,44 @@ function cercaAdesso() {
 
         // 🟢 CASO SPECIALE: Intervallo
         if (ora_scuola === "intervallo") {
+            const ore = oggi.getHours();
+            const min = oggi.getMinutes();
+            const nowMinuti = ore * 60 + min;
+            const classeSel = (document.getElementById('classe_select') || {}).value || "";
+            const isSeconda = classeSel.startsWith("2") || classeSel.includes("2");
+            const orariGiorno = isSeconda ? orari_scuola_per_classi["2"][giorno] : orari_scuola_per_classi["1_3_4_5"][giorno];
+            
+            let oraPrecedente = null;
+            if (orariGiorno) {
+                for (let i = 0; i < orariGiorno.length; i++) {
+                    let [start, end] = orariGiorno[i].split("-");
+                    let [eH, eM] = end.split(":").map(Number);
+                    let eMin = eH * 60 + eM;
+                    if (nowMinuti > eMin) oraPrecedente = i + 1;
+                }
+            }
+            
+            let risultatiPrecedenti = [];
+            if (oraPrecedente && docente) {
+                risultatiPrecedenti = orario.filter(item => {
+                    let ok = item.Giorno === giorno && item.Ora === oraPrecedente;
+                    ok = ok && estraiDocenti(item.Descrizione).includes(docente);
+                    ok = ok && item.Descrizione && item.Descrizione !== "nan";
+                    return ok;
+                });
+            }
+            
             const box = document.getElementById('risultati');
             if (box) {
+                let extraInfo = '';
+                if (risultatiPrecedenti.length > 0 && docente) {
+                    const item = risultatiPrecedenti[0];
+                    const materia = item.Descrizione.replace(/\s*\(.*\)/, '').trim();
+                    const aula = estraiAula(item.Descrizione);
+                    extraInfo = `<p style="color: rgba(255,255,255,0.9); font-weight:500; margin-top:8px;">
+                        📍 Nell'ora precedente (${oraPrecedente}ª): <b>${materia}</b> con <b>${item.Classe}</b>${aula ? ` in <b>${aula}</b>` : ''}
+                    </p>`;
+                }
                 box.innerHTML = `
                 <div class="banner-lezioni" style="background: linear-gradient(135deg, #FFA726 0%, #FF9800 100%); border: none;">
                     <div class="icona-banner" style="font-size: 3em;">☕</div>
@@ -407,6 +443,7 @@ function cercaAdesso() {
                     <p style="color: rgba(255,255,255,0.95); font-weight:500;">
                         Tutti gli studenti e i docenti sono in pausa. Le lezioni riprenderanno a breve.
                     </p>
+                    ${extraInfo}
                 </div>`;
                 setTimeout(() => box.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
             }
@@ -533,12 +570,17 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
                     const aulaHtml = aulaRaw ? `<br><small><span class="cella-aula">📍 ${aulaRaw}</span></small>` : '';
                     
                     const cellaMateria = `${materia}${classeInMateria}${aulaHtml}`;
+                    
+                    const classeSel = (document.getElementById('classe_select') || {}).value || "";
+                    const isSeconda = classeSel.startsWith("2") || classeSel.includes("2");
+                    const orariGiorno = isSeconda ? orari_scuola_per_classi["2"][item.Giorno] : orari_scuola_per_classi["1_3_4_5"][item.Giorno];
+                    const orarioSlot = orariGiorno && orariGiorno[item.Ora - 1] ? orariGiorno[item.Ora - 1] : '';
 
                     return `
                         <tr>
                             <td class="cella-classe">${item.Classe}</td>
                             ${!adessoMode ? `<td>${item.Giorno}</td>` : ''}
-                            <td>${item.Ora}ª</td>
+                            <td>${item.Ora}ª${orarioSlot ? `<br><small style="font-size:0.8em;color:rgba(255,255,255,0.65);font-weight:500;background:rgba(0,0,0,0.1);padding:2px 6px;border-radius:3px;display:inline-block;margin-top:2px;">⏰ ${orarioSlot}</small>` : ''}</td>
                             <td class="cella-docente">${cellaDocente}</td>
                             <td>${cellaMateria}</td>
                         </tr>
@@ -614,9 +656,14 @@ function mostraGrigliaOrario(risultati, tipo) {
         table += `<tr><td class="ora-header">${o}ª</td>`;
         giorni.forEach(g => {
             const lezioni = griglia[g][o];
+            const classeSel = (document.getElementById('classe_select') || {}).value || "";
+            const isSeconda = classeSel.startsWith("2") || classeSel.includes("2");
+            const orariGiorno = isSeconda ? orari_scuola_per_classi["2"][g] : orari_scuola_per_classi["1_3_4_5"][g];
+            const orarioSlot = orariGiorno && orariGiorno[o - 1] ? `<div style="font-size:0.75em;font-weight:500;margin-bottom:4px;color:rgba(255,255,255,0.65);padding:2px 4px;background:rgba(0,0,0,0.15);border-radius:3px;display:inline-block;">⏰ ${orariGiorno[o - 1]}</div>` : '';
             table += `<td class="${lezioni.length > 0 ? 'lezione-attiva' : 'libero'}">`;
             
             if (lezioni.length > 0) {
+                table += orarioSlot;
                 lezioni.forEach(item => {
                     const desc = item.Descrizione;
                     const docentiTrovati = estraiDocenti(desc);
@@ -647,6 +694,7 @@ function mostraGrigliaOrario(risultati, tipo) {
                     table += `</div>`;
                 });
             } else {
+                table += orarioSlot;
                 table += `<span class="slot-libero">Libero</span>`;
             }
             table += `</td>`;
