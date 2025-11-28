@@ -85,6 +85,8 @@ function mostraHome() {
     const infoCards = document.getElementById('infoCards');
     if (infoCards) infoCards.style.display = "grid";
     document.body.classList.remove('senza-lezioni');
+    // Rimuovi classe per far tornare il footer visibile inizialmente
+    document.body.classList.remove('has-results');
 
     // Resetta filtri (se esistono)
     ['classe_select','docente_select','aula_select','giorno_select','ora_select'].forEach(id => {
@@ -129,6 +131,7 @@ function aggiornaOrologio() {
   const minuti = String(now.getMinutes()).padStart(2, '0');
   const secondi = String(now.getSeconds()).padStart(2, '0');
   
+  // Aggiorna orologio desktop
   const oraCorrente = document.querySelector('#orologio-dinamico .ora-corrente');
   const oraScolastica = document.querySelector('#orologio-dinamico .ora-scolastica');
   
@@ -146,6 +149,24 @@ function aggiornaOrologio() {
       oraScolastica.classList.remove('fuori-orario');
     }
   }
+  
+  // Aggiorna orologio mobile
+  const oraCorrenteMobile = document.querySelector('#orologio-mobile .ora-corrente');
+  const oraScolasticaMobile = document.querySelector('#orologio-mobile .ora-scolastica');
+  
+  if (oraCorrenteMobile) {
+    oraCorrenteMobile.textContent = `${ore}:${minuti}:${secondi}`;
+  }
+  
+  if (oraScolasticaMobile) {
+    oraScolasticaMobile.textContent = oraScolasticaCalcolata.testo;
+    if (oraScolasticaCalcolata.fuori) {
+      oraScolasticaMobile.classList.add('fuori-orario');
+    } else {
+      oraScolasticaMobile.classList.remove('fuori-orario');
+    }
+  }
+  
   // 🟢 Aggiorna box "Prossima Lezione"
   aggiornaProssimaLezione(now);
 }
@@ -254,6 +275,7 @@ function aggiornaSelect(sel, values, placeholderText) {
     let ph = document.createElement("option");
     ph.value = "";
     ph.textContent = placeholderText;
+    ph.selected = true;
     sel.appendChild(ph);
 
     Array.from(values).sort().forEach(val => {
@@ -282,9 +304,9 @@ fetch('orario_unificato.json')
             }
         });
 
-        aggiornaSelect(document.getElementById('classe_select'), classiSet, "Filtra per Classe...");
-        aggiornaSelect(document.getElementById('docente_select'), docentiSet, "Filtra per Docente...");
-        aggiornaSelect(document.getElementById('aula_select'), aulaSet, "Filtra per Aula...");
+        aggiornaSelect(document.getElementById('classe_select'), classiSet, "Classe");
+        aggiornaSelect(document.getElementById('docente_select'), docentiSet, "Docente");
+        aggiornaSelect(document.getElementById('aula_select'), aulaSet, "Aula");
         
 
         ['classe_select','docente_select','aula_select','giorno_select','ora_select'].forEach(id => {
@@ -324,6 +346,9 @@ function cerca() {
         alert('Errore: dati non caricati.');
         return;
     }
+
+    // Aggiungi classe per spostare il footer in fondo quando ci sono risultati
+    document.body.classList.add('has-results');
 
     let vistaGriglia = false, tipoGriglia = '';
     if (classe && !docente && !aula && !giorno && !ora) {
@@ -376,6 +401,8 @@ function cercaAdesso() {
     const infoCards = document.getElementById('infoCards');
     if (infoCards) infoCards.style.display = "none";
     document.body.classList.remove('senza-lezioni');
+    // Aggiungi classe per spostare il footer in fondo quando ci sono risultati
+    document.body.classList.add('has-results');
 
     const giorni = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
     const oggi = new Date();

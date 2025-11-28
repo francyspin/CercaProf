@@ -6,93 +6,104 @@
   <title>Orario Scolastico ITT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="fix.css">
 </head>
 
 <body>
 
-  <!-- Dark Mode Button -->
-  <button id="darkModeToggle" class="dark-mode-btn" aria-pressed="false" title="Attiva/disattiva modalità scura">🌙 Modalità Scura</button>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1 class="navbar-title">Orario Scolastico ITTVT</h1>
+    <!-- Orologio Dinamico in Navbar (Desktop only) -->
+    <div id="orologio-dinamico" class="navbar-clock">
+      <div class="ora-corrente">--:--</div>
+      <div class="ora-scolastica">Caricamento...</div>
+    </div>
+  </nav>
 
-  <!-- Hero Section -->
-  <div class="hero-section">
-    <h1>Orario Scolastico ITTVT</h1>
-  </div>
+  <main class="page-content">
+    <!-- Orologio Mobile (fuori navbar) -->
+    <div id="orologio-mobile" class="orologio-mobile">
+      <div class="ora-corrente">--:--</div>
+      <div class="ora-scolastica">Caricamento...</div>
+    </div>
 
-  <!-- Orologio Dinamico -->
-  <div id="orologio-dinamico">
-    <div class="ora-corrente">--:--</div>
-    <div class="ora-scolastica">Caricamento...</div>
-    <div id="prossima-lezione" style="display: none;"></div>
-  </div>
-  
-<div class="form-group-wrapper">
-  <div class="form-group-filtri">
-    <select id="classe_select">
-      <option value="">Filtra per Classe...</option>
-    </select>
-    <select id="docente_select">
-      <option value="">Filtra per Docente...</option>
-    </select>
-    <select id="aula_select">
-      <option value="">Filtra per Aula...</option>
-    </select>
-    <select id="giorno_select">
-      <option value="">Qualsiasi Giorno</option>
-      <option value="Lun">Lunedì</option>
-      <option value="Mar">Martedì</option>
-      <option value="Mer">Mercoledì</option>
-      <option value="Gio">Giovedì</option>
-      <option value="Ven">Venerdì</option>
-    </select>
-    <select id="ora_select">
-      <option value="">Qualsiasi Ora</option>
-      <option value="1">1ª ora</option>
-      <option value="2">2ª ora</option>
-      <option value="3">3ª ora</option>
-      <option value="4">4ª ora</option>
-      <option value="5">5ª ora</option>
-      <option value="6">6ª ora</option>
-      <option value="7">7ª ora</option>
-    </select>
-    
-    <!-- BOTTONI DENTRO I FILTRI -->
-    <button onclick="cercaAdesso()" class="btn-adesso-inline">
-      🚀 Lezioni Attive
-    </button>
-    <button onclick="resetFiltri()" class="btn-reset-inline">
-      ✕ Reset
-    </button>
+    <div class="form-group-wrapper">
+      <div class="form-group-filtri">
+        <h2 class="filtri-title" style="width: 100%; flex-basis: 100%; color: #fff; font-size: 1.3em; font-weight: 700; margin: 0 0 18px 0; padding-bottom: 15px; text-align: center; border-bottom: 3px solid #fff; letter-spacing: 1px; text-transform: uppercase;">Filtri</h2>
+        <select id="classe_select">
+          <option value="">Classe</option>
+        </select>
+        <select id="docente_select">
+          <option value="">Docente</option>
+        </select>
+        <select id="aula_select">
+          <option value="">Aula</option>
+        </select>
+        <select id="giorno_select">
+          <option value="">Qualsiasi Giorno</option>
+          <option value="Lun">Lunedì</option>
+          <option value="Mar">Martedì</option>
+          <option value="Mer">Mercoledì</option>
+          <option value="Gio">Giovedì</option>
+          <option value="Ven">Venerdì</option>
+        </select>
+        <select id="ora_select">
+          <option value="">Qualsiasi Ora</option>
+          <option value="1">1ª ora</option>
+          <option value="2">2ª ora</option>
+          <option value="3">3ª ora</option>
+          <option value="4">4ª ora</option>
+          <option value="5">5ª ora</option>
+          <option value="6">6ª ora</option>
+          <option value="7">7ª ora</option>
+        </select>
+
+        <!-- BOTTONI DENTRO I FILTRI -->
+        <button onclick="cercaAdesso()" class="btn-adesso-inline">
+          🚀 Lezioni Attive
+        </button>
+        <button onclick="resetFiltri()" class="btn-reset-inline">
+          ✕ Reset
+        </button>
         <button onclick="esportaPDF()" class="btn-export-inline" title="Esporta orario in PDF">
-      📄 Esporta PDF
-  </div>
-</div>
+          📄 Esporta PDF
+        </button>
+      </div>
+    </div>
 
-  <!-- Risultati -->
-  <div id="risultati"></div>
+    <!-- Prossima Lezione -->
+    <div id="prossima-lezione" style="display: none;"></div>
 
-  <!-- Info Cards (visibili quando non ci sono risultati) -->
-  <div class="info-cards" id="infoCards">
-    <div class="info-card">
-      <div class="info-icon">🔍</div>
-      <h3>Ricerca Veloce</h3>
-      <p>Usa i filtri per trovare rapidamente docenti, classi o aule specifiche</p>
+    <!-- Risultati -->
+    <div id="risultati"></div>
+
+    <!-- Info Cards (visibili quando non ci sono risultati) -->
+    <div class="info-cards" id="infoCards">
+      <div class="info-card">
+        <div class="info-icon">🔍</div>
+        <h3>Ricerca Veloce</h3>
+        <p>Usa i filtri per trovare rapidamente docenti, classi o aule specifiche</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">⚡</div>
+        <h3>Lezioni Attive</h3>
+        <p>Clicca su "Lezioni Attive" per vedere cosa sta succedendo ora</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🌙</div>
+        <h3>Dark Mode</h3>
+        <p>Attiva la modalità scura per una migliore esperienza notturna</p>
+      </div>
     </div>
-    <div class="info-card">
-      <div class="info-icon">⚡</div>
-      <h3>Lezioni Attive</h3>
-      <p>Clicca su "Lezioni Attive" per vedere cosa sta succedendo ora</p>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🌙</div>
-      <h3>Dark Mode</h3>
-      <p>Attiva la modalità scura per una migliore esperienza notturna</p>
-    </div>
-  </div>
+  </main>
 
   <!-- COLLEGAMENTO AL FILE JS ESTERNO -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="script.js"></script>
+
+  <footer class="site-footer">
+    <p>© 2024 Orario Scolastico ITTVT - Tutti i diritti riservati</p>
+  </footer>
 
   <div class="bg-shapes">
     <div class="shape shape-1"></div>
