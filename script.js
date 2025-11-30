@@ -85,7 +85,6 @@ function mostraHome() {
     const infoCards = document.getElementById('infoCards');
     if (infoCards) infoCards.style.display = "grid";
     document.body.classList.remove('senza-lezioni');
-    // Rimuovi classe per far tornare il footer visibile inizialmente
     document.body.classList.remove('has-results');
 
     // Resetta filtri (se esistono)
@@ -511,6 +510,7 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
     const risultatiPerPagina = typeof resultsPerPage !== 'undefined' ? resultsPerPage : 15;
 
     document.body.classList.remove('senza-lezioni');
+    document.body.classList.add('has-results');
     
     const box = document.getElementById('risultati');
     let pagi = "";
@@ -556,6 +556,9 @@ function mostraRisultati(risultati, ora_scuola = null, giorno = null, adessoMode
             }
             return;
         }
+          if (risultati && risultati.length > 0) {
+    document.body.classList.add('has-results');
+  }
     }
 
     /* === TABELLA / PAGINAZIONE === */
@@ -661,6 +664,7 @@ if (box) {
    MOSTRA GRIGLIA SETTIMANALE
    ============================ */
 function mostraGrigliaOrario(risultati, tipo) {
+    document.body.classList.add('has-results');
     const giorni = ["Lun", "Mar", "Mer", "Gio", "Ven"];
     const ore = ["1", "2", "3", "4", "5", "6", "7"];
     const griglia = {};
@@ -1015,6 +1019,24 @@ window.esportaPDF = function() {
 })();
 
 /* ============================
+   NAVBAR HIDE ON SCROLL
+   ============================ */
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrollTop > lastScrollTop && scrollTop > 100) {
+    navbar.classList.add('hidden');
+  } else {
+    navbar.classList.remove('hidden');
+  }
+  
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}, false);
+
+/* ============================
    INIZIALIZZAZIONE FINALE
    (unico DOMContentLoaded, pulito)
    ============================ */
@@ -1134,3 +1156,4 @@ window.esportaPDF = function() {
 
   html2pdf().set(opt).from(elemento).save();
 };
+
