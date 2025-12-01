@@ -699,11 +699,13 @@ function mostraGrigliaOrario(risultati, tipo) {
                     const docentiTrovati = estraiDocenti(desc);
                     const aulaText = estraiAula(desc);
 
-                    // Estrai materia pulita
-                    let materia = desc;
-                    if (docentiTrovati.length > 0) docentiTrovati.forEach(d => materia = materia.replace(d, ''));
-                    if (aulaText) materia = materia.replace(aulaText, '');
-                    materia = materia.replace(/\([\s\S]*?\)/g, '').replace(/[\(\);,]/g, '').replace(/\s{2,}/g, ' ').trim();
+                    // Estrai materia pulita - prima rimuovi tutto tra parentesi
+                    let materia = desc.replace(/\s*\([^)]*\)/g, '').trim();
+                    // Se la materia è vuota, prova a prendere il testo prima della prima parentesi
+                    if (!materia || materia.length === 0) {
+                        const match = desc.match(/^([^(]+)/);
+                        materia = match ? match[1].trim() : 'Lezione';
+                    }
 
                     // Layout semplice e pulito
                     table += `<div class="cella-lezione">`;
